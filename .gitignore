@@ -1,4 +1,5 @@
 .next
+.vercel
 tsconfig.tsbuildinfo
 node_modules
 out
