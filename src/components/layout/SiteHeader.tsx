@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BrandLogo } from "@/components/brand/BrandLogo";
+import { useTheme } from "@/context/ThemeContext";
 import { navItems } from "@/data/site-content";
 
 export function SiteHeader() {
@@ -8,16 +10,8 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("sportsventurex-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldUseDarkMode = savedTheme ? savedTheme === "dark" : prefersDark;
-
-    setIsDarkMode(shouldUseDarkMode);
-    document.documentElement.classList.toggle("theme-dark", shouldUseDarkMode);
-  }, []);
+  const { theme, toggleTheme } = useTheme();
+  const isDarkMode = theme === "dark";
 
   useEffect(() => {
     const updateNavigation = () => {
@@ -36,19 +30,11 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", updateNavigation);
   }, []);
 
-  const toggleTheme = () => {
-    const nextTheme = !isDarkMode;
-    setIsDarkMode(nextTheme);
-    document.documentElement.classList.toggle("theme-dark", nextTheme);
-    window.localStorage.setItem("sportsventurex-theme", nextTheme ? "dark" : "light");
-  };
-
   return (
     <header className={`header-wrap ${isScrolled ? "is-scrolled" : ""}`}>
       <div className="site-header" aria-label="Main navigation">
         <a className="brand-mark" href="#top" aria-label="SportsVentureX home" onClick={() => setIsOpen(false)}>
-          <span className="brand-symbol" aria-hidden="true">SVX</span>
-          <span>SportsVentureX</span>
+          <BrandLogo className="brand-logo" />
         </a>
         <nav className={`nav-links ${isOpen ? "is-open" : ""}`} aria-label="Site sections">
           {navItems.map((item) => (
@@ -73,7 +59,7 @@ export function SiteHeader() {
             aria-pressed={isDarkMode}
             onClick={toggleTheme}
           >
-            <span aria-hidden="true">{isDarkMode ? "☀" : "☾"}</span>
+            <span aria-hidden="true">{isDarkMode ? "\u263c" : "\u263e"}</span>
           </button>
           <button
             className={`menu-toggle ${isOpen ? "is-open" : ""}`}
