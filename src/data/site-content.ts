@@ -122,6 +122,6 @@ export const faqs: Faq[] = [
   {
     question: "Is the contact form connected?",
     answer:
-      "Not yet. For this launch page, the contact form is visual-only and marked as coming soon.",
+      "Yes. Send an enquiry with your product details and the SportsVentureX team will receive it directly.",
   },
 ];

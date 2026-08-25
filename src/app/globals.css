@@ -251,6 +251,13 @@ details p { max-width: 600px; margin: 0 0 18px; color: var(--ink-soft); font-siz
 .contact-form input, .contact-form select, .contact-form textarea { width: 100%; border: 1px solid rgba(255,255,255,.34); border-radius: 0; background: transparent; color: rgba(255,255,255,.7); padding: 12px; opacity: 1; resize: vertical; }
 .contact-form input:disabled, .contact-form select:disabled, .contact-form textarea:disabled { cursor: not-allowed; -webkit-text-fill-color: rgba(255,255,255,.42); }
 .contact-form button { min-height: 50px; margin-top: 8px; border: 0; border-radius: 0; background: var(--lime); color: var(--ink); font-size: 13px; font-weight: 700; }
+.contact-form button:not(:disabled) { cursor: pointer; transition: background 160ms ease, color 160ms ease; }
+.contact-form button:not(:disabled):hover { background: var(--brand-blue); color: var(--white); }
+.contact-form button:disabled { cursor: wait; opacity: .72; }
+.form-status { min-height: 20px; margin: 0; color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.4; }
+.form-status.success { color: #a9f5c7; }
+.form-status.error { color: #ffc0b2; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 
 .site-footer { background: var(--ink); color: var(--white); }
 .site-footer .brand-mark { color: var(--white); }
