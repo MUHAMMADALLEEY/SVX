@@ -3,12 +3,35 @@ export type NavItem = {
   href: string;
 };
 
-export type Product = {
-  name: string;
-  eyebrow: string;
-  description: string;
+export type SockShowcaseCategory =
+  | "Multipacks"
+  | "Crew socks"
+  | "Performance socks"
+  | "Lifestyle colors"
+  | "Logo / custom branding";
+
+export type SockShowcaseImage = {
+  id: string;
+  title: string;
+  category: SockShowcaseCategory;
   image: string;
-  features: string[];
+  alt: string;
+};
+
+export type CatalogueProduct = {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+  description: string;
+  meta: string;
+  specs: string[];
+};
+
+export type CatalogueCategory = {
+  label: string;
+  description: string;
 };
 
 export type Service = {

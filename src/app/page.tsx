@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { ProductSection } from "@/components/sections/ProductSection";
+import { ProductCatalogueSection } from "@/components/sections/ProductCatalogueSection";
 import { QualitySection } from "@/components/sections/QualitySection";
 import { SolutionsSection } from "@/components/sections/SolutionsSection";
 import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
@@ -14,7 +14,7 @@ export default function Home() {
       <SiteHeader />
       <HeroSection />
       <WhyChooseUsSection />
-      <ProductSection />
+      <ProductCatalogueSection />
       <SolutionsSection />
       <ProcessSection />
       <QualitySection />

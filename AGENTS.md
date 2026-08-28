@@ -2,29 +2,31 @@
 
 ## Project Structure & Module Organization
 
-This is a Next.js App Router project. Application routes live in `src/app`, with the homepage in `src/app/page.tsx` and the contact API route in `src/app/api/contact/route.ts`. UI is organized under `src/components`, split into `layout`, `sections`, `ui`, and `brand`. Shared logic and tests live in `src/lib`, site data in `src/data`, and shared types in `src/types`. Static images and product assets are stored in `public/products`. Setup notes belong in `docs`.
+This is a Next.js App Router website for SportsVentureX. Route entry points and API handlers live in `src/app/` (for example, `src/app/api/contact/route.ts`). Reusable UI is organized by purpose in `src/components/`: page sections, layout, brand, and generic `ui` primitives. Put shared business logic in `src/lib/`, content in `src/data/`, and shared TypeScript types in `src/types/`. Static product images belong in `public/products/`. Keep configuration at the repository root; deployment and CI workflows are in `.github/workflows/`.
 
 ## Build, Test, and Development Commands
 
-- `npm run dev`: start the local Next.js development server.
-- `npm run build`: create a production build and run TypeScript checks.
-- `npm start`: serve the production build after `npm run build`.
-- `npm test`: run the Vitest test suite once.
+- `npm ci` installs the lockfile-pinned dependencies used by CI.
+- `npm run dev` starts the local Next.js development server.
+- `npm run build` produces a production build and catches Next.js build errors.
+- `npm start` serves a completed production build.
+- `npm test` runs the Vitest suite once.
+- `npx tsc --noEmit` performs the strict TypeScript check used in CI.
 
-Use `npm` for dependency management because the repository includes `package-lock.json`.
+Before opening a pull request, run `npm test`, `npx tsc --noEmit`, and `npm run build`.
 
 ## Coding Style & Naming Conventions
 
-Write TypeScript and React components with 2-space indentation. Use PascalCase for React components and context providers, such as `ContactForm` and `ThemeContext`. Use kebab-case for documentation files and descriptive lowercase names for static assets. Keep reusable business logic in `src/lib` and avoid duplicating validation or email-building logic inside components. Prefer existing Tailwind and CSS patterns from `src/app/globals.css` before adding new styling conventions.
+Use TypeScript with strict types and the `@/` alias for imports from `src` (for example, `@/lib/contact-email`). Follow the existing two-space indentation, double quotes, and trailing-comma style. Name React components and context files in PascalCase (`ContactForm.tsx`, `ThemeContext.tsx`); use kebab-case for route and utility filenames where appropriate. Keep components focused and place global styling in `src/app/globals.css`; use Tailwind utility classes for component styling. No lint script is currently configured, so preserve the surrounding file’s formatting.
 
 ## Testing Guidelines
 
-Tests use Vitest. Place tests next to the code they cover with the `.test.ts` suffix, as in `src/lib/contact-email.test.ts`. Add or update tests when changing validation, email rendering, API behavior, or shared utilities. Run `npm test` before handing off changes, and run `npm run build` for changes that touch routes, imports, configuration, or TypeScript types.
+Tests use Vitest in the Node environment. Co-locate unit tests with the module they cover and use `*.test.ts` names, such as `src/lib/contact-submission.test.ts`. Cover successful and invalid inputs, especially for validation, HTML escaping, and API-related logic. Do not lower existing coverage expectations by removing boundary-case tests.
 
 ## Commit & Pull Request Guidelines
 
-Recent commits use short imperative messages, for example `Add Resend contact notifications` and `Deploy only after successful CI`. Follow that style: start with a verb, keep the subject concise, and describe one logical change. Pull requests should include a short summary, testing performed, linked issues when available, and screenshots for visible UI changes.
+Recent commits use concise, imperative summaries such as `Add Resend contact notifications` and `Deploy only after successful CI`. Keep each commit scoped to one change. Pull requests should describe the user-visible or technical change, link the relevant issue when available, and include screenshots for visual updates. Confirm the validation commands pass; CI requires type checking and a production build on changes targeting `main`.
 
-## Security & Configuration Tips
+## Security & Configuration
 
-Never commit real secrets. Local values belong in `.env.local`; examples belong in `.env.example`. Resend configuration requires `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_NOTIFICATION_EMAIL`. Keep server-only keys out of client components and never prefix them with `NEXT_PUBLIC_`.
+Copy `.env.example` to `.env.local` for local email configuration. Never commit real Resend or Vercel credentials, and never expose server-only variables with `NEXT_PUBLIC_`. See `docs/resend-setup.md` before modifying contact-form delivery.

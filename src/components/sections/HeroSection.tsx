@@ -14,7 +14,7 @@ export function HeroSection() {
           </p>
           <div className="hero-brand-actions hero-actions-in" aria-label="Primary actions">
             <ButtonLink href="#contact">Get in touch</ButtonLink>
-            <a href="#products">Explore what we make <span aria-hidden="true">↘</span></a>
+            <a href="#catalogue">Explore what we make <span aria-hidden="true">↘</span></a>
           </div>
         </div>
 
