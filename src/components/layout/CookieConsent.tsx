@@ -2,6 +2,7 @@
 
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
+import { GoogleAnalytics } from "@/components/layout/GoogleAnalytics";
 
 const consentStorageKey = "sportsventurex-cookie-consent";
 export const openCookieSettingsEvent = "sportsventurex:open-cookie-settings";
@@ -41,7 +42,12 @@ export function CookieConsent() {
 
   return (
     <>
-      {consent === "accepted" ? <Analytics /> : null}
+      {consent === "accepted" ? (
+        <>
+          <Analytics />
+          <GoogleAnalytics />
+        </>
+      ) : null}
       {isReady && consent === null ? (
         <aside
           className="cookie-consent"
@@ -53,7 +59,7 @@ export function CookieConsent() {
           <div>
             <strong id="cookie-consent-title">Your privacy choices</strong>
             <p id="cookie-consent-description">
-              We use optional, privacy-focused analytics to understand site performance. Essential
+              We use optional analytics, including Google Analytics, to understand site performance. Essential
               site functions work without analytics. Read our <a href="/privacy-policy">privacy policy</a>.
             </p>
           </div>
