@@ -1,11 +1,17 @@
 import { Resend } from "resend";
 import { createContactNotificationEmail } from "@/lib/contact-email";
+import { checkContactRateLimit, getContactClientIdentifier } from "@/lib/contact-rate-limit";
 import { parseContactSubmission } from "@/lib/contact-submission";
 
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   let payload: unknown;
+
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (Number.isFinite(contentLength) && contentLength > 64_000) {
+    return Response.json({ message: "The enquiry is too large to process." }, { status: 413 });
+  }
 
   try {
     payload = await request.json();
@@ -21,6 +27,18 @@ export async function POST(request: Request) {
 
   if (result.data.website) {
     return Response.json({ success: true });
+  }
+
+  const rateLimit = checkContactRateLimit(getContactClientIdentifier(request));
+
+  if (!rateLimit.allowed) {
+    return Response.json(
+      { message: "Too many enquiries were submitted. Please wait a few minutes and try again." },
+      {
+        status: 429,
+        headers: { "Retry-After": rateLimit.retryAfterSeconds.toString() },
+      },
+    );
   }
 
   const apiKey = process.env.RESEND_API_KEY;

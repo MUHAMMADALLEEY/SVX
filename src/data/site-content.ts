@@ -32,7 +32,6 @@ export const sockShowcaseCategories: {
 const transparentSockImageIds = new Set([
   "black-six-pack-flat",
   "white-grey-technical-pair",
-  "cream-retro-crew-pair",
   "blue-quarter-performance",
   "illustrated-white-crew",
   "orange-no-show",
@@ -55,7 +54,6 @@ function sockImage(
 export const sockShowcaseImages: SockShowcaseImage[] = [
   sockImage("black-six-pack-flat", "Black six-pack flat lay", "Multipacks", "Six black crew socks arranged as a product lineup"),
   sockImage("white-grey-technical-pair", "White technical pair", "Performance socks", "White performance sock pair with grey reinforced zones"),
-  sockImage("cream-retro-crew-pair", "Cream crew with retro bands", "Lifestyle colors", "Cream crew socks with orange and brown cuff bands"),
   sockImage("blue-quarter-performance", "Blue quarter performance concept", "Performance socks", "Blue quarter socks with contrasting technical support zones"),
   sockImage("illustrated-white-crew", "Illustrated crew concept", "Logo / custom branding", "White crew socks with a custom illustrated graphic"),
   sockImage("orange-no-show", "Orange no-show concept", "Performance socks", "Orange low-cut performance socks on a white background"),

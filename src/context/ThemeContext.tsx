@@ -12,24 +12,43 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 const storageKey = "sportsventurex-theme";
 
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.toggle("theme-dark", theme === "dark");
+
+  try {
+    window.localStorage.setItem(storageKey, theme);
+  } catch {
+    // The visual theme still works when browser privacy settings block storage.
+  }
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem(storageKey) as Theme | null;
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    setTheme(savedTheme ?? preferredTheme);
-  }, []);
+    let savedTheme: string | null = null;
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("theme-dark", theme === "dark");
-    window.localStorage.setItem(storageKey, theme);
-  }, [theme]);
+    try {
+      savedTheme = window.localStorage.getItem(storageKey);
+    } catch {
+      // Fall back to the operating-system preference when storage is unavailable.
+    }
+
+    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const resolvedTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : preferredTheme;
+
+    setTheme(resolvedTheme);
+    applyTheme(resolvedTheme);
+  }, []);
 
   const value = useMemo(
     () => ({
       theme,
-      toggleTheme: () => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark")),
+      toggleTheme: () => {
+        const nextTheme = theme === "dark" ? "light" : "dark";
+        setTheme(nextTheme);
+        applyTheme(nextTheme);
+      },
     }),
     [theme],
   );

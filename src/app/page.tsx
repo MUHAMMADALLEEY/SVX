@@ -1,5 +1,3 @@
-import { SiteFooter } from "@/components/layout/SiteFooter";
-import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -10,8 +8,7 @@ import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 
 export default function Home() {
   return (
-    <main>
-      <SiteHeader />
+    <>
       <HeroSection />
       <WhyChooseUsSection />
       <ProductCatalogueSection />
@@ -19,7 +16,6 @@ export default function Home() {
       <ProcessSection />
       <QualitySection />
       <ContactSection />
-      <SiteFooter />
-    </main>
+    </>
   );
 }

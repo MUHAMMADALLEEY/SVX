@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const galleryPageSize = 4;
 
@@ -72,6 +72,9 @@ export function ProductRangeSection({
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const lightboxPanelRef = useRef<HTMLDivElement>(null);
+  const lightboxCloseButtonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocusedElementRef = useRef<HTMLElement | null>(null);
 
   const filteredItems = useMemo(
     () =>
@@ -87,6 +90,7 @@ export function ProductRangeSection({
   const visibleItems = filteredItems.slice(pageStart, pageStart + galleryPageSize);
   const selectedItem = selectedIndex === null ? null : filteredItems[selectedIndex];
   const lightboxPosition = selectedIndex === null ? 0 : selectedIndex + 1;
+  const isLightboxOpen = selectedItem !== null;
 
   function selectCategory(category: string) {
     setActiveCategory(category);
@@ -113,22 +117,63 @@ export function ProductRangeSection({
   }
 
   useEffect(() => {
-    if (selectedIndex === null) return;
+    if (!isLightboxOpen) return;
+
     const previousOverflow = document.body.style.overflow;
+    previouslyFocusedElementRef.current =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
     document.body.style.overflow = "hidden";
+    const focusFrame = window.requestAnimationFrame(() => lightboxCloseButtonRef.current?.focus());
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") closeLightbox();
-      if (event.key === "ArrowLeft") showPrevious();
-      if (event.key === "ArrowRight") showNext();
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeLightbox();
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrevious();
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNext();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusableElements = Array.from(
+        lightboxPanelRef.current?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      );
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      if (!firstElement || !lastElement) return;
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => {
+      window.cancelAnimationFrame(focusFrame);
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      previouslyFocusedElementRef.current?.focus();
+      previouslyFocusedElementRef.current = null;
     };
-  }, [selectedIndex, filteredItems.length]);
+  }, [isLightboxOpen, filteredItems.length]);
 
   if (!featuredItem) return null;
 
@@ -234,15 +279,26 @@ export function ProductRangeSection({
       </div>
 
       {selectedItem ? (
-        <div className="range-lightbox" role="dialog" aria-modal="true" aria-label="Product image preview">
-          <button type="button" className="range-lightbox-backdrop" onClick={closeLightbox} aria-label="Close product preview" />
-          <div className="range-lightbox-panel">
+        <div
+          className="range-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={`range-lightbox-title-${selectedItem.id}`}
+        >
+          <button
+            type="button"
+            className="range-lightbox-backdrop"
+            onClick={closeLightbox}
+            aria-label="Close product preview"
+            tabIndex={-1}
+          />
+          <div className="range-lightbox-panel" ref={lightboxPanelRef}>
             <div className="range-lightbox-image">
               <RangeImage image={selectedItem.image} alt={selectedItem.alt} fallbackImage={fallbackImage} sizes="90vw" />
             </div>
             <div className="range-lightbox-controls">
               <div className="range-lightbox-copy">
-                <strong>{selectedItem.title}</strong>
+                <strong id={`range-lightbox-title-${selectedItem.id}`}>{selectedItem.title}</strong>
                 <span>{selectedItem.category} · {lightboxPosition} / {filteredItems.length}</span>
                 {selectedItem.description ? <p>{selectedItem.description}</p> : null}
                 {selectedItem.specs?.length ? (
@@ -254,7 +310,7 @@ export function ProductRangeSection({
               <div className="range-lightbox-actions">
                 <button type="button" onClick={showPrevious}>Previous</button>
                 <button type="button" onClick={showNext}>Next</button>
-                <button type="button" onClick={closeLightbox}>Close</button>
+                <button type="button" onClick={closeLightbox} ref={lightboxCloseButtonRef}>Close</button>
               </div>
             </div>
           </div>

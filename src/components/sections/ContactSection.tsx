@@ -2,8 +2,19 @@ import { faqs } from "@/data/site-content";
 import { ContactForm } from "@/components/sections/ContactForm";
 
 export function ContactSection() {
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
   return (
     <section id="contact" className="section-shell content-section contact-section">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       <div className="contact-copy reveal">
         <p className="eyebrow">Get in touch</p>
         <h2>Bring us the next big idea.</h2>
