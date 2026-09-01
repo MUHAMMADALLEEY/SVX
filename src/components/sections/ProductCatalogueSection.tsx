@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { type CSSProperties, useState } from "react";
 import { ProductRangeSection } from "@/components/sections/ProductRangeSection";
 import {
@@ -11,12 +10,14 @@ import {
   footballCategories,
   sockShowcaseCategories,
   sockShowcaseImages,
+  tshirtCatalogue,
+  tshirtCategories,
 } from "@/data/site-content";
 
-type ProductFamily = "footballs" | "socks" | "bags";
+type ProductFamily = "footballs" | "socks" | "bags" | "tshirts";
 
 const totalCatalogueReferences =
-  footballCatalogue.length + sockShowcaseImages.length + bagCatalogue.length;
+  footballCatalogue.length + sockShowcaseImages.length + bagCatalogue.length + tshirtCatalogue.length;
 
 const productFamilies = {
   footballs: {
@@ -64,6 +65,21 @@ const productFamilies = {
     featuredLabel: "Featured bag sample",
     fallbackImage: "/products/bag-photo.jpg",
   },
+  tshirts: {
+    label: "T-shirts",
+    countLabel: `${tshirtCatalogue.length} references`,
+    previewImage: tshirtCatalogue[0].image,
+    previewAlt: "Preview of the custom T-shirt catalogue",
+    eyebrow: "T-shirt range",
+    title: "Custom tees, built beyond the graphic.",
+    description:
+      "Explore performance, cotton, sublimated, and heavyweight T-shirts developed around fabric, fit, construction, and decoration—not just a logo on a blank.",
+    stats: ["Cotton and performance fabrics", "Classic, athletic and relaxed fits", "Custom print, color and branding"],
+    categories: tshirtCategories,
+    items: tshirtCatalogue,
+    featuredLabel: "Featured T-shirt sample",
+    fallbackImage: "/images/tshirts/classic-cotton-tee.png",
+  },
 } satisfies Record<ProductFamily, {
   label: string;
   countLabel: string;
@@ -104,7 +120,11 @@ export function ProductCatalogueSection() {
             className="catalogue-tabs"
             role="tablist"
             aria-label="Product ranges"
-            style={{ "--active-tab": activeFamilyIndex } as CSSProperties}
+            style={{
+              "--active-tab": activeFamilyIndex,
+              "--active-column": activeFamilyIndex % 2,
+              "--active-row": Math.floor(activeFamilyIndex / 2),
+            } as CSSProperties}
           >
             <span className="catalogue-tabs-indicator" aria-hidden="true" />
             {familyKeys.map((family) => {
@@ -119,8 +139,29 @@ export function ProductCatalogueSection() {
                   id={`catalogue-tab-${family}`}
                   aria-selected={isActive}
                   aria-controls="selected-product-range"
+                  tabIndex={isActive ? 0 : -1}
                   className={isActive ? "is-active" : ""}
                   onClick={() => setActiveFamily(family)}
+                  onKeyDown={(event) => {
+                    const directions: Partial<Record<string, number>> = {
+                      ArrowRight: 1,
+                      ArrowLeft: -1,
+                      ArrowDown: 2,
+                      ArrowUp: -2,
+                    };
+                    const direction = directions[event.key];
+
+                    if (direction === undefined) return;
+
+                    event.preventDefault();
+                    const nextIndex = (activeFamilyIndex + direction + familyKeys.length) % familyKeys.length;
+                    const nextFamily = familyKeys[nextIndex];
+
+                    setActiveFamily(nextFamily);
+                    requestAnimationFrame(() => {
+                      document.getElementById(`catalogue-tab-${nextFamily}`)?.focus();
+                    });
+                  }}
                 >
                   <span className="catalogue-tab-image" aria-hidden="true">
                     <Image src={item.previewImage} alt={item.previewAlt} fill sizes="72px" />
@@ -128,9 +169,6 @@ export function ProductCatalogueSection() {
                   <span className="catalogue-tab-copy">
                     <strong>{item.label}</strong>
                     <small>{item.countLabel}</small>
-                  </span>
-                  <span className="catalogue-tab-arrow" aria-hidden="true">
-                    <ArrowRight size={18} strokeWidth={1.8} />
                   </span>
                 </button>
               );

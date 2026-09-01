@@ -3,7 +3,7 @@ import { BrandLogo } from "@/components/brand/BrandLogo";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import { navItems, services } from "@/data/site-content";
 
-const productLinks = ["Footballs", "Socks", "Bags"];
+const productLinks = ["Footballs", "Socks", "Bags", "T-shirts"];
 
 export function SiteFooter() {
   return (
@@ -53,8 +53,10 @@ export function SiteFooter() {
           <nav className="footer-links" aria-label="Legal and privacy">
             <a href="/privacy-policy">Privacy policy</a>
             <a href="/terms">Terms</a>
-            <CookieSettingsButton />
           </nav>
+          <div className="footer-cookie-row">
+            <CookieSettingsButton />
+          </div>
         </div>
       </div>
     </footer>

@@ -183,6 +183,52 @@ export const bagCatalogue: CatalogueProduct[] = [
   catalogueProduct("black-contrast-backpack", "Black contrast backpack", "Solid backpacks", "/images/bags/bag-10.png", `${backpackDescription} A black backpack with turquoise contrast piping, zipper, and lower panel.`, "Backpack · 42 × 27.5 × 14 cm", ["600D polyester Oxford", "Contrast trim details", "Water-repellent finish"]),
 ];
 
+export const tshirtCategories: CatalogueCategory[] = [
+  { label: "Performance tees", description: "Moisture-managing training styles with movement-led panel construction." },
+  { label: "Cotton essentials", description: "Versatile everyday silhouettes in soft, dependable cotton jersey." },
+  { label: "Sublimated graphics", description: "All-over performance prints built for bold team and brand programs." },
+  { label: "Heavyweight fits", description: "Structured relaxed shapes with a premium, substantial hand feel." },
+];
+
+export const tshirtCatalogue: CatalogueProduct[] = [
+  catalogueProduct(
+    "performance-panel-tee",
+    "Panelled performance T-shirt",
+    "Performance tees",
+    "/images/tshirts/performance-panel-tee.png",
+    "A lightweight training tee with contrast raglan and side panels, developed for breathable teamwear and active brand programs.",
+    "Performance interlock · Athletic fit",
+    ["Moisture-managing polyester", "Movement-led panel construction", "Custom colors and logo placement"],
+  ),
+  catalogueProduct(
+    "classic-cotton-tee",
+    "Classic cotton crew T-shirt",
+    "Cotton essentials",
+    "/images/tshirts/classic-cotton-tee.png",
+    "A clean crew-neck essential with a balanced everyday silhouette, ready for private-label color, trim, and decoration programs.",
+    "Combed cotton jersey · Everyday fit",
+    ["Soft combed-cotton jersey", "Reinforced rib crew neck", "Print and embroidery ready"],
+  ),
+  catalogueProduct(
+    "geometric-training-tee",
+    "All-over print training T-shirt",
+    "Sublimated graphics",
+    "/images/tshirts/geometric-training-tee.png",
+    "A high-impact performance tee that uses full-surface sublimation to carry coordinated graphics across the body and sleeves.",
+    "Sublimated polyester · Athletic fit",
+    ["Full-surface sublimation", "Lightweight performance jersey", "Colorfast custom artwork"],
+  ),
+  catalogueProduct(
+    "heavyweight-relaxed-tee",
+    "Heavyweight relaxed T-shirt",
+    "Heavyweight fits",
+    "/images/tshirts/heavyweight-relaxed-tee.png",
+    "A premium oversized tee with dropped shoulders and a structured drape, designed for elevated lifestyle and merchandise collections.",
+    "Heavy cotton jersey · Relaxed fit",
+    ["Substantial cotton jersey", "Dropped-shoulder silhouette", "Premium label and trim options"],
+  ),
+];
+
 export const services: Service[] = [
   {
     title: "Product Development",
@@ -202,7 +248,7 @@ export const services: Service[] = [
   {
     title: "Sourcing & Production",
     description:
-      "Coordinate reliable product programs across footballs, socks, and bags with clear timelines and practical guidance.",
+      "Coordinate reliable product programs across footballs, socks, bags, and T-shirts with clear timelines and practical guidance.",
   },
 ];
 
