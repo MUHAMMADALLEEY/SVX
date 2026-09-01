@@ -12,7 +12,7 @@ export const siteConfig = {
   name: "SportsVentureX",
   shortName: "SVX",
   description:
-    "SportsVentureX develops custom footballs, socks, bags, and sports goods programs for growing brands.",
+    "Custom sports goods manufacturer in Europe. Design & produce branded footballs, socks, bags, and sports merchandise. OEM/ODM for European brands & retailers.",
   url: siteUrl.replace(/\/$/, ""),
 } as const;
 
