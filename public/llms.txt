@@ -1,0 +1,30 @@
+# SportsVentureX
+
+> Custom sports goods development and manufacturing support for growing brands.
+
+SportsVentureX develops custom footballs, socks, bags, T-shirts, and sports goods programs. Support covers product definition, samples, branding, quality checks, production, packing, handover, and shipment preparation.
+
+## Main pages
+
+- [Home](https://www.sportsventurex.com/): Company overview, solutions, product range, process, quality, and contact.
+- [Privacy policy](https://www.sportsventurex.com/privacy-policy): Privacy information.
+- [Terms](https://www.sportsventurex.com/terms): Website terms.
+
+## Products
+
+- Custom footballs and balls
+- Custom performance and lifestyle socks
+- Custom backpacks and waist packs
+- Custom performance and cotton T-shirts
+
+## Services
+
+SportsVentureX can help define a product, develop and refine samples, manage production with quality checkpoints, and prepare finished goods for delivery.
+
+## Enquiries
+
+For pricing, minimum order quantities, samples, lead times, branding, or a product brief, send an enquiry through the contact form on the home page. Exact commercial terms depend on the product and specification.
+
+## Machine-readable full content
+
+See [/llms-full.txt](/llms-full.txt) for the expanded site knowledge document.

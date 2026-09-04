@@ -59,11 +59,11 @@ export function HeroSection() {
       <div className="section-shell hero-brand-layout">
         <div className="hero-brand-copy">
           <h1>
-            <span>Custom Sports Goods for European Brands.</span>
-            <span>Manufactured with Purpose.</span>
+            <span>Built for the game.</span>
+            <span>Made for your brand.</span>
           </h1>
           <p className="hero-brand-description hero-text-in">
-            Premium sports goods manufacturer specializing in custom footballs, performance socks, branded bags, and athletic apparel. OEM & ODM solutions for UK, Germany, France, and across Europe.
+            Custom footballs, performance socks, bags, and T-shirts made with the product thinking your brand deserves.
           </p>
           <div className="hero-brand-actions hero-actions-in" aria-label="Primary actions">
             <ButtonLink href="#contact">Get in touch</ButtonLink>

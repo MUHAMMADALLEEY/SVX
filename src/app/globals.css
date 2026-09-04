@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.chatbot { position: fixed; right: 24px; bottom: 24px; z-index: 30; }
+.chatbot-launcher, .chatbot-form button { display: grid; place-items: center; border: 0; background: var(--brand-blue); color: var(--white); cursor: pointer; box-shadow: 0 12px 30px rgba(16,19,29,.2); }
+.chatbot-launcher { width: 52px; height: 52px; border-radius: 50%; transition: transform 160ms ease, background 160ms ease; }
+.chatbot-launcher:hover { background: var(--brand-orange); transform: translateY(-2px); }
+.chatbot-panel { display: flex; width: min(360px, calc(100vw - 32px)); height: min(520px, calc(100vh - 48px)); flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--text); box-shadow: 0 20px 55px rgba(16,19,29,.2); }
+.chatbot-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--ink); color: var(--white); }
+.chatbot-header div { display: grid; gap: 3px; }
+.chatbot-header span { color: rgba(255,255,255,.68); font-size: 11px; }
+.chatbot-header button { display: grid; place-items: center; border: 0; background: transparent; color: inherit; cursor: pointer; }
+.chatbot-messages { display: flex; flex: 1; flex-direction: column; gap: 10px; overflow-y: auto; padding: 18px; }
+.chatbot-message { max-width: 88%; margin: 0; padding: 10px 12px; border-radius: 6px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; }
+.chatbot-message.assistant { align-self: flex-start; background: var(--paper-deep); }
+.chatbot-message.user { align-self: flex-end; background: var(--brand-blue); color: var(--white); }
+.chatbot-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); }
+.chatbot-form input { min-width: 0; flex: 1; border: 1px solid var(--line); border-radius: 4px; padding: 10px; background: var(--paper); color: var(--text); font-size: 13px; }
+.chatbot-form button { width: 40px; flex: 0 0 40px; border-radius: 4px; box-shadow: none; }
+.chatbot-form button:disabled { cursor: not-allowed; opacity: .45; }
+@media (max-width: 520px) { .chatbot { right: 16px; bottom: 16px; } }
+
 :root {
   --header-height: 64px;
   --brand-graphite: #10131d;
