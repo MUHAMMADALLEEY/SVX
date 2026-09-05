@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .chatbot { position: fixed; right: 24px; bottom: 24px; z-index: 30; }
 .chatbot-launcher, .chatbot-form button { display: grid; place-items: center; border: 0; background: var(--brand-blue); color: var(--white); cursor: pointer; box-shadow: 0 12px 30px rgba(16,19,29,.2); }
 .chatbot-launcher { width: 52px; height: 52px; border-radius: 50%; transition: transform 160ms ease, background 160ms ease; }
