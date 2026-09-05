@@ -21,14 +21,99 @@ function sourceList(documents: SiteKnowledgeDocument[]) {
   }));
 }
 
-function fallbackAnswer(question: string, documents: SiteKnowledgeDocument[]) {
-  const context = documents.length > 0 ? documents : siteKnowledgeDocuments.slice(0, 4);
+export function isGreeting(question: string) {
+  return /^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|hola|howdy|yo)[.!?\s]*$/i.test(question);
+}
+
+export function isIdentityQuery(question: string) {
+  return /^(who\s*(are\s*u|are\s*you|u\s*are)|what\s*(is|are)\s*(sportsventurex|svx|this\s*site|you)|tell\s*me\s*about\s*(yourself|svx|sportsventurex)|what\s*do\s*you\s*do)[.!?\s]*$/i.test(question);
+}
+
+export function isThankYou(question: string) {
+  return /^(thanks|thank\s*you|thx|cheers|awesome|great|perfect)[.!?\s]*$/i.test(question);
+}
+
+export function isMeetingQuery(question: string) {
+  return /(meet|meeting|calendly|schedule\s*(a\s*)?(call|meet|meeting|time|discussion)|book\s*(a\s*)?(call|meet|meeting|time|slot)|video\s*call|zoom|google\s*meet|talk\s*to\s*(someone|team|expert|sales|rep)|add\s*(a\s*)?(meet|meeting))/i.test(
+    question,
+  );
+}
+
+export function fallbackAnswer(question: string, documents: SiteKnowledgeDocument[]) {
+  if (isMeetingQuery(question)) {
+    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim() || "https://calendly.com/sportsventurex";
+    return {
+      answer:
+        "Yes, absolutely! You can schedule a direct consultation call with our team on Calendly.\n\n" +
+        "We'll be delighted to discuss your custom product specifications, samples, and production timelines.\n\n" +
+        "Click the button below to choose a time that works best for you:",
+      action: {
+        type: "calendly",
+        label: "Schedule on Calendly",
+        url: calendlyUrl,
+      },
+      sources: [],
+      mode: "local",
+    };
+  }
+
+  if (isGreeting(question)) {
+    return {
+      answer:
+        "Hello! Welcome to SportsVentureX. I'm your SVX Assistant.\n\n" +
+        "I can help you with information on:\n" +
+        "• Custom sports gear (footballs, performance socks, bags, T-shirts)\n" +
+        "• Product branding, materials, and production steps\n" +
+        "• Submitting project enquiries for quotes and samples\n\n" +
+        "How can I assist your brand today?",
+      sources: [],
+      mode: "local",
+    };
+  }
+
+  if (isIdentityQuery(question)) {
+    return {
+      answer:
+        "SportsVentureX is a custom sports goods development and manufacturing partner for growing athletic brands and organizations.\n\n" +
+        "We specialize in:\n" +
+        "• Custom Footballs (Match, Training, Promotional, Minis)\n" +
+        "• Performance Socks (Crew, Ankle, Grip, Knee-High)\n" +
+        "• Gear Bags (Backpacks, Duffles, Boot Bags)\n" +
+        "• Athletic Apparel (Performance T-Shirts, Polos, Jerseys)\n\n" +
+        "Feel free to ask about our manufacturing process or submit an enquiry for custom specifications!",
+      sources: sourceList(siteKnowledgeDocuments.slice(0, 2)),
+      mode: "local",
+    };
+  }
+
+  if (isThankYou(question)) {
+    return {
+      answer: "You're very welcome! If you have any further questions or would like to discuss a custom project, our team is here to help.",
+      sources: [],
+      mode: "local",
+    };
+  }
+
+  const hasMatches = documents.length > 0;
+  const context = hasMatches ? documents : siteKnowledgeDocuments.slice(0, 3);
+
   const productHint = /contact|quote|price|sample|moq|order|timeline|ship|cost/i.test(question)
-    ? " For project details like pricing, MOQs, samples, and lead times, the best next step is to send an enquiry through the contact form."
+    ? "\n\nFor specific project pricing, MOQs, custom samples, and lead times, please submit your requirements through our contact form below."
     : "";
 
+  let structuredBody = "";
+  if (hasMatches) {
+    structuredBody = context
+      .map((doc) => `• ${doc.title}: ${doc.content}`)
+      .join("\n\n");
+  } else {
+    structuredBody =
+      "SportsVentureX produces custom sports goods designed to your brand's specifications.\n\n" +
+      "Key offerings include custom footballs, technical socks, gear bags, and sports T-shirts with end-to-end quality control and production support.";
+  }
+
   return {
-    answer: `${context.map((document) => document.content).join(" ")}${productHint}`,
+    answer: `${structuredBody}${productHint}`,
     sources: sourceList(context),
     mode: "local",
   };
@@ -95,9 +180,13 @@ async function answerWithCohere(question: string, documents: SiteKnowledgeDocume
     {
       role: "system",
       content:
-        "You are the SportsVentureX website assistant. Answer only from the supplied site context. " +
-        "Be concise, practical, and helpful for brands asking about custom sports goods. " +
-        "If the context does not contain exact pricing, MOQ, or lead-time details, ask the visitor to send an enquiry.",
+        "You are the official AI representative for SportsVentureX (SVX), a premier custom sports goods manufacturer specializing in footballs, performance socks, athletic apparel, and gear bags.\n\n" +
+        "Guidelines:\n" +
+        "1. Respond in a warm, executive, highly professional tone.\n" +
+        "2. Handle greetings and introduction questions naturally and welcomingly.\n" +
+        "3. Structure your answers with short paragraphs and bullet points for readability.\n" +
+        "4. Answer using the supplied site context. If exact pricing, MOQ, or custom lead times are requested and not present in context, invite the user to submit an enquiry via the contact form.\n" +
+        "5. Keep responses concise, helpful, and direct.",
     },
     {
       role: "human",
@@ -124,6 +213,10 @@ export async function POST(request: Request) {
   const question = cleanQuestion(body.message);
   if (!question) {
     return Response.json({ message: "Send a question for the SportsVentureX assistant." }, { status: 400 });
+  }
+
+  if (isGreeting(question) || isIdentityQuery(question) || isThankYou(question) || isMeetingQuery(question)) {
+    return Response.json(fallbackAnswer(question, []));
   }
 
   try {

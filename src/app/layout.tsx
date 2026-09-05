@@ -59,11 +59,38 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/icon.svg`,
+      description: siteConfig.description,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        url: `${siteConfig.url}/#contact`,
+      },
+    },
+    {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
+};
+
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider>
