@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { type CSSProperties, useState } from "react";
 import { ProductRangeSection } from "@/components/sections/ProductRangeSection";
-import { siteConfig } from "@/lib/site-config";
 import {
   bagCatalogue,
   bagCategories,
@@ -102,99 +101,9 @@ export function ProductCatalogueSection() {
   const familyKeys = Object.keys(productFamilies) as ProductFamily[];
   const activeFamilyIndex = familyKeys.indexOf(activeFamily);
 
-  const productCatalogueStructuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Product",
-        name: "Custom Footballs",
-        description: "From training footballs to match, mini, and promotional formats with custom panels, materials, and branding.",
-        image: `${siteConfig.url}/headerimages/hero-footballs-v2.webp`,
-        brand: {
-          "@type": "Brand",
-          name: siteConfig.name,
-        },
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "USD",
-          lowPrice: "5.00",
-          highPrice: "45.00",
-          offerCount: 24,
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${siteConfig.url}/#catalogue`,
-        },
-      },
-      {
-        "@type": "Product",
-        name: "Custom Socks",
-        description: "Custom crew, quarter, performance, grip, and knee-high sports socks with custom knitted branding and presentation.",
-        image: `${siteConfig.url}/headerimages/hero-socks-v2.webp`,
-        brand: {
-          "@type": "Brand",
-          name: siteConfig.name,
-        },
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "USD",
-          lowPrice: "2.50",
-          highPrice: "14.00",
-          offerCount: 18,
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${siteConfig.url}/#catalogue`,
-        },
-      },
-      {
-        "@type": "Product",
-        name: "Custom Bags",
-        description: "Custom athletic backpacks, duffle bags, and waist packs developed in water-repellent 600D Oxford fabric.",
-        image: `${siteConfig.url}/headerimages/hero-bags-v2.webp`,
-        brand: {
-          "@type": "Brand",
-          name: siteConfig.name,
-        },
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "USD",
-          lowPrice: "8.00",
-          highPrice: "38.00",
-          offerCount: 12,
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${siteConfig.url}/#catalogue`,
-        },
-      },
-      {
-        "@type": "Product",
-        name: "Custom T-Shirts",
-        description: "Custom performance, cotton, sublimated, and heavyweight athletic T-shirts with bespoke prints, colors, and trims.",
-        image: `${siteConfig.url}/headerimages/hero-tshirts-v2.webp`,
-        brand: {
-          "@type": "Brand",
-          name: siteConfig.name,
-        },
-        offers: {
-          "@type": "AggregateOffer",
-          priceCurrency: "USD",
-          lowPrice: "6.00",
-          highPrice: "28.00",
-          offerCount: 16,
-          priceValidUntil: "2027-12-31",
-          availability: "https://schema.org/InStock",
-          url: `${siteConfig.url}/#catalogue`,
-        },
-      },
-    ],
-  };
-
   return (
     <>
       <section id="catalogue" className="catalogue-switcher">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productCatalogueStructuredData) }}
-        />
         <div className="section-shell">
           <div className="catalogue-switcher-heading reveal">
             <div>
