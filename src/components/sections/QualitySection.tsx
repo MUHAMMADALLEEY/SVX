@@ -2,7 +2,7 @@ import { qualityFocus } from "@/data/site-content";
 
 export function QualitySection() {
   return (
-    <section className="content-section quality-section">
+    <section id="quality" className="content-section quality-section">
       <div className="section-shell quality-panel reveal">
         <div>
           <p className="eyebrow">Quality focus</p>

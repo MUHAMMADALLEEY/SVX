@@ -1,7 +1,7 @@
 import { faqs } from "@/data/site-content";
 import { ContactForm } from "@/components/sections/ContactForm";
 
-export function ContactSection() {
+export function ContactSection({ initialMessage }: { initialMessage?: string } = {}) {
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -17,7 +17,7 @@ export function ContactSection() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       <div className="contact-copy reveal">
         <p className="eyebrow">Get in touch</p>
-        <h2>Bring us the next big idea.</h2>
+        <h2>Let’s talk about your product.</h2>
         <p>
           Tell us about your product, your brand, and where you want to take it. We will make the next step simple.
         </p>
@@ -32,7 +32,7 @@ export function ContactSection() {
         </div>
       </div>
 
-      <ContactForm />
+      <ContactForm initialMessage={initialMessage} />
     </section>
   );
 }

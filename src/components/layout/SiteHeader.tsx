@@ -17,7 +17,7 @@ export function SiteHeader() {
   const isHomePage = pathname === "/";
 
   function resolveHref(href: string) {
-    return isHomePage ? href : `/${href}`;
+    return href.startsWith("#") && !isHomePage ? `/${href}` : href;
   }
 
   useEffect(() => {
@@ -25,20 +25,21 @@ export function SiteHeader() {
       const viewportPosition = window.scrollY + 180;
       const activeSection = isHomePage
         ? [...navItems].reverse().find((item) => {
+            if (!item.href.startsWith("#")) return false;
             const section = document.querySelector(item.href);
             return section ? section.getBoundingClientRect().top + window.scrollY <= viewportPosition : false;
           })
         : undefined;
 
       setIsScrolled(window.scrollY > 20);
-      setActiveHref(activeSection?.href ?? "");
+      setActiveHref(activeSection?.href ?? (isHomePage ? "" : pathname));
       setScrollProgress(window.scrollY / Math.max(document.documentElement.scrollHeight - window.innerHeight, 1));
     };
 
     updateNavigation();
     window.addEventListener("scroll", updateNavigation, { passive: true });
     return () => window.removeEventListener("scroll", updateNavigation);
-  }, [isHomePage]);
+  }, [isHomePage, pathname]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -69,10 +70,10 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
-          <a className="nav-mobile-cta" href={resolveHref("#contact")} onClick={() => setIsOpen(false)}>Let&apos;s talk</a>
+          <a className="nav-mobile-cta" href="/contact" onClick={() => setIsOpen(false)}>Request a quote</a>
         </nav>
         <div className="header-actions">
-          <a className="header-cta" href={resolveHref("#contact")}>Let&apos;s talk</a>
+          <a className="header-cta" href="/contact">Request a quote</a>
           <button
             className="theme-icon-button"
             type="button"

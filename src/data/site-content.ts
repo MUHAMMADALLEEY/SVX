@@ -11,11 +11,11 @@ import type {
 } from "@/types/site";
 
 export const navItems: NavItem[] = [
-  { label: "Why us", href: "#why-us" },
-  { label: "Catalogue", href: "#catalogue" },
+  { label: "About", href: "/about" },
+  { label: "Products", href: "/catalogue" },
   { label: "Solutions", href: "#solutions" },
   { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const sockShowcaseCategories: {
@@ -304,18 +304,23 @@ export const qualityFocus = [
 
 export const faqs: Faq[] = [
   {
-    question: "Can SportsVentureX support custom branding?",
-    answer:
-      "Yes. The site presents custom branding as a core capability across product colorways, logos, labels, packaging, and finishing details.",
+    question: "Which products can I develop with SportsVentureX?",
+    answer: "Explore custom footballs and other sports balls, performance and everyday socks, backpacks, waist packs and T-shirts. Our catalogue provides references to help define your own product brief.",
   },
   {
-    question: "Which products are included in the first website version?",
-    answer:
-      "The first version focuses on footballs, socks, and bags, with room to add sportswear or accessories later.",
+    question: "Can I add my own logo, colors and packaging?",
+    answer: "Yes. We discuss product colors, logo placement, labels, trims and packaging during development. The available branding method depends on your chosen material and construction.",
   },
   {
-    question: "Is the contact form connected?",
-    answer:
-      "Yes. Send an enquiry with your product details and the SportsVentureX team will receive it directly.",
+    question: "What is the minimum order quantity?",
+    answer: "Minimum quantities depend on the product, materials and customization. Send your preferred style and estimated quantity so we can confirm the requirements for your project.",
+  },
+  {
+    question: "How do sampling and production timelines work?",
+    answer: "We agree the brief, develop and review the sample, then confirm the production specification. Sample costs and lead times are quoted for the project; share your target date at the enquiry stage.",
+  },
+  {
+    question: "What should I include in a quote request?",
+    answer: "Include the product reference, estimated quantity, size requirements, artwork or branding brief, delivery destination and target date. If some details are undecided, tell us what you know so we can help develop the brief.",
   },
 ];

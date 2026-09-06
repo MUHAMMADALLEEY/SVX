@@ -1,36 +1,31 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function MotionController() {
+  const pathname = usePathname();
   useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
-
-    if (reduceMotion) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return;
-    }
-
-    document.documentElement.classList.add("motion-ready");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
+    let cancelled = false;
+    let cleanup: (() => void) | undefined;
+    async function enhance() {
+      const [{ gsap }, { ScrollTrigger }] = await Promise.all([import("gsap"), import("gsap/ScrollTrigger")]);
+      if (cancelled) return;
+      gsap.registerPlugin(ScrollTrigger);
+      const media = gsap.matchMedia();
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.utils.toArray<HTMLElement>(".reveal").forEach((element) => {
+          gsap.from(element, { y: 28, duration: 0.75, ease: "power2.out", scrollTrigger: { trigger: element, start: "top 92%", once: true } });
         });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px" },
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => {
-      observer.disconnect();
-      document.documentElement.classList.remove("motion-ready");
-    };
-  }, []);
-
+        if (document.querySelector(".svx-hero")) {
+          gsap.from(".svx-hero-copy h1", { y: 30, duration: 0.85, ease: "power3.out" });
+          gsap.to(".svx-hero-image", { yPercent: 5, ease: "none", scrollTrigger: { trigger: ".svx-hero", start: "top top", end: "bottom top", scrub: 1 } });
+        }
+      });
+      cleanup = () => media.revert();
+    }
+    void enhance().catch(() => { /* Content remains readable if animation cannot load. */ });
+    return () => { cancelled = true; cleanup?.(); };
+  }, [pathname]);
   return null;
 }

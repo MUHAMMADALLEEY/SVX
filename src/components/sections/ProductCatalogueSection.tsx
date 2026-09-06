@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion, useReducedMotion } from "motion/react";
 import { type CSSProperties, useState } from "react";
 import { ProductRangeSection } from "@/components/sections/ProductRangeSection";
 import {
@@ -96,6 +97,7 @@ const productFamilies = {
 }>;
 
 export function ProductCatalogueSection() {
+  const reduceMotion = useReducedMotion();
   const [activeFamily, setActiveFamily] = useState<ProductFamily>("footballs");
   const activeRange = productFamilies[activeFamily];
   const familyKeys = Object.keys(productFamilies) as ProductFamily[];
@@ -177,7 +179,11 @@ export function ProductCatalogueSection() {
         </div>
       </section>
 
-      <div
+      <motion.div
+        key={activeFamily}
+        initial={reduceMotion ? false : { y: 14 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut" }}
         id="selected-product-range"
         role="tabpanel"
         aria-labelledby={`catalogue-tab-${activeFamily}`}
@@ -194,7 +200,7 @@ export function ProductCatalogueSection() {
           featuredLabel={activeRange.featuredLabel}
           fallbackImage={activeRange.fallbackImage}
         />
-      </div>
+      </motion.div>
     </>
   );
 }

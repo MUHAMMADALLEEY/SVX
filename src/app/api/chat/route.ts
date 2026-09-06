@@ -22,7 +22,7 @@ function sourceList(documents: SiteKnowledgeDocument[]) {
 }
 
 export function isGreeting(question: string) {
-  return /^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|hola|howdy|yo)[.!?\s]*$/i.test(question);
+  return /^(hi|hello|hey|greetings|good\s*(morning|afternoon|evening)|hola|howdy|yo)(?:\s+there)?[.!?\s]*$/i.test(question);
 }
 
 export function isIdentityQuery(question: string) {
@@ -30,7 +30,7 @@ export function isIdentityQuery(question: string) {
 }
 
 export function isThankYou(question: string) {
-  return /^(thanks|thank\s*you|thx|cheers|awesome|great|perfect)[.!?\s]*$/i.test(question);
+  return /^(thanks|thank\s*you|thx|cheers|awesome|great|perfect)(?:\s+(?:so\s+much|very\s+much|a\s+lot))?[.!?\s]*$/i.test(question);
 }
 
 export function isMeetingQuery(question: string) {

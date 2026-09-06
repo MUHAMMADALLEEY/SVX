@@ -3,7 +3,7 @@ import { BrandLogo } from "@/components/brand/BrandLogo";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import { navItems, services } from "@/data/site-content";
 
-const productLinks = ["Footballs", "Socks", "Bags", "T-shirts"];
+import { productRanges } from "@/data/product-ranges";
 
 export function SiteFooter() {
   return (
@@ -28,14 +28,14 @@ export function SiteFooter() {
             <nav className="footer-column" aria-label="Footer navigation">
               <h2>Explore</h2>
               {navItems.map((item) => (
-                <a key={item.href} href={`/${item.href}`}>{item.label}</a>
+                <a key={item.href} href={item.href.startsWith("#") ? `/${item.href}` : item.href}>{item.label}</a>
               ))}
             </nav>
 
             <nav className="footer-column" aria-label="Product ranges">
               <h2>Products</h2>
-              {productLinks.map((product) => (
-                <a key={product} href="/#catalogue">{product}</a>
+              {productRanges.map((product) => (
+                <a key={product.slug} href={`/${product.slug}`}>{product.name}</a>
               ))}
             </nav>
 

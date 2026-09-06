@@ -7,7 +7,7 @@ type FormStatus = "idle" | "sending" | "success" | "error";
 const fallbackErrorMessage = "We could not send your enquiry. Please try again.";
 const requestTimeoutMs = 15_000;
 
-export function ContactForm() {
+export function ContactForm({ initialMessage }: { initialMessage?: string } = {}) {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [message, setMessage] = useState("");
   const submissionInFlight = useRef(false);
@@ -79,7 +79,7 @@ export function ContactForm() {
       </label>
       <label>
         <span>Message</span>
-        <textarea name="message" placeholder="Tell us what you want to build" rows={4} minLength={10} maxLength={4000} required disabled={isSending} />
+        <textarea defaultValue={initialMessage} name="message" placeholder="Tell us what you want to build" rows={4} minLength={10} maxLength={4000} required disabled={isSending} />
       </label>
       <label className="honeypot" aria-hidden="true">
         <span>Website</span>
