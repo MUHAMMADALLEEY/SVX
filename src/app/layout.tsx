@@ -82,6 +82,7 @@ const organizationStructuredData = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
+        email: siteConfig.contactEmail,
         url: `${siteConfig.url}/#contact`,
       },
     },

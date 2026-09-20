@@ -1,7 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 import { navItems, services } from "@/data/site-content";
+import { siteConfig } from "@/lib/site-config";
 
 const productLinks = ["Footballs", "Socks", "Bags", "T-shirts"];
 
@@ -18,10 +19,16 @@ export function SiteFooter() {
               Custom sports goods developed with practical product thinking,
               considered branding, and production-ready detail.
             </p>
-            <a className="footer-cta" href="/#contact">
-              Start an enquiry
-              <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
-            </a>
+            <div className="footer-contact-actions">
+              <a className="footer-cta" href="/#contact">
+                Send a project enquiry
+                <ArrowUpRight size={15} strokeWidth={1.8} aria-hidden="true" />
+              </a>
+              <a className="footer-email" href={`mailto:${siteConfig.contactEmail}`}>
+                <Mail size={15} strokeWidth={1.8} aria-hidden="true" />
+                <span>{siteConfig.contactEmail}</span>
+              </a>
+            </div>
           </div>
 
           <div className="footer-directory">

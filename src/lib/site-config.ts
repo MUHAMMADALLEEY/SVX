@@ -13,6 +13,7 @@ export const siteConfig = {
   shortName: "SVX",
   description:
     "SportsVentureX develops custom footballs, socks, bags, and sports goods programs for growing brands.",
+  contactEmail: "sales@sportsventurex.com",
   url: siteUrl.replace(/\/$/, ""),
 } as const;
 

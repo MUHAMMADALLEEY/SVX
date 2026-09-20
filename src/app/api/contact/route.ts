@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { createContactNotificationEmail } from "@/lib/contact-email";
 import { checkContactRateLimit, getContactClientIdentifier } from "@/lib/contact-rate-limit";
 import { parseContactSubmission } from "@/lib/contact-submission";
+import { siteConfig } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
-  const recipient = process.env.CONTACT_NOTIFICATION_EMAIL;
+  const recipient = process.env.CONTACT_NOTIFICATION_EMAIL?.trim() || siteConfig.contactEmail;
 
   if (!apiKey || !from || !recipient) {
     console.error("Contact form email configuration is incomplete.");

@@ -2,6 +2,7 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import { contactProductOptions } from "@/lib/contact-submission";
+import { siteConfig } from "@/lib/site-config";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 const fallbackErrorMessage = "We could not send your enquiry. Please try again.";
@@ -57,7 +58,12 @@ export function ContactForm() {
 
   return (
     <form className="contact-form reveal" aria-label="Project enquiry form" onSubmit={handleSubmit}>
-      <p className="form-overline">Project enquiry</p>
+      <div className="form-intro">
+        <p className="form-overline">Project enquiry</p>
+        <p className="form-destination">
+          Send your requirements to <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+        </p>
+      </div>
       <label>
         <span>Name</span>
         <input type="text" name="name" placeholder="Your name" autoComplete="name" minLength={2} maxLength={120} required disabled={isSending} />
@@ -89,7 +95,7 @@ export function ContactForm() {
         By sending this form, you agree that we may use your details to answer your enquiry. See our <a href="/privacy-policy">privacy policy</a>.
       </p>
       <button type="submit" disabled={isSending}>
-        {isSending ? "Sending enquiry..." : "Send enquiry"}
+        {isSending ? "Sending enquiry..." : "Send project enquiry"}
       </button>
       <p id="contact-form-status" className={`form-status ${status}`} role="status" aria-live="polite">
         {message}
