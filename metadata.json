@@ -1,0 +1,6 @@
+{
+  "name": "SVX | Manufacturing & Sourcing",
+  "description": "SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
