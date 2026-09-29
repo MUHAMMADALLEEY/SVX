@@ -23,28 +23,28 @@ export default function Header() {
         }`}
       >
         <a
-          href="#network"
+          href="/#network"
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Network
         </a>
         <a
-          href="#products"
+          href="/#products"
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Products
         </a>
         <a
-          href="#buyers"
+          href="/#buyers"
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Buyers
         </a>
         <a
-          href="#process"
+          href="/#process"
           onClick={() => setMenuOpen(false)}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >

@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   title: 'SVX | Manufacturing & Sourcing',
   description: 'SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.',
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070a10'/%3E%3Cpath d='M9 21h23v7H16v5h16v8H9V21zm24 0h8l4 10 5-10h8L45 43z' fill='white'/%3E%3C/svg%3E",
+    icon: [
+      {url: '/icon.svg?v=2', type: 'image/svg+xml'},
+      {url: '/favicon.ico?v=2', sizes: 'any'},
+    ],
+    apple: [{url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png'}],
   },
   openGraph: {
     title: 'SVX | Manufacturing & Sourcing',
