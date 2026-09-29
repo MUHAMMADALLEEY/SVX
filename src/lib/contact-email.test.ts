@@ -15,7 +15,7 @@ describe("createContactNotificationEmail", () => {
       new Date("2026-08-25T10:00:00.000Z"),
     );
 
-    expect(html).toContain("New project enquiry");
+    expect(html).toContain("New Manufacturing Brief: Footballs");
     expect(html).toContain("jordan@example.com");
     expect(html).toContain("&lt;strong&gt;our brand&lt;/strong&gt;");
   });
