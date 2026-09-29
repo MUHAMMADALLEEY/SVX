@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { openContactBrief } from '@/components/ContactBriefModal';
 
 const slides = [
   {
@@ -105,7 +106,7 @@ export default function Hero() {
           controlled production, digital visibility and retail-ready delivery.
         </p>
         <div className="hero-actions">
-          <a className="cta" href="#contact">
+          <a className="cta" href="#contact" onClick={(event) => { event.preventDefault(); openContactBrief(); }}>
             BUILD A PROGRAMME <span>↗</span>
           </a>
           <a className="text-link" href="#network">

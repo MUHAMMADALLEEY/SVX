@@ -1,7 +1,22 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import BrandLogo from '@/components/BrandLogo';
+import type { IconType } from 'react-icons';
+import {
+  FaBoxOpen,
+  FaClipboardCheck,
+  FaCommentDots,
+  FaComments,
+  FaFileInvoiceDollar,
+  FaFlask,
+  FaMagnifyingGlass,
+  FaLocationCrosshairs,
+  FaPenRuler,
+  FaShieldHalved,
+  FaSliders,
+  FaTruckFast,
+} from 'react-icons/fa6';
 
 const stages = [
   {
@@ -9,66 +24,84 @@ const stages = [
     title: 'CONSULTING',
     desc: 'We align the opportunity, commercial goals and practical supply route.',
     label: 'Consulting',
+    icon: FaComments,
   },
   {
     num: '02',
     title: 'REQUIREMENTS',
     desc: 'Product, target price, quantity, market, compliance and timing are defined.',
     label: 'Requirements',
+    icon: FaClipboardCheck,
   },
   {
     num: '03',
     title: 'DESIGN',
     desc: 'Requirements become materials, construction, colour, specifications and samples.',
     label: 'Design',
+    icon: FaPenRuler,
   },
   {
     num: '04',
     title: 'SOURCING',
     desc: 'The brief is matched to suitable capability, capacity and commercial terms.',
     label: 'Sourcing',
+    icon: FaMagnifyingGlass,
   },
   {
     num: '05',
     title: 'SAMPLES',
     desc: 'Physical samples confirm design, construction, fit, colour and commercial direction.',
     label: 'Samples',
+    icon: FaFlask,
   },
   {
     num: '06',
     title: 'CONTROL FRAMEWORK',
     desc: 'Milestones, approvals, responsibilities and quality controls are clearly managed.',
     label: 'Control Framework',
+    icon: FaSliders,
   },
   {
     num: '07',
     title: 'COMPLIANCE',
     desc: 'Testing, social compliance, product standards and market requirements are verified.',
     label: 'Compliance',
+    icon: FaShieldHalved,
   },
   {
     num: '08',
     title: 'FINANCIALS / CONTRACT',
     desc: 'Costing, payment terms, contracts and commercial responsibilities are agreed.',
     label: 'Financials / Contract',
+    icon: FaFileInvoiceDollar,
   },
   {
     num: '09',
     title: 'TRANSPORTATION',
     desc: 'The correct freight route, documentation and delivery plan are coordinated.',
     label: 'Transportation',
+    icon: FaTruckFast,
   },
   {
     num: '10',
     title: 'TRACKING & TRACEABILITY',
     desc: 'Production and shipment progress remain visible from source to destination.',
     label: 'Tracking & Traceability',
+    icon: FaLocationCrosshairs,
   },
   {
     num: '11',
     title: 'DELIVERY',
     desc: 'Goods and documents reach the customer ready for retail and repeat orders.',
     label: 'Delivery',
+    icon: FaBoxOpen,
+  },
+  {
+    num: '12',
+    title: 'FEEDBACK',
+    desc: 'Buyer, customer and market feedback is reviewed alongside quality and delivery performance. These insights improve the product, strengthen future programmes and support better repeat-order decisions.',
+    label: 'Feedback',
+    icon: FaCommentDots,
   },
 ];
 
@@ -139,8 +172,8 @@ export default function OrbitSection() {
       </div>
 
       <div
-        className="orbit-wrap eleven"
-        aria-label="Interactive 11-stage SVX digital supply chain"
+        className="orbit-wrap twelve"
+        aria-label="Interactive 12-stage SVX digital supply chain"
       >
         <div className="orbit-rings">
           <div className="ring ring-a" />
@@ -153,14 +186,9 @@ export default function OrbitSection() {
         </div>
 
         <div className="orbit-core">
-          <Image
-            src="/assets/logo-wide.png"
-            alt="SVX"
-            width={120}
-            height={45}
-            priority
-            referrerPolicy="no-referrer"
-            className="w-[74%] h-auto max-h-[38px] object-contain"
+          <BrandLogo
+            className="w-[72%] h-auto max-h-[36px] text-[#0b1220]"
+            title="SVX"
           />
           <span>
             DIGITAL
@@ -170,6 +198,7 @@ export default function OrbitSection() {
         </div>
 
         {stages.map((stage, idx) => {
+          const StageIcon: IconType = stage.icon;
           const nodeClass = `node n${idx + 1} ${
             idx === currentStage ? 'active' : ''
           }`;
@@ -180,8 +209,9 @@ export default function OrbitSection() {
               className={nodeClass}
               data-index={idx}
               onClick={() => selectStage(idx)}
+              aria-label={`${stage.num}: ${stage.label}`}
             >
-              <i>{stage.num}</i>
+              <i aria-hidden="true"><StageIcon /></i>
               <b>{stage.label}</b>
             </button>
           );

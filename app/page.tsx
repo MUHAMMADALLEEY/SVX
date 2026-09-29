@@ -1,8 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import OrbitSection from '@/components/OrbitSection';
 import ScrollReveal from '@/components/ScrollReveal';
+import BrandLogo from '@/components/BrandLogo';
+import { ContactBriefButton } from '@/components/ContactBriefModal';
+import ProductCardVisual from '@/components/ProductCardVisual';
+import { PRODUCT_CATEGORIES } from '@/data/product-categories';
 
 export default function Home() {
   return (
@@ -53,58 +58,27 @@ export default function Home() {
               className="w-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="image-tag">SVX PRODUCT LAB / 2026</div>
+            <div className="image-tag">SVX PRODUCT LAB</div>
           </div>
 
           <div className="category-grid">
-            <article>
-              <span>01</span>
-              <h3>SOCKS</h3>
-              <p>
-                Performance, dress, lifestyle, workwear, medical, football and
-                complete team-sock programmes.
-              </p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>FOOTBALLS</h3>
-              <p>
-                From World Cup-standard match balls to training footballs, with
-                FIFA-approved manufacturing capability.
-              </p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>BAGS</h3>
-              <p>
-                Backpacks, duffles, travel, team, school and technical carry
-                solutions.
-              </p>
-            </article>
-            <article>
-              <span>04</span>
-              <h3>APPAREL</h3>
-              <p>
-                Sportswear, underwear, menswear, workwear and coordinated retail
-                collections.
-              </p>
-            </article>
-            <article>
-              <span>05</span>
-              <h3>SPORTS PRODUCTS</h3>
-              <p>
-                New product development across training, fitness, club,
-                academy and specialist sports categories.
-              </p>
-            </article>
-            <article>
-              <span>06</span>
-              <h3>ACCESSORIES</h3>
-              <p>
-                Custom-developed sports, team and lifestyle accessories
-                tailored to your brand and market.
-              </p>
-            </article>
+            {PRODUCT_CATEGORIES.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/products/${cat.slug}`}
+                className="category-card group"
+                data-category={cat.slug}
+              >
+                <ProductCardVisual
+                  image={cat.coverImage}
+                  alt={cat.title}
+                  kicker="SVX PRODUCT PROGRAMME"
+                  title={cat.title}
+                  actionLabel="EXPLORE COLLECTION"
+                  sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 1179px) 50vw, 25vw"
+                />
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -257,27 +231,18 @@ export default function Home() {
             Share the product, target price, approximate quantity, destination
             market and required date. SVX will shape the smartest route forward.
           </p>
-          <a
-            className="cta light"
-            href="mailto:?subject=SVX%20Manufacturing%20%26%20Sourcing%20Brief&body=Product%20category%3A%0ATarget%20price%3A%0AApproximate%20quantity%3A%0AMarket%3A%0ARequired%20date%3A"
-          >
+          <ContactBriefButton className="cta light">
             SEND YOUR BRIEF <span>↗</span>
-          </a>
+          </ContactBriefButton>
         </section>
       </main>
 
       <footer>
-        <div className="bg-white px-3 py-1.5 flex items-center justify-center h-10 w-[125px] overflow-hidden">
-          <Image
-            src="/assets/logo-wide.png"
-            alt="SVX"
-            width={125}
-            height={40}
-            className="h-full w-full object-contain"
-            referrerPolicy="no-referrer"
-          />
+        <div className="flex items-center text-white h-10">
+          <BrandLogo className="h-8 w-auto" />
         </div>
         <span>MANUFACTURING · SOURCING · PRODUCT DEVELOPMENT</span>
+        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
         <span>LONDON (UK) COMMERCIAL OFFICE · GLOBAL MANUFACTURING NETWORK</span>
       </footer>
 

@@ -1,24 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
+import BrandLogo from '@/components/BrandLogo';
+import { openContactBrief } from '@/components/ContactBriefModal';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed md:absolute z-30">
-      <a className="logo" href="#top" aria-label="SVX home">
-        <Image
-          src="/assets/logo-wide.png"
-          alt="SVX"
-          width={148}
-          height={51}
-          priority
-          referrerPolicy="no-referrer"
-          className="h-full w-full object-contain"
-        />
-      </a>
+    <header className="fixed z-30">
+      <Link className="logo text-white" href="/" aria-label="SVX home">
+        <BrandLogo className="h-8 md:h-9 w-auto" />
+      </Link>
 
       <nav
         aria-label="Main navigation"
@@ -56,10 +50,21 @@ export default function Header() {
         >
           Process
         </a>
+        <a
+          href="#contact"
+          onClick={(event) => {
+            event.preventDefault();
+            setMenuOpen(false);
+            openContactBrief();
+          }}
+          className="hover:text-[#4e9dff] transition-colors py-1"
+        >
+          Contact us
+        </a>
       </nav>
 
       <div className="flex items-center gap-3">
-        <a className="cta mini hidden md:inline-flex" href="#contact">
+        <a className="cta mini hidden md:inline-flex" href="#contact" onClick={(event) => { event.preventDefault(); openContactBrief(); }}>
           START A BRIEF <span>↗</span>
         </a>
         <button

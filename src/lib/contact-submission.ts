@@ -1,12 +1,23 @@
-export const contactProductOptions = ["Footballs", "Socks", "Bags", "Multiple products"] as const;
+export const contactProductOptions = [
+  "Socks",
+  "Footballs",
+  "Bags",
+  "T-Shirts",
+  "Sports Products",
+  "Accessories",
+  "Multiple products",
+  "Other",
+] as const;
 
 export type ContactSubmission = {
   name: string;
   email: string;
-  company: string;
+  company?: string;
   productInterest: (typeof contactProductOptions)[number];
+  quantity?: string;
+  market?: string;
   message: string;
-  website: string;
+  website?: string;
 };
 
 type ParseResult =
@@ -36,6 +47,8 @@ export function parseContactSubmission(input: unknown): ParseResult {
   const email = normalizeSingleLine(getString(input.email)).toLowerCase();
   const company = normalizeSingleLine(getString(input.company));
   const productInterest = getString(input.productInterest);
+  const quantity = normalizeSingleLine(getString(input.quantity));
+  const market = normalizeSingleLine(getString(input.market));
   const message = getString(input.message);
   const website = getString(input.website);
   const errors: string[] = [];
@@ -43,11 +56,14 @@ export function parseContactSubmission(input: unknown): ParseResult {
   if (name.length < 2 || name.length > 120) errors.push("Enter a name between 2 and 120 characters.");
   if (!emailPattern.test(email) || email.length > 254) errors.push("Enter a valid email address.");
   if (company.length > 120) errors.push("Company name must be 120 characters or fewer.");
+  if (quantity.length > 100) errors.push("Quantity must be 100 characters or fewer.");
+  if (market.length > 120) errors.push("Destination market must be 120 characters or fewer.");
+
   if (!contactProductOptions.includes(productInterest as ContactSubmission["productInterest"])) {
     errors.push("Choose a product interest.");
   }
-  if (message.length < 10 || message.length > 4000) {
-    errors.push("Tell us a little more in 10 to 4,000 characters.");
+  if (message.length < 5 || message.length > 4000) {
+    errors.push("Tell us a little more about your requirements in 5 to 4,000 characters.");
   }
 
   if (errors.length > 0) return { success: false, errors };
@@ -57,10 +73,12 @@ export function parseContactSubmission(input: unknown): ParseResult {
     data: {
       name,
       email,
-      company,
+      company: company || undefined,
       productInterest: productInterest as ContactSubmission["productInterest"],
+      quantity: quantity || undefined,
+      market: market || undefined,
       message,
-      website,
+      website: website || undefined,
     },
   };
 }

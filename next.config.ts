@@ -1,4 +1,5 @@
 import type {NextConfig} from 'next';
+import path from 'node:path';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -10,6 +11,7 @@ const nextConfig: NextConfig = {
   },
   // Allow access to remote image placeholder.
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,6 +22,9 @@ const nextConfig: NextConfig = {
     ],
   },
   output: 'standalone',
+  // Keep standalone output tracing scoped to this app when another lockfile
+  // exists higher in the local filesystem.
+  outputFileTracingRoot: path.join(__dirname),
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
