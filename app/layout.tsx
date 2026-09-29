@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {Barlow_Condensed, Inter} from 'next/font/google';
+import ContactBriefModal from '@/components/ContactBriefModal';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -45,6 +46,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         className="bg-[#070a10] text-[#f5f7fa] font-sans antialiased"
       >
         {children}
+        <ContactBriefModal />
       </body>
     </html>
   );
