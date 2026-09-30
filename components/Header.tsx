@@ -47,7 +47,7 @@ export default function Header() {
           </button>
           <div id="product-range-menu" className="nav-product-dropdown">
             <p>Product ranges</p>
-            <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>24 specialist categories</span></Link>
+            <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>22 specialist categories</span></Link>
             <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>13 carry solutions</span></Link>
             <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>8 purpose-built ranges</span></Link>
             <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>

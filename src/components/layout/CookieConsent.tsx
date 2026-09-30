@@ -60,7 +60,7 @@ export function CookieConsent() {
             <strong id="cookie-consent-title">Your privacy choices</strong>
             <p id="cookie-consent-description">
               We use optional analytics, including Google Analytics, to understand site performance. Essential
-              site functions work without analytics. Read our <a href="/privacy-policy">privacy policy</a>.
+              site functions work without analytics.
             </p>
           </div>
           <div className="cookie-consent-actions">

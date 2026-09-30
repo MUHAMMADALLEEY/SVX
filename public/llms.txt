@@ -1,25 +1,27 @@
 # SportsVentureX
 
-> Custom sports goods development and manufacturing support for growing brands.
+> Buyer-focused product development, manufacturing, sourcing, and delivery support.
 
-SportsVentureX develops custom footballs, socks, bags, T-shirts, and sports goods programs. Support covers product definition, samples, branding, quality checks, production, packing, handover, and shipment preparation.
+SportsVentureX (SVX) develops custom socks, footballs, bags, and apparel for brands, retailers, clubs, schools, institutions, distributors, and specialist organisations. Support covers specification, costing, sampling, testing, production, quality control, packaging, and delivery coordination.
 
 ## Main pages
 
-- [Home](https://www.sportsventurex.com/): Company overview, solutions, product range, process, quality, and contact.
-- [Privacy policy](https://www.sportsventurex.com/privacy-policy): Privacy information.
-- [Terms](https://www.sportsventurex.com/terms): Website terms.
+- [Home](https://www.sportsventurex.com/): Company overview, manufacturing network, buyers, product programmes, process, and contact.
+- [Socks](https://www.sportsventurex.com/products/socks): 22 sock development categories.
+- [Footballs](https://www.sportsventurex.com/products/footballs): Eight football construction and use categories.
+- [Bags](https://www.sportsventurex.com/products/bags): Thirteen carry-product categories.
+- [Apparel](https://www.sportsventurex.com/products/apparel): Thirteen performance, lifestyle, workwear, and textile categories.
 
 ## Products
 
-- Custom footballs and balls
-- Custom performance and lifestyle socks
-- Custom backpacks and waist packs
-- Custom performance and cotton T-shirts
+- Custom performance, lifestyle, work, health, travel, and compression socks
+- Custom match, training, promotional, indoor, mini, and specialist footballs
+- Custom backpacks, duffles, travel, team, school, and technical bags
+- Custom performance apparel, teamwear, lifestyle, workwear, towels, and robes
 
 ## Services
 
-SportsVentureX can help define a product, develop and refine samples, manage production with quality checkpoints, and prepare finished goods for delivery.
+SVX can define a product and commercial target, develop and validate samples, place and monitor production, perform quality checkpoints, and coordinate delivery preparation.
 
 ## Enquiries
 

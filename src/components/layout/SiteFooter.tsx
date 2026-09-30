@@ -57,8 +57,7 @@ export function SiteFooter() {
 
         <div className="footer-bottom">
           <p>SportsVentureX. Making sport more considered.</p>
-          <nav className="footer-links" aria-label="Legal and privacy">
-            <a href="/privacy-policy">Privacy policy</a>
+          <nav className="footer-links" aria-label="Legal information">
             <a href="/terms">Terms</a>
           </nav>
           <div className="footer-cookie-row">

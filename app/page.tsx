@@ -73,7 +73,7 @@ export default function Home() {
               >
                 <ProductCardVisual
                   image={cat.coverImage}
-                  alt={cat.title}
+                  alt={`${cat.title} product manufacturing programme`}
                   kicker="SVX PRODUCT PROGRAMME"
                   title={cat.title}
                   actionLabel="EXPLORE COLLECTION"

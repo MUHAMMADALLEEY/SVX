@@ -92,7 +92,7 @@ export function ContactForm() {
         <input type="text" name="website" tabIndex={-1} autoComplete="off" disabled={isSending} />
       </label>
       <p className="form-privacy">
-        By sending this form, you agree that we may use your details to answer your enquiry. See our <a href="/privacy-policy">privacy policy</a>.
+        By sending this form, you agree that we may use your details to answer your enquiry.
       </p>
       <button type="submit" disabled={isSending}>
         {isSending ? "Sending enquiry..." : "Send project enquiry"}

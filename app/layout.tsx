@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {Barlow_Condensed, Inter} from 'next/font/google';
 import ContactBriefModal from '@/components/ContactBriefModal';
+import {siteConfig} from '@/lib/site-config';
 import './globals.css';
 
 const barlowCondensed = Barlow_Condensed({
@@ -18,8 +19,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'SVX | Manufacturing & Sourcing',
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: 'SVX | Manufacturing & Sourcing',
+    template: '%s | SVX',
+  },
   description: 'SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.',
+  alternates: {canonical: '/'},
   icons: {
     icon: [
       {url: '/icon.svg?v=2', type: 'image/svg+xml'},

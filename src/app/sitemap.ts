@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: absoluteUrl("/"), lastModified, changeFrequency: "monthly", priority: 1 },
-    { url: absoluteUrl("/privacy-policy"), lastModified, changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 }
