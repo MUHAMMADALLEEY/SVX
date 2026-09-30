@@ -132,25 +132,46 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
       })),
     ],
   },
-  // {
-  //   slug: 'sports-products',
-  //   title: 'SPORTS PRODUCTS',
-  //   subtitle: 'New product development across training, fitness, club, academy and specialist sports categories.',
-  //   description:
-  //     'End-to-end product development for fitness accessories, club training equipment, protective gear, and custom team hardware.',
-  //   coverImage: '/products/sports-products/featured-01.webp',
-  //   stats: ['Multi-category tooling', 'Factory-level specification', 'Prototyping & sample testing'],
-  //   items: [
-  //     {
-  //       id: 'sports-product-lab-1',
-  //       title: 'SVX Product Lab Collection',
-  //       image: '/products/sports-products/featured-01.webp',
-  //       category: 'Product Lab',
-  //       specs: ['Custom equipment specification', 'Full batch production', 'Compliance certified'],
-  //       alt: 'SVX Product Lab Collection',
-  //     },
-  //   ],
-  // },
+  {
+    slug: 'sports-products',
+    title: 'SPORTS PRODUCTS',
+    subtitle: 'Training, fitness, club and academy equipment developed as coordinated programmes.',
+    description:
+      'A broad equipment programme spanning speed, agility, strength, conditioning, coaching and team training products, developed around your market, performance level and brand identity.',
+    coverImage: '/images/sports-products/sports-product-01.webp',
+    stats: ['19 product references', 'Club & academy equipment', 'Custom colours, branding & packaging'],
+    items: [],
+  },
+  {
+    slug: 'hockey',
+    title: 'HOCKEY',
+    subtitle: 'Field hockey sticks, team bundles, balls and organised multi-stick transport.',
+    description:
+      'Original wooden, hybrid and carbon-composite stick programmes supported by team quantities, matching balls and organised multi-stick transport.',
+    coverImage: '/images/hockey/hockey-01.webp',
+    stats: ['Wooden, hybrid & composite builds', 'Custom bow, weight & balance', 'Retail lines & team quantities'],
+    items: [],
+  },
+  {
+    slug: 'cricket',
+    title: 'CRICKET',
+    subtitle: 'Cricket bats, technical pads, protective equipment and purpose-built transport.',
+    description:
+      'A coordinated professional range combining bat craftsmanship, lightweight impact protection and purpose-built transport for junior, academy, club and professional programmes.',
+    coverImage: '/images/cricket/cricket-04.webp',
+    stats: ['English & Kashmir willow options', 'Junior to professional sizing', 'Custom materials, colours & branding'],
+    items: [],
+  },
+  {
+    slug: 'pickleball-padel',
+    title: 'PICKLEBALL & PADEL RACKETS',
+    subtitle: 'Purpose-built paddles, rackets, balls, covers and complete carry sets.',
+    description:
+      'Purpose-built racket programmes combining confident SVX styling, practical construction and complete retail-ready accessories for pickleball and padel players.',
+    coverImage: '/images/pickleball-padel/pickleball-padel-01.webp',
+    stats: ['Custom face material & core thickness', 'Player-level grip & edge options', 'Balls, covers & carry sets'],
+    items: [],
+  },
   // {
   //   slug: 'accessories',
   //   title: 'ACCESSORIES',

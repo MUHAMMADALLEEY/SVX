@@ -179,13 +179,15 @@ nav a:hover {
 }
 
 .nav-product-dropdown {
-  position: absolute;
+  position: fixed;
   z-index: 50;
-  top: calc(100% + 25px);
-  left: 50%;
+  top: 88px;
+  left: 50vw;
   display: grid;
-  width: 310px;
-  padding: 14px;
+  width: min(900px, calc(100vw - 48px));
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(7, 10, 16, 0.98);
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
@@ -201,7 +203,7 @@ nav a:hover {
   right: 0;
   bottom: 100%;
   left: 0;
-  height: 26px;
+  height: 52px;
   content: '';
 }
 
@@ -216,35 +218,47 @@ nav a:hover {
 
 .nav-product-dropdown > p {
   margin: 0;
-  padding: 5px 8px 10px;
+  padding: 2px 4px 14px;
   color: #6f7d91;
   font-size: 0.62rem;
   letter-spacing: 0.16em;
 }
 
-.nav-product-dropdown > a {
+.nav-product-grid {
   display: grid;
-  gap: 1px;
-  padding: 11px 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.09);
-  color: #fff;
-  text-transform: none;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.nav-product-dropdown > a:hover,
-.nav-product-dropdown > a:focus-visible {
+.nav-product-grid > a {
+  display: grid;
+  min-width: 0;
+  min-height: 92px;
+  align-content: center;
+  gap: 5px;
+  padding: 18px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  text-transform: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-product-grid > a:hover,
+.nav-product-grid > a:focus-visible {
   background: rgba(8, 109, 255, 0.12);
   color: #fff;
   outline: none;
 }
 
-.nav-product-dropdown strong {
+.nav-product-grid strong {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.nav-product-dropdown > a > span {
+.nav-product-grid > a > span {
   color: #8d9aac;
   font-size: 0.68rem;
   font-weight: 500;
@@ -254,8 +268,8 @@ nav a:hover {
 .nav-product-dropdown > .nav-product-all {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
-  padding-top: 13px;
+  margin-top: 12px;
+  padding: 13px 4px 2px;
   color: #4e9dff;
   font-size: 0.69rem;
   font-weight: 800;
@@ -1494,6 +1508,16 @@ footer .footer-email:hover {
     pointer-events: auto;
     transform: none;
   }
+  .nav-product-dropdown::before {
+    display: none;
+  }
+  .nav-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nav-product-grid > a {
+    min-height: 76px;
+    padding: 13px;
+  }
   .nav-product-menu:hover .nav-product-dropdown,
   .nav-product-menu:focus-within .nav-product-dropdown {
     display: none;
@@ -1578,6 +1602,9 @@ footer .footer-email:hover {
     height: 74px;
     padding: 0 18px;
     background: rgba(7, 10, 16, 0.9);
+  }
+  .nav-product-grid {
+    grid-template-columns: 1fr;
   }
   .logo {
     width: auto;

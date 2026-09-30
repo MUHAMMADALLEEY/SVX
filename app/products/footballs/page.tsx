@@ -1,9 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import Header from '@/components/Header';
-import BrandLogo from '@/components/BrandLogo';
-import { ContactBriefButton } from '@/components/ContactBriefModal';
+import ProductCataloguePage from '../ProductCataloguePage';
 import styles from './footballs-page.module.css';
 
 type FootballCategory = {
@@ -22,6 +18,9 @@ const footballCategories: FootballCategory[] = [
   { title: 'Team Training', image: '/images/footballs/F9.webp', description: 'Hard-wearing everyday construction for clubs, schools and organised team programmes.', features: ['Hard-wearing outer cover', 'Dependable air retention', 'Repeat team programmes'] },
   { title: 'Junior & School', image: '/images/footballs/F4.webp', description: 'Bright, engaging designs in sizes 3, 4 and 5 with age-appropriate weight and softer-touch options.', features: ['Sizes 3, 4 and 5', 'Age-appropriate weights', 'Softer-touch options'] },
   { title: 'Custom & Promotional', image: '/images/footballs/F7.webp', description: 'Bespoke colours, panel graphics, branding and packaging developed around every customer brief.', features: ['Bespoke panel graphics', 'Custom colours and branding', 'Retail packaging options'] },
+  { title: 'Precision Control', image: '/images/footballs/F11.webp', description: 'A high-grip technical football with deeply textured panels for confident control and dependable match performance.', features: ['High-grip textured surface', 'Precision-moulded panel design', 'Match and training options'] },
+  { title: 'Eco Training', image: '/images/footballs/F12.webp', description: 'A durable training direction combining a resilient textured cover with a distinctive recycled-material visual language.', features: ['Durable textured cover', 'Recycled-material options', 'High-volume training programmes'] },
+  { title: 'Elite Thermobonded', image: '/images/footballs/F13.webp', description: 'A clean premium match-ball direction with large thermally bonded panels, controlled flight and responsive touch.', features: ['Thermally bonded construction', 'Large-panel flight stability', 'Premium textured finish'] },
 ];
 
 const developmentSteps = [
@@ -34,71 +33,34 @@ const developmentSteps = [
 
 export const metadata: Metadata = {
   title: 'Custom Football Product Development | SVX',
-  description: 'Explore eight purpose-built custom football programmes for professional, competition, club, academy, training, junior and promotional use.',
+  description: 'Explore eleven purpose-built custom football programmes for professional, competition, club, academy, training, junior and promotional use.',
   alternates: { canonical: '/products/footballs' },
 };
 
 export default function FootballsPage() {
   return (
-    <>
-      <Header />
-      <main className={styles.page}>
-        <section className={styles.hero}>
-          <div className={styles.shell}>
-            <Link className={styles.backLink} href="/#products"><span aria-hidden="true">←</span> Back to product categories</Link>
-            <p className={styles.eyebrow}>SVX football range · product development</p>
-            <h1>Every match.<span>One expert route.</span></h1>
-            <p className={styles.heroCopy}>One focused range covering professional matches, club and academy play, training, schools and promotional programmes.</p>
-            <dl className={styles.stats}>
-              <div><dt>8</dt><dd>Purpose-built ranges</dd></div>
-              <div><dt>30</dt><dd>Years of experience</dd></div>
-              <div><dt>1</dt><dd>Accountable partner</dd></div>
-            </dl>
-          </div>
-        </section>
-
-        <section className={styles.catalogue} aria-labelledby="football-category-heading">
-          <div className={styles.shell}>
-            <div className={styles.catalogueIntro}>
-              <div><p className={styles.eyebrow}>SVX football range</p><h2 id="football-category-heading">Eight purpose-<br />built designs</h2></div>
-              <p>Each programme is developed around its playing level, construction, touch, flight, durability, panel artwork and commercial target.</p>
-            </div>
-
-            <div className={styles.grid}>
-              {footballCategories.map((category, index) => (
-                <article className={styles.card} key={category.title}>
-                  <div className={styles.cardImage}>
-                    <Image src={category.image} alt={`${category.title} custom SVX football`} fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw" priority={index < 4} />
-                    <ContactBriefButton className={styles.cardAction} defaultCategory="Footballs" defaultProduct={category.title}>
-                      Select this category <span aria-hidden="true">↗</span>
-                    </ContactBriefButton>
-                  </div>
-                  <div className={styles.cardBody}>
-                    <p className={styles.cardIndex}>{String(index + 1).padStart(2, '0')} / Football</p>
-                    <h3>{category.title}</h3>
-                    <p className={styles.cardDescription}>{category.description}</p>
-                    <ul>{category.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.process} aria-labelledby="football-process-heading">
-          <div className={`${styles.shell} ${styles.processLayout}`}>
-            <div><p className={styles.eyebrow}>Built around your brief</p><h2 id="football-process-heading">Panel to<br />match-ready.</h2></div>
-            <ol>{developmentSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step}</strong></li>)}</ol>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <div className="flex items-center text-white h-10"><BrandLogo className="h-8 w-auto" /></div>
-        <span>FOOTBALLS · PRODUCT DEVELOPMENT · GLOBAL SOURCING</span>
-        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
-        <a href="/">BACK TO MAIN WEBSITE</a>
-      </footer>
-    </>
+    <ProductCataloguePage
+      category="Footballs"
+      categorySlug="football"
+      heroEyebrow="SVX football range · product development"
+      headline="Every match."
+      headlineAccent="One expert route."
+      heroCopy="One focused range covering professional matches, club and academy play, training, schools and promotional programmes."
+      stats={[
+        { value: String(footballCategories.length), label: 'Purpose-built ranges' },
+        { value: '30', label: 'Years of experience' },
+        { value: '1', label: 'Accountable partner' },
+      ]}
+      catalogueEyebrow="SVX football range"
+      catalogueHeading={['Eleven purpose-', 'built designs']}
+      catalogueCopy="Each programme is developed around its playing level, construction, touch, flight, durability, panel artwork and commercial target."
+      items={footballCategories.map((category) => ({ ...category, label: 'Football' }))}
+      processHeading={['Panel to', 'match-ready.']}
+      developmentSteps={developmentSteps}
+      footerLine="FOOTBALLS · PRODUCT DEVELOPMENT · GLOBAL SOURCING"
+      getItemAlt={(item) => `${item.title} custom SVX football`}
+      imagePriorityCount={4}
+      styles={styles}
+    />
   );
 }

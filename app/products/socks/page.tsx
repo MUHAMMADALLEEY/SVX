@@ -1,9 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import Header from '@/components/Header';
-import BrandLogo from '@/components/BrandLogo';
-import { ContactBriefButton } from '@/components/ContactBriefModal';
+import ProductCataloguePage from '../ProductCataloguePage';
 import styles from './socks-page.module.css';
 
 type SockCategory = {
@@ -37,6 +33,9 @@ const sockCategories: SockCategory[] = [
   { title: "Ladies' Comfort", label: 'Comfort', image: '/images/socks/S2.webp', description: 'Soft fine-gauge socks with gentle cuffs, elegant patterns and comfortable seamless-toe options.', features: ['Non-binding cuff', 'Soft-touch yarns', 'Classic and fashion designs'] },
   { title: 'Hiking Socks', label: 'Trail', image: '/images/socks/S3.webp', description: 'Technical outdoor socks with zoned cushioning, ankle protection and breathable merino-rich options.', features: ['Trail-ready durability', 'Ventilated knit zones', 'Light to expedition weights'] },
   { title: 'Compression Socks', label: 'Support', image: '/images/socks/S21.webp', description: 'Knee-high graduated-support socks with anatomical calf shaping and breathable technical construction.', features: ['Graduated compression options', 'Travel and recovery use', 'Independent testing available'] },
+  { title: 'Guard-Pocket Football Socks', label: 'Protection', image: '/images/socks/S23.webp', description: 'Knee-high performance socks with an integrated shin-guard pocket, mapped ventilation and reinforced impact zones.', features: ['Integrated guard pocket', 'Ventilated calf construction', 'Reinforced heel and forefoot'] },
+  { title: 'Technical Training Socks', label: 'Training', image: '/images/socks/S24.webp', description: 'Cushioned crew socks engineered with breathable mesh, structured arch support and secure heel lockdown.', features: ['Mapped cushioning zones', 'Arch and ankle support', 'Moisture-managing knit'] },
+  { title: 'Elite Football Socks', label: 'Football', image: '/images/socks/S25.webp', description: 'Knee-high football socks combining breathable calf panels, anatomical support and durable match-day cushioning.', features: ['Knee-high match profile', 'Breathable shin zones', 'Anatomical foot cushioning'] },
 ];
 
 const developmentSteps = [
@@ -49,71 +48,34 @@ const developmentSteps = [
 
 export const metadata: Metadata = {
   title: 'Custom Socks Product Development | SVX',
-  description: 'Explore 22 custom sock categories developed by SVX, from organic cotton and performance socks to work, travel and compression programmes.',
+  description: 'Explore 25 custom sock categories developed by SVX, from organic cotton and performance socks to work, travel and compression programmes.',
   alternates: { canonical: '/products/socks' },
 };
 
 export default function SocksPage() {
   return (
-    <>
-      <Header />
-      <main className={styles.page}>
-        <section className={styles.hero}>
-          <div className={styles.shell}>
-            <Link className={styles.backLink} href="/#products"><span aria-hidden="true">←</span> Back to product categories</Link>
-            <p className={styles.eyebrow}>SVX socks · product development</p>
-            <h1>Every sock.<span>One expert route.</span></h1>
-            <p className={styles.heroCopy}>From everyday essentials to high-performance engineered socks, SVX develops materials, construction, fit, branding and packaging around each buyer&apos;s market.</p>
-            <dl className={styles.stats}>
-              <div><dt>{sockCategories.length}</dt><dd>Product categories</dd></div>
-              <div><dt>30</dt><dd>Years of experience</dd></div>
-              <div><dt>1</dt><dd>Accountable partner</dd></div>
-            </dl>
-          </div>
-        </section>
-
-        <section className={styles.catalogue} aria-labelledby="sock-category-heading">
-          <div className={styles.shell}>
-            <div className={styles.catalogueIntro}>
-              <div><p className={styles.eyebrow}>Complete sock capability</p><h2 id="sock-category-heading">Select a<br />category</h2></div>
-              <p>Every image represents a development direction. Yarn composition, colours, cushioning, sizing, performance zones and packaging can be customized to the customer brief.</p>
-            </div>
-
-            <div className={styles.grid}>
-              {sockCategories.map((category, index) => (
-                <article className={styles.card} key={category.title}>
-                  <div className={styles.cardImage}>
-                    <Image src={category.image} alt={`${category.title} custom sock development example`} fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw" priority={index < 3} />
-                    <ContactBriefButton className={styles.cardAction} defaultCategory="Socks" defaultProduct={category.title}>
-                      Select this category <span aria-hidden="true">↗</span>
-                    </ContactBriefButton>
-                  </div>
-                  <div className={styles.cardBody}>
-                    <p className={styles.cardIndex}>{String(index + 1).padStart(2, '0')} / {category.label}</p>
-                    <h3>{category.title}</h3>
-                    <p className={styles.cardDescription}>{category.description}</p>
-                    <ul>{category.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.process} aria-labelledby="sock-process-heading">
-          <div className={`${styles.shell} ${styles.processLayout}`}>
-            <div><p className={styles.eyebrow}>Built around your brief</p><h2 id="sock-process-heading">Yarn to<br />retail-ready.</h2></div>
-            <ol>{developmentSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, '0')}</span><strong>{step}</strong></li>)}</ol>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <div className="flex items-center text-white h-10"><BrandLogo className="h-8 w-auto" /></div>
-        <span>MANUFACTURING · SOURCING · PRODUCT DEVELOPMENT</span>
-        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
-        <span>LONDON (UK) COMMERCIAL OFFICE · GLOBAL MANUFACTURING NETWORK</span>
-      </footer>
-    </>
+    <ProductCataloguePage
+      category="Socks"
+      categorySlug="sock"
+      heroEyebrow="SVX socks · product development"
+      headline="Every sock."
+      headlineAccent="One expert route."
+      heroCopy="From everyday essentials to high-performance engineered socks, SVX develops materials, construction, fit, branding and packaging around each buyer's market."
+      stats={[
+        { value: String(sockCategories.length), label: 'Product categories' },
+        { value: '30', label: 'Years of experience' },
+        { value: '1', label: 'Accountable partner' },
+      ]}
+      catalogueEyebrow="Complete sock capability"
+      catalogueHeading={['Select a', 'category']}
+      catalogueCopy="Every image represents a development direction. Yarn composition, colours, cushioning, sizing, performance zones and packaging can be customized to the customer brief."
+      items={sockCategories}
+      processHeading={['Yarn to', 'retail-ready.']}
+      developmentSteps={developmentSteps}
+      footerLine="MANUFACTURING · SOURCING · PRODUCT DEVELOPMENT"
+      footerEnd={{ label: 'LONDON (UK) COMMERCIAL OFFICE · GLOBAL MANUFACTURING NETWORK' }}
+      getItemAlt={(item) => `${item.title} custom sock development example`}
+      styles={styles}
+    />
   );
 }

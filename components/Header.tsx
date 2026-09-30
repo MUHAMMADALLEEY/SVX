@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import BrandLogo from '@/components/BrandLogo';
 import { openContactBrief } from '@/components/ContactBriefModal';
@@ -8,8 +8,32 @@ import { openContactBrief } from '@/components/ContactBriefModal';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const productsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function cancelProductsClose() {
+    if (productsCloseTimer.current) {
+      clearTimeout(productsCloseTimer.current);
+      productsCloseTimer.current = null;
+    }
+  }
+
+  function openProducts() {
+    cancelProductsClose();
+    setProductsOpen(true);
+  }
+
+  function scheduleProductsClose() {
+    cancelProductsClose();
+    productsCloseTimer.current = setTimeout(() => {
+      setProductsOpen(false);
+      productsCloseTimer.current = null;
+    }, 300);
+  }
+
+  useEffect(() => () => cancelProductsClose(), []);
 
   function closeNavigation() {
+    cancelProductsClose();
     setMenuOpen(false);
     setProductsOpen(false);
   }
@@ -24,7 +48,7 @@ export default function Header() {
         aria-label="Main navigation"
         className={`${
           menuOpen
-            ? '!flex fixed top-[74px] left-0 right-0 bg-[#070a10] p-6 flex-col border-b border-white/15 gap-5 shadow-2xl z-40'
+            ? '!flex fixed top-[74px] left-0 right-0 max-h-[calc(100dvh-74px)] overflow-y-auto bg-[#070a10] p-6 flex-col border-b border-white/15 gap-5 shadow-2xl z-40'
             : 'hidden md:flex'
         }`}
       >
@@ -35,22 +59,35 @@ export default function Header() {
         >
           Network
         </a>
-        <div className={`nav-product-menu${productsOpen ? ' is-open' : ''}`}>
+        <div
+          className={`nav-product-menu${productsOpen ? ' is-open' : ''}`}
+          onMouseEnter={openProducts}
+          onMouseLeave={scheduleProductsClose}
+        >
           <button
             type="button"
             className="nav-products-trigger"
             aria-expanded={productsOpen}
             aria-controls="product-range-menu"
-            onClick={() => setProductsOpen((open) => !open)}
+            onClick={() => {
+              cancelProductsClose();
+              setProductsOpen((open) => !open);
+            }}
           >
             Products <span aria-hidden="true">⌄</span>
           </button>
           <div id="product-range-menu" className="nav-product-dropdown">
             <p>Product ranges</p>
-            <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>22 specialist categories</span></Link>
-            <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>13 carry solutions</span></Link>
-            <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>8 purpose-built ranges</span></Link>
-            <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>
+            <div className="nav-product-grid">
+              <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>25 specialist categories</span></Link>
+              <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>13 carry solutions</span></Link>
+              <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>11 purpose-built ranges</span></Link>
+              <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>
+              <Link href="/products/sports-products" onClick={closeNavigation}><strong>Sports Products</strong><span>19 product groups</span></Link>
+              <Link href="/products/hockey" onClick={closeNavigation}><strong>Hockey</strong><span>4 equipment groups</span></Link>
+              <Link href="/products/cricket" onClick={closeNavigation}><strong>Cricket</strong><span>4 equipment groups</span></Link>
+              <Link href="/products/pickleball-padel" onClick={closeNavigation}><strong>Pickleball &amp; Padel</strong><span>5 racket directions</span></Link>
+            </div>
             <a className="nav-product-all" href="/#products" onClick={closeNavigation}>View all products <span aria-hidden="true">→</span></a>
           </div>
         </div>

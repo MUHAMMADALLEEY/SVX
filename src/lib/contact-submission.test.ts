@@ -32,4 +32,17 @@ describe("parseContactSubmission", () => {
 
     expect(result).toMatchObject({ success: true, data: { website: "https://spam.example" } });
   });
+
+  it.each(["Hockey", "Cricket", "Pickleball & Padel Rackets"])(
+    "accepts the new %s product category",
+    (productInterest) => {
+      const result = parseContactSubmission({
+        ...validSubmission,
+        productInterest,
+        productName: "Custom development brief",
+      });
+
+      expect(result).toMatchObject({ success: true, data: { productInterest } });
+    },
+  );
 });

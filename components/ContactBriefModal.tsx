@@ -12,7 +12,9 @@ const productCategories = [
   'Bags',
   'Apparel',
   'Sports Products',
-  'Accessories',
+  'Hockey',
+  'Cricket',
+  'Pickleball & Padel Rackets',
   'Other',
 ] as const satisfies readonly ProductCategoryName[];
 

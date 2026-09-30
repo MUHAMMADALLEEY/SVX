@@ -7,6 +7,9 @@ export const CATEGORY_SLUGS = [
   'footballs',
   'bags',
   'sports-products',
+  'hockey',
+  'cricket',
+  'pickleball-padel',
   'accessories',
 ] as const;
 
@@ -19,6 +22,10 @@ const CATALOGUE_IMAGE_DIRECTORIES: Partial<Record<CategorySlug, string>> = {
   socks: 'socks',
   footballs: 'footballs',
   bags: 'bags',
+  'sports-products': 'sports-products',
+  hockey: 'hockey',
+  cricket: 'cricket',
+  'pickleball-padel': 'pickleball-padel',
 };
 
 function imagesInDirectory(
