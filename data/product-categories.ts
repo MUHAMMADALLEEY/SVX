@@ -31,7 +31,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Performance, dress, lifestyle, workwear, medical, football and complete team-sock programmes.',
     description:
       'From custom team and technical sports socks to multi-pack retail programs, our sock manufacturing covers specialized yarns, seamless toe linking, graduated compression, and precision jacquard branding.',
-    coverImage: '/images/socks/S24.webp',
+    coverImage: '/images/socks/S15.webp',
     stats: ['Technical & compression options', 'Custom knitted logos & patterns', 'Retail-ready multi-pack packaging'],
     items: [
       {

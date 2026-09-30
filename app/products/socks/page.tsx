@@ -15,13 +15,11 @@ type SockCategory = {
 };
 
 const sockCategories: SockCategory[] = [
-  { title: 'Basic Socks', label: 'Everyday', image: '/images/socks/S24.webp', description: 'Comfortable everyday crew socks with a secure rib cuff, stretch rib body and reinforced heel and toe.', features: ['Everyday comfort', 'Multiple pack options', "Men's, women's and children's sizing"] },
   { title: 'Organic Cotton', label: 'Natural', image: '/images/socks/S19.webp', description: 'Breathable, soft-touch socks developed with certified organic cotton and responsible material options.', features: ['Natural hand feel', 'Traceable yarn options', 'Eco packaging compatible'] },
   { title: 'Special High-Tech', label: 'Engineered', image: '/images/socks/S22.webp', description: 'Advanced engineered socks with mapped ventilation, compression zones, impact cushioning and anatomical shaping.', features: ['Zoned construction', 'Moisture management', 'Performance knitting options'] },
   { title: 'Dress Socks', label: 'Executive', image: '/images/socks/S20.webp', description: 'Fine-gauge business socks with refined patterns, smooth toe seams and elegant over-calf or crew profiles.', features: ['Mercerised cotton options', 'Fine needle construction', 'Cuff and welt customization'] },
   { title: 'Sports Socks', label: 'Active', image: '/images/socks/S15.webp', description: 'Versatile athletic socks combining arch support, ventilation mesh and strategic footbed cushioning.', features: ['Quarter and crew lengths', 'Supportive fit', 'Club and retail programmes'] },
   { title: 'Performance Socks', label: 'Elite', image: '/images/socks/S18.webp', description: 'Premium technical socks engineered for intensive training, racing and high-output athletic use.', features: ['Anatomical left/right fit', 'Targeted compression', 'High-abrasion protection'] },
-  { title: 'Football Socks', label: 'Football', image: '/images/socks/S23.webp', description: 'Knee-high match and training socks with shin-guard coverage, cuff ventilation and durable cushioning.', features: ['Match and training builds', 'Fold-over cuff options', 'Custom club colours'] },
   { title: 'Health Socks', label: 'Wellness', image: '/images/socks/S16.webp', description: 'Comfort-focused socks with non-binding cuffs, smooth toe construction and soft moisture-managing yarns.', features: ['Comfort top', 'Seamless toe options', 'Healthcare programmes'] },
   { title: 'Team Socks', label: 'Teamwear', image: '/images/socks/S17.webp', description: 'Durable coordinated socks for clubs, academies, schools and organizations in bespoke colourways.', features: ['Custom colours', 'Size grading', 'Repeat programme control'] },
   { title: 'Work Socks', label: 'Industrial', image: '/images/socks/S14.webp', description: 'Heavy-duty boot socks with high-wear reinforcement, moisture channels and protective cushioning.', features: ['Reinforced heel and toe', 'Boot-fit cushioning', 'High-durability blends'] },
@@ -51,7 +49,7 @@ const developmentSteps = [
 
 export const metadata: Metadata = {
   title: 'Custom Socks Product Development | SVX',
-  description: 'Explore 24 custom sock categories developed by SVX, from everyday and organic cotton socks to football, performance and compression programmes.',
+  description: 'Explore 22 custom sock categories developed by SVX, from organic cotton and performance socks to work, travel and compression programmes.',
   alternates: { canonical: '/products/socks' },
 };
 
@@ -67,7 +65,7 @@ export default function SocksPage() {
             <h1>Every sock.<span>One expert route.</span></h1>
             <p className={styles.heroCopy}>From everyday essentials to high-performance engineered socks, SVX develops materials, construction, fit, branding and packaging around each buyer&apos;s market.</p>
             <dl className={styles.stats}>
-              <div><dt>24</dt><dd>Product categories</dd></div>
+              <div><dt>{sockCategories.length}</dt><dd>Product categories</dd></div>
               <div><dt>30</dt><dd>Years of experience</dd></div>
               <div><dt>1</dt><dd>Accountable partner</dd></div>
             </dl>
