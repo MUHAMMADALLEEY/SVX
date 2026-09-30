@@ -31,7 +31,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Performance, dress, lifestyle, workwear, medical, football and complete team-sock programmes.',
     description:
       'From custom team and technical sports socks to multi-pack retail programs, our sock manufacturing covers specialized yarns, seamless toe linking, graduated compression, and precision jacquard branding.',
-    coverImage: '/images/socks/S15.webp',
+    coverImage: '/images/socks/S3.webp',
     stats: ['Technical & compression options', 'Custom knitted logos & patterns', 'Retail-ready multi-pack packaging'],
     items: [
       {
@@ -57,7 +57,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'From World Cup-standard match balls to training footballs, with FIFA-approved manufacturing capability.',
     description:
       'We manufacture match, training, and promotional balls across soccer, basketball, American football, and volleyball formats, using hybrid, thermo-bonded, and hand-stitched constructions.',
-    coverImage: '/images/footballs/F3.webp',
+    coverImage: '/images/footballs/f6.webp',
     stats: ['FIFA-standard test capability', 'Thermo-bonded & hand-stitched builds', 'High-air-retention bladders'],
     items: [
       {
@@ -84,7 +84,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Backpacks, duffles, travel, team, school and technical carry solutions.',
     description:
       'Engineered backpacks, waist packs, and sports carry bags built from water-repellent PU-coated 600D polyester Oxford, featuring reinforced stress points, ergonomic padding, and custom hardware.',
-    coverImage: '/images/bags/B1.webp',
+    coverImage: '/images/bags/B2.webp',
     stats: ['600D water-repellent Oxford', 'Custom hardware & contrast zips', 'Full digital print & embroidery'],
     items: [
       {
@@ -111,7 +111,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Performance teamwear, lifestyle, workwear and home textiles developed around every brief.',
     description:
       'From performance teamwear to lifestyle, workwear and home textiles, SVX develops fit, fabric, trims, graphics and packaging around every customer brief.',
-    coverImage: '/images/Apparel/A8.webp',
+    coverImage: '/images/Apparel/A10.webp',
     stats: ['13 product categories', 'Custom fit, fabric and trims', 'Retail-ready branding and packaging'],
     items: [
       {
@@ -168,7 +168,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Purpose-built paddles, rackets, balls, covers and complete carry sets.',
     description:
       'Purpose-built racket programmes combining confident SVX styling, practical construction and complete retail-ready accessories for pickleball and padel players.',
-    coverImage: '/images/pickleball-padel/pickleball-padel-01.webp',
+    coverImage: '/images/pickleball-padel/pickleball-padel-02.webp',
     stats: ['Custom face material & core thickness', 'Player-level grip & edge options', 'Balls, covers & carry sets'],
     items: [],
   },
