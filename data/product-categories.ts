@@ -57,7 +57,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'From World Cup-standard match balls to training footballs, with FIFA-approved manufacturing capability.',
     description:
       'We manufacture match, training, and promotional balls across soccer, basketball, American football, and volleyball formats, using hybrid, thermo-bonded, and hand-stitched constructions.',
-    coverImage: '/images/footballs/f6.webp',
+    coverImage: '/images/footballs/F6.webp',
     stats: ['FIFA-standard test capability', 'Thermo-bonded & hand-stitched builds', 'High-air-retention bladders'],
     items: [
       {
