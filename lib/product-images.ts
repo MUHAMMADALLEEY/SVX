@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 export const CATEGORY_SLUGS = [
-  't-shirts',
+  'apparel',
   'socks',
   'footballs',
   'bags',
@@ -15,7 +15,7 @@ export type CategorySlug = typeof CATEGORY_SLUGS[number];
 const IMAGE_FILE_PATTERN = /\.(png|jpe?g|webp|svg|avif)$/i;
 
 const CATALOGUE_IMAGE_DIRECTORIES: Partial<Record<CategorySlug, string>> = {
-  't-shirts': 'tshirts',
+  apparel: 'Apparel',
   socks: 'socks',
   footballs: 'footballs',
   bags: 'bags',

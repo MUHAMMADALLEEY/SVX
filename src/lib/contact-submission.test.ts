@@ -6,6 +6,7 @@ const validSubmission = {
   email: "jordan@example.com",
   company: "Northside FC",
   productInterest: "Footballs",
+  productName: "Professional",
   message: "We would like to discuss a custom match-ball programme for next season.",
   website: "",
 };
@@ -16,7 +17,7 @@ describe("parseContactSubmission", () => {
 
     expect(result).toMatchObject({
       success: true,
-      data: { name: "Jordan Smith", email: "jordan@example.com", productInterest: "Footballs" },
+      data: { name: "Jordan Smith", email: "jordan@example.com", productInterest: "Footballs", productName: "Professional" },
     });
   });
 

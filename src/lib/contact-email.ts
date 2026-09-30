@@ -19,6 +19,7 @@ function detailRow(label: string, value: string) {
 
 export function createContactNotificationEmail(submission: ContactSubmission, submittedAt: Date) {
   const company = submission.company || "Not provided";
+  const productName = submission.productName || "Not specified";
   const quantity = submission.quantity || "Not specified";
   const market = submission.market || "Not specified";
   const message = escapeHtml(submission.message).replaceAll("\n", "<br />");
@@ -38,6 +39,7 @@ export function createContactNotificationEmail(submission: ContactSubmission, su
             ${detailRow("Email", submission.email)}
             ${detailRow("Company", company)}
             ${detailRow("Product Category", submission.productInterest)}
+            ${detailRow("Selected Sub-category", productName)}
             ${detailRow("Quantity", quantity)}
             ${detailRow("Destination Market", market)}
             ${detailRow("Submitted At", submittedAt.toUTCString())}

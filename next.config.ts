@@ -26,6 +26,15 @@ const nextConfig: NextConfig = {
   // exists higher in the local filesystem.
   outputFileTracingRoot: path.join(__dirname),
   transpilePackages: ['motion'],
+  async redirects() {
+    return [
+      {
+        source: '/products/t-shirts',
+        destination: '/products/apparel',
+        permanent: true,
+      },
+    ];
+  },
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
     // Do not modify—file watching is disabled to prevent flickering during agent edits.

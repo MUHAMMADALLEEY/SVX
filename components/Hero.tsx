@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { openContactBrief } from '@/components/ContactBriefModal';
 
 const slides = [
   {
@@ -25,8 +24,8 @@ const slides = [
   },
   {
     src: '/assets/hero-tshirt-v2.png',
-    alt: 'SVX Sportswear T-shirt',
-    label: 'Show T-shirts',
+    alt: 'SVX performance apparel',
+    label: 'Show apparel',
     className: 'garment-slide',
   },
 ];
@@ -99,15 +98,15 @@ export default function Hero() {
           <br />
           MEETS THE
           <br />
-          <i>DIGITAL SUPPLY CHAIN.</i>
+          <i>DIGITAL SUPPLY CHAIN</i>
         </h1>
         <p>
           One commercial team connecting buyer ambition to capable factories,
           controlled production, digital visibility and retail-ready delivery.
         </p>
         <div className="hero-actions">
-          <a className="cta" href="#contact" onClick={(event) => { event.preventDefault(); openContactBrief(); }}>
-            BUILD A PROGRAMME <span>↗</span>
+          <a className="cta" href="#brands">
+            BRANDS <span>↗</span>
           </a>
           <a className="text-link" href="#network">
             EXPLORE THE NETWORK ↓

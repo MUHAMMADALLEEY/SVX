@@ -151,11 +151,11 @@ export default function OrbitSection() {
       <div className="orbit-copy">
         <p className="eyebrow">THE SVX VALUE LOOP</p>
         <h2>
-          SUPPLY ECO-SYSTEM
+          ECO-FRIENDLY YARNS
           <br />
-          MEETS DIGITAL
+          RECYCLED MATERIALS
           <br />
-          SUPPLY CHAIN.
+          RESPONSIBLE SUPPLY
         </h2>
         <p>
           Every stage informs the next. Buyer requirements stay visible from

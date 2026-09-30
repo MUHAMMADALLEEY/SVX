@@ -9,6 +9,7 @@ describe("createContactNotificationEmail", () => {
         email: "jordan@example.com",
         company: "Northside FC",
         productInterest: "Footballs",
+        productName: "Professional <Match>",
         message: "Please use <strong>our brand</strong> on the ball.",
         website: "",
       },
@@ -17,6 +18,7 @@ describe("createContactNotificationEmail", () => {
 
     expect(html).toContain("New Manufacturing Brief: Footballs");
     expect(html).toContain("jordan@example.com");
+    expect(html).toContain("Professional &lt;Match&gt;");
     expect(html).toContain("&lt;strong&gt;our brand&lt;/strong&gt;");
   });
 });

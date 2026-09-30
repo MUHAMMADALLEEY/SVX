@@ -20,9 +20,11 @@ export default function Home() {
         <section className="intro">
           <p className="eyebrow">BUILT FOR BUYERS</p>
           <h2>
-            GLOBAL THINKING.
+            MANFACTURE ECO SYSTEM
             <br />
-            FACTORY-LEVEL CONTROL.
+            MEETS THE DIGITAL
+            <br />
+            SUPPLY CHAIN
           </h2>
           <p>
             SVX supports established brands, growing labels, retailers,
@@ -44,7 +46,7 @@ export default function Home() {
             </h2>
             <p>
               Own-label, private-label, promotional and licensed-style
-              programmes developed around the buyer’s standard—not a fixed
+              programmes developed around the buyer’s standard not a fixed
               catalogue.
             </p>
           </div>
@@ -58,7 +60,7 @@ export default function Home() {
               className="w-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="image-tag">SVX PRODUCT LAB</div>
+            <div className="image-tag">SVX PRODUCT LAB / 2026</div>
           </div>
 
           <div className="category-grid">
@@ -86,9 +88,9 @@ export default function Home() {
           <div className="buyer-intro">
             <p className="eyebrow">CUSTOMER FIT</p>
             <h2>
-              DIFFERENT BUYERS.
+              DIFFERENT NEEDS.
               <br />
-              ONE STANDARD.
+              ONE ACCOUNTABLE PARTNER.
             </h2>
             <p>
               We understand that a supermarket programme, specialist brand and
@@ -124,17 +126,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="proof">
+        {/* <section className="proof">
           <div className="proof-quote">
             <span>“</span>
             <h2>
-              WE SPEAK
+              EXPERIENCED TEAM
               <br />
-              BUYER.
+              GLOBAL NETWORK
               <br />
-              WE SPEAK
-              <br />
-              FACTORY.
+              DELIVERED TO YOUR DOOR
             </h2>
           </div>
 
@@ -170,7 +170,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="process" id="process">
           <div className="section-head">
@@ -220,7 +220,7 @@ export default function Home() {
           </ol>
         </section>
 
-        <section className="contact" id="contact">
+        {/* <section className="contact" id="contact">
           <p className="eyebrow">A BETTER BRIEF STARTS HERE</p>
           <h2>
             WHAT ARE YOU
@@ -234,6 +234,49 @@ export default function Home() {
           <ContactBriefButton className="cta light">
             SEND YOUR BRIEF <span>↗</span>
           </ContactBriefButton>
+        </section> */}
+
+        <section className="brand-wall" id="brands">
+          <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>
+          <h2>25 LEADING NAMES</h2>
+          <div
+            className="brand-logo-grid"
+            aria-label="Brands and retailers supported by the team's experience"
+          >
+            <span>Adidas</span>
+            <span>Reebok</span>
+            <span>STANCE</span>
+            <span>FILA</span>
+            <span>Kappa</span>
+            <span>UMBRO</span>
+            <span>Ellesse</span>
+            <span>EVERLAST</span>
+            <span>KARRIMOR</span>
+            <span>SONDICO</span>
+            <span>JACK WILLS</span>
+            <span>NO FEAR</span>
+            <span>DKNY</span>
+            <span>WRANGLER</span>
+            <span>REAL MADRID</span>
+            <span>
+              NATIONAL
+              <br />
+              GEOGRAPHIC
+            </span>
+            <span>RIP CURL</span>
+            <span>Champion</span>
+            <span>STARTER</span>
+            <span>
+              EMPORIO
+              <br />
+              ARMANI
+            </span>
+            <span>HARLEY-DAVIDSON</span>
+            <span>PRIMARK</span>
+            <span>SPRINTER</span>
+            <span>JD SPORTS</span>
+            <span>SPORTS DIRECT</span>
+          </div>
         </section>
       </main>
 

@@ -31,7 +31,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Performance, dress, lifestyle, workwear, medical, football and complete team-sock programmes.',
     description:
       'From custom team and technical sports socks to multi-pack retail programs, our sock manufacturing covers specialized yarns, seamless toe linking, graduated compression, and precision jacquard branding.',
-    coverImage: '/products/socks/featured-01.webp',
+    coverImage: '/images/socks/S24.webp',
     stats: ['Technical & compression options', 'Custom knitted logos & patterns', 'Retail-ready multi-pack packaging'],
     items: [
       {
@@ -57,7 +57,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'From World Cup-standard match balls to training footballs, with FIFA-approved manufacturing capability.',
     description:
       'We manufacture match, training, and promotional balls across soccer, basketball, American football, and volleyball formats, using hybrid, thermo-bonded, and hand-stitched constructions.',
-    coverImage: '/products/footballs/featured-01.webp',
+    coverImage: '/images/footballs/F3.webp',
     stats: ['FIFA-standard test capability', 'Thermo-bonded & hand-stitched builds', 'High-air-retention bladders'],
     items: [
       {
@@ -84,7 +84,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     subtitle: 'Backpacks, duffles, travel, team, school and technical carry solutions.',
     description:
       'Engineered backpacks, waist packs, and sports carry bags built from water-repellent PU-coated 600D polyester Oxford, featuring reinforced stress points, ergonomic padding, and custom hardware.',
-    coverImage: '/products/bags/featured-01.webp',
+    coverImage: '/images/bags/B1.webp',
     stats: ['600D water-repellent Oxford', 'Custom hardware & contrast zips', 'Full digital print & embroidery'],
     items: [
       {
@@ -106,18 +106,18 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     ],
   },
   {
-    slug: 't-shirts',
-    title: 'T-SHIRTS',
-    subtitle: 'Performance, cotton, sublimated, and heavyweight custom T-shirt programmes.',
+    slug: 'apparel',
+    title: 'APPAREL',
+    subtitle: 'Performance teamwear, lifestyle, workwear and home textiles developed around every brief.',
     description:
-      'Comprehensive apparel manufacturing for brand collections, training teams, and retail stores. Capabilities include cut-and-sew paneling, high-breathability performance interlock, soft combed cotton, and full-surface sublimation.',
-    coverImage: '/products/t-shirts/featured-01.webp',
-    stats: ['Technical moisture-wicking interlock', 'Combed cotton & heavyweight jerseys', 'Sublimation, screen print & silicone heat transfer'],
+      'From performance teamwear to lifestyle, workwear and home textiles, SVX develops fit, fabric, trims, graphics and packaging around every customer brief.',
+    coverImage: '/images/Apparel/A8.webp',
+    stats: ['13 product categories', 'Custom fit, fabric and trims', 'Retail-ready branding and packaging'],
     items: [
       {
         id: 'tshirt-svx-primary',
         title: 'SVX Panelled Athletic Training Tee',
-        image: '/products/t-shirts/featured-01.webp',
+        image: '/images/Apparel/A8.webp',
         category: 'Performance',
         specs: ['Breathable mesh side panels', 'Contrast raglan seam', 'Quick-dry moisture management'],
         alt: 'SVX Panelled Athletic Training Tee',

@@ -7,6 +7,12 @@ import { openContactBrief } from '@/components/ContactBriefModal';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+
+  function closeNavigation() {
+    setMenuOpen(false);
+    setProductsOpen(false);
+  }
 
   return (
     <header className="fixed z-30">
@@ -24,28 +30,40 @@ export default function Header() {
       >
         <a
           href="/#network"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Network
         </a>
-        <a
-          href="/#products"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#4e9dff] transition-colors py-1"
-        >
-          Products
-        </a>
+        <div className={`nav-product-menu${productsOpen ? ' is-open' : ''}`}>
+          <button
+            type="button"
+            className="nav-products-trigger"
+            aria-expanded={productsOpen}
+            aria-controls="product-range-menu"
+            onClick={() => setProductsOpen((open) => !open)}
+          >
+            Products <span aria-hidden="true">⌄</span>
+          </button>
+          <div id="product-range-menu" className="nav-product-dropdown">
+            <p>Product ranges</p>
+            <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>24 specialist categories</span></Link>
+            <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>13 carry solutions</span></Link>
+            <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>8 purpose-built ranges</span></Link>
+            <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>
+            <a className="nav-product-all" href="/#products" onClick={closeNavigation}>View all products <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
         <a
           href="/#buyers"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Buyers
         </a>
         <a
           href="/#process"
-          onClick={() => setMenuOpen(false)}
+          onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Process
@@ -54,7 +72,7 @@ export default function Header() {
           href="#contact"
           onClick={(event) => {
             event.preventDefault();
-            setMenuOpen(false);
+            closeNavigation();
             openContactBrief();
           }}
           className="hover:text-[#4e9dff] transition-colors py-1"

@@ -2,7 +2,7 @@ export const contactProductOptions = [
   "Socks",
   "Footballs",
   "Bags",
-  "T-Shirts",
+  "Apparel",
   "Sports Products",
   "Accessories",
   "Multiple products",
@@ -14,6 +14,7 @@ export type ContactSubmission = {
   email: string;
   company?: string;
   productInterest: (typeof contactProductOptions)[number];
+  productName?: string;
   quantity?: string;
   market?: string;
   message: string;
@@ -47,6 +48,7 @@ export function parseContactSubmission(input: unknown): ParseResult {
   const email = normalizeSingleLine(getString(input.email)).toLowerCase();
   const company = normalizeSingleLine(getString(input.company));
   const productInterest = getString(input.productInterest);
+  const productName = normalizeSingleLine(getString(input.productName));
   const quantity = normalizeSingleLine(getString(input.quantity));
   const market = normalizeSingleLine(getString(input.market));
   const message = getString(input.message);
@@ -56,6 +58,7 @@ export function parseContactSubmission(input: unknown): ParseResult {
   if (name.length < 2 || name.length > 120) errors.push("Enter a name between 2 and 120 characters.");
   if (!emailPattern.test(email) || email.length > 254) errors.push("Enter a valid email address.");
   if (company.length > 120) errors.push("Company name must be 120 characters or fewer.");
+  if (productName.length > 160) errors.push("Selected sub-category must be 160 characters or fewer.");
   if (quantity.length > 100) errors.push("Quantity must be 100 characters or fewer.");
   if (market.length > 120) errors.push("Destination market must be 120 characters or fewer.");
 
@@ -75,6 +78,7 @@ export function parseContactSubmission(input: unknown): ParseResult {
       email,
       company: company || undefined,
       productInterest: productInterest as ContactSubmission["productInterest"],
+      productName: productName || undefined,
       quantity: quantity || undefined,
       market: market || undefined,
       message,
