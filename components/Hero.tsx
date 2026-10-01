@@ -106,7 +106,7 @@ export default function Hero() {
         </p>
         <div className="hero-actions">
           <a className="cta" href="#brands">
-            BRANDS <span>↗</span>
+            BRANDS
           </a>
           <a className="text-link" href="#network">
             EXPLORE THE NETWORK ↓
