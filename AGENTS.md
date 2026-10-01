@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This is a Next.js App Router website for SportsVentureX. Route entry points and API handlers live in `src/app/` (for example, `src/app/api/contact/route.ts`). Reusable UI is organized by purpose in `src/components/`: page sections, layout, brand, and generic `ui` primitives. Put shared business logic in `src/lib/`, content in `src/data/`, and shared TypeScript types in `src/types/`. Static product images belong in `public/products/`. Keep configuration at the repository root; deployment and CI workflows are in `.github/workflows/`.
+This is a Next.js App Router website for SportsVentureX. Route entry points and API handlers live in `app/` (for example, `app/api/contact/route.ts`). Reusable UI lives in `components/`. Put shared business logic in `lib/`, content in `data/`, and shared TypeScript types in `types/`. Static product images belong in `public/products/`. Keep configuration at the repository root; deployment and CI workflows are in `.github/workflows/`.
 
 ## Build, Test, and Development Commands
 
@@ -17,11 +17,11 @@ Before opening a pull request, run `npm test`, `npx tsc --noEmit`, and `npm run 
 
 ## Coding Style & Naming Conventions
 
-Use TypeScript with strict types and the `@/` alias for imports from `src` (for example, `@/lib/contact-email`). Follow the existing two-space indentation, double quotes, and trailing-comma style. Name React components and context files in PascalCase (`ContactForm.tsx`, `ThemeContext.tsx`); use kebab-case for route and utility filenames where appropriate. Keep components focused and place global styling in `src/app/globals.css`; use Tailwind utility classes for component styling. No lint script is currently configured, so preserve the surrounding file’s formatting.
+Use TypeScript with strict types and the `@/` alias for imports from the repository root (for example, `@/lib/contact-email`). Preserve each file's surrounding formatting. Name React components in PascalCase (`ContactBriefModal.tsx`); use kebab-case for route and utility filenames where appropriate. Keep components focused and place global styling in `app/globals.css`; use Tailwind utility classes for component styling.
 
 ## Testing Guidelines
 
-Tests use Vitest in the Node environment. Co-locate unit tests with the module they cover and use `*.test.ts` names, such as `src/lib/contact-submission.test.ts`. Cover successful and invalid inputs, especially for validation, HTML escaping, and API-related logic. Do not lower existing coverage expectations by removing boundary-case tests.
+Tests use Vitest in the Node environment. Co-locate unit tests with the module they cover and use `*.test.ts` names, such as `lib/contact-submission.test.ts`. Cover successful and invalid inputs, especially for validation, HTML escaping, and API-related logic. Do not lower existing coverage expectations by removing boundary-case tests.
 
 ## Commit & Pull Request Guidelines
 

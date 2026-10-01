@@ -413,6 +413,9 @@ nav a:hover {
 }
 
 .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -1618,8 +1621,8 @@ footer .footer-email:hover {
     font-size: 1rem;
   }
   .hero {
-    height: min(860px, 100svh);
-    min-height: 740px;
+    height: auto;
+    min-height: 100svh;
   }
   .hero-slides .hero-bg {
     object-position: 62% center;
@@ -1638,7 +1641,7 @@ footer .footer-email:hover {
       linear-gradient(0deg, #070a10, transparent 55%);
   }
   .hero-copy {
-    padding: 112px 20px 230px;
+    padding: 112px 20px 32px;
   }
   .hero .eyebrow {
     font-size: 0.72rem;
@@ -1666,27 +1669,38 @@ footer .footer-email:hover {
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
-    gap: 18px;
+    width: min(100%, 320px);
+    gap: 10px;
     margin-top: 25px;
   }
   .hero-actions .cta {
     width: 100%;
-    max-width: 320px;
+    max-width: none;
     padding: 16px 18px;
   }
   .text-link {
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 2px;
     font-size: 0.76rem;
   }
   .slide-dots {
+    position: relative;
     right: auto;
-    left: 20px;
-    bottom: 188px;
+    bottom: auto;
+    left: auto;
+    margin: 0 20px 24px;
   }
   .slide-dots button {
     width: 38px;
     height: 5px;
   }
   .hero-proof {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
     grid-template-columns: repeat(2, 1fr);
   }
   .hero-proof article {

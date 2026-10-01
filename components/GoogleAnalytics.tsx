@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Script from "next/script";
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import Script from 'next/script';
+import { usePathname } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
@@ -15,35 +15,38 @@ type GoogleAnalyticsProps = {
   measurementId?: string;
 };
 
-export function GoogleAnalytics({
+export default function GoogleAnalytics({
   measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
 }: GoogleAnalyticsProps) {
   const pathname = usePathname();
+  const isFirstPage = useRef(true);
   const analyticsId = measurementId?.trim();
-  const analyticsIdJson = JSON.stringify(analyticsId);
 
   useEffect(() => {
-    if (!analyticsId || !window.gtag) return;
+    if (isFirstPage.current) {
+      isFirstPage.current = false;
+      return;
+    }
 
-    window.gtag("config", analyticsId, {
+    window.gtag?.('config', analyticsId, {
       page_path: `${window.location.pathname}${window.location.search}`,
     });
   }, [analyticsId, pathname]);
 
-  if (!analyticsId) return null;
+  if (!analyticsId || !/^G-[A-Z0-9]+$/i.test(analyticsId)) return null;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(analyticsId)}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-          gtag("js", new Date());
-          gtag("config", ${analyticsIdJson}, { send_page_view: false });
+          gtag('js', new Date());
+          gtag('config', ${JSON.stringify(analyticsId)});
         `}
       </Script>
     </>

@@ -3,7 +3,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const rootDir = process.cwd();
-const svgPath = path.join(rootDir, "src", "app", "icon.svg");
+const svgPath = path.join(rootDir, "public", "icon.svg");
 const publicDir = path.join(rootDir, "public");
 
 if (!fs.existsSync(svgPath)) {

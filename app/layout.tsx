@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {Barlow_Condensed, Inter} from 'next/font/google';
 import ContactBriefModal from '@/components/ContactBriefModal';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import {siteConfig} from '@/lib/site-config';
 import './globals.css';
 
@@ -57,6 +58,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       >
         {children}
         <ContactBriefModal />
+        <GoogleAnalytics />
       </body>
     </html>
   );

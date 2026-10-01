@@ -31,8 +31,12 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL;
-  const recipient = 'sales@sportsventurex.com';
-  if (!apiKey || !from) {
+  const recipients = (process.env.CONTACT_NOTIFICATION_EMAIL ?? '')
+    .split(',')
+    .map((recipient) => recipient.trim())
+    .filter(Boolean);
+
+  if (!apiKey || !from || recipients.length === 0) {
     console.error('Contact form email configuration is incomplete.');
     return Response.json({ message: 'We could not send your brief. Please try again later.' }, { status: 500 });
   }
@@ -43,7 +47,7 @@ export async function POST(request: Request) {
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({
         from,
-        to: [recipient],
+        to: recipients,
         reply_to: result.data.email,
         subject: `[SVX] New brief from ${result.data.name}`,
         html: createContactNotificationEmail(result.data, new Date()),

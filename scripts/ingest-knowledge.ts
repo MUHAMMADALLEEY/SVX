@@ -1,7 +1,7 @@
 import { loadEnvConfig } from "@next/env";
 import { CohereEmbeddings } from "@langchain/cohere";
 import { createClient } from "@supabase/supabase-js";
-import { siteKnowledgeDocuments } from "../src/lib/site-knowledge";
+import { siteKnowledgeDocuments } from "../lib/site-knowledge";
 
 loadEnvConfig(process.cwd());
 

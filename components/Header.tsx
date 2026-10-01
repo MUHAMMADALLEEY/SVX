@@ -52,13 +52,13 @@ export default function Header() {
             : 'hidden md:flex'
         }`}
       >
-        <a
+        <Link
           href="/#network"
           onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Network
-        </a>
+        </Link>
         <div
           className={`nav-product-menu${productsOpen ? ' is-open' : ''}`}
           onMouseEnter={openProducts}
@@ -88,23 +88,23 @@ export default function Header() {
               <Link href="/products/cricket" onClick={closeNavigation}><strong>Cricket</strong><span>4 equipment groups</span></Link>
               <Link href="/products/pickleball-padel" onClick={closeNavigation}><strong>Pickleball &amp; Padel</strong><span>5 racket directions</span></Link> */}
             </div>
-            <a className="nav-product-all" href="/#products" onClick={closeNavigation}>View all products <span aria-hidden="true">→</span></a>
+            <Link className="nav-product-all" href="/#products" onClick={closeNavigation}>View all products <span aria-hidden="true">→</span></Link>
           </div>
         </div>
-        <a
+        <Link
           href="/#buyers"
           onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Buyers
-        </a>
-        <a
+        </Link>
+        <Link
           href="/#process"
           onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
           Process
-        </a>
+        </Link>
         <a
           href="#contact"
           onClick={(event) => {
