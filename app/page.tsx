@@ -77,7 +77,7 @@ export default function Home() {
                   kicker="SVX PRODUCT PROGRAMME"
                   title={cat.title}
                   actionLabel="EXPLORE COLLECTION"
-                  sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 1179px) 50vw, 25vw"
+                  sizes="(max-width: 620px) calc(100vw - 40px), (max-width: 1179px) 50vw, 33vw"
                 />
               </Link>
             ))}

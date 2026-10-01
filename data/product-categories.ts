@@ -2,7 +2,7 @@ import {
   bagCatalogue,
   footballCatalogue,
   sockShowcaseImages,
-  tshirtCatalogue,
+  // tshirtCatalogue,
 } from '@/data/site-content';
 
 export interface ProductCategoryItem {
@@ -105,7 +105,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
       })),
     ],
   },
-  {
+  /* {
     slug: 'apparel',
     title: 'APPAREL',
     subtitle: 'Performance teamwear, lifestyle, workwear and home textiles developed around every brief.',
@@ -171,7 +171,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     coverImage: '/images/pickleball-padel/pickleball-padel-02.webp',
     stats: ['Custom face material & core thickness', 'Player-level grip & edge options', 'Balls, covers & carry sets'],
     items: [],
-  },
+  }, */
   // {
   //   slug: 'accessories',
   //   title: 'ACCESSORIES',

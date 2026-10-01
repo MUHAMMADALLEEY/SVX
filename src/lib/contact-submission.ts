@@ -2,14 +2,6 @@ export const contactProductOptions = [
   "Socks",
   "Footballs",
   "Bags",
-  "Apparel",
-  "Sports Products",
-  "Hockey",
-  "Cricket",
-  "Pickleball & Padel Rackets",
-  "Accessories",
-  "Multiple products",
-  "Other",
 ] as const;
 
 export type ContactSubmission = {

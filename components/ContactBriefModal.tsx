@@ -10,12 +10,6 @@ const productCategories = [
   'Socks',
   'Footballs',
   'Bags',
-  'Apparel',
-  'Sports Products',
-  'Hockey',
-  'Cricket',
-  'Pickleball & Padel Rackets',
-  'Other',
 ] as const satisfies readonly ProductCategoryName[];
 
 type ProductCategory = (typeof productCategories)[number];
@@ -90,7 +84,7 @@ export default function ContactBriefModal() {
       if (defaultProduct && categoryOptions.some((option) => option === defaultProduct)) {
         setSubcategory(defaultProduct);
         setCustomSubcategory('');
-      } else if (defaultProduct || nextCategory === 'Other') {
+      } else if (defaultProduct) {
         setSubcategory('Other');
         setCustomSubcategory(defaultProduct);
       } else {
@@ -223,7 +217,7 @@ export default function ContactBriefModal() {
                 onChange={(event) => {
                   const nextCategory = event.target.value as ProductCategory;
                   setCategory(nextCategory);
-                  setSubcategory(nextCategory === 'Other' ? 'Other' : '');
+                  setSubcategory('');
                   setCustomSubcategory('');
                 }}
                 className="h-10 rounded-md border border-white/15 bg-[#070a10] px-3 text-sm text-white outline-none focus:border-[#4e9dff]"

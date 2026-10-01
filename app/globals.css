@@ -184,7 +184,7 @@ nav a:hover {
   top: 88px;
   left: 50vw;
   display: grid;
-  width: min(900px, calc(100vw - 48px));
+  width: min(380px, calc(100vw - 48px));
   max-height: calc(100dvh - 110px);
   overflow-y: auto;
   padding: 20px;
@@ -226,7 +226,7 @@ nav a:hover {
 
 .nav-product-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -906,7 +906,7 @@ nav a:hover {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 22px;
   gap: clamp(14px, 1.35vw, 24px);
 }
@@ -1512,7 +1512,7 @@ footer .footer-email:hover {
     display: none;
   }
   .nav-product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
   .nav-product-grid > a {
     min-height: 76px;
