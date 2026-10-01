@@ -2,6 +2,14 @@
   "name": "ai-studio-applet",
   "version": "0.1.0",
   "private": true,
+  "allowScripts": {
+    "@google/genai@2.24.0": false,
+    "@tailwindcss/oxide@4.1.11": true,
+    "esbuild@0.28.2": true,
+    "protobufjs@7.6.6": false,
+    "re2@1.27.0": true,
+    "unrs-resolver@1.12.2": true
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

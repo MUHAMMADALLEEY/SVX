@@ -55,12 +55,11 @@
 .hero h1 span { display: block; color: transparent; -webkit-text-stroke: 2px rgba(247, 249, 252, .94); }
 .heroCopy { position: relative; z-index: 1; max-width: 650px; margin: 30px 0 0; color: #c0c9d7; font-size: 15px; line-height: 1.7; }
 
-.stats { position: relative; z-index: 1; display: flex; max-width: 680px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .26); }
-.stats div { display: flex; gap: 9px; align-items: baseline; padding-right: 30px; }
-.stats div { min-width: 0; }
-.stats div + div { padding-left: 30px; border-left: 1px solid rgba(255, 255, 255, .16); }
-.stats dt { color: var(--bag-orange); font-size: 24px; font-weight: 900; }
-.stats dd { margin: 0; color: #e9edf4; font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; max-width: 680px; margin: 34px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .26); }
+.stats div { display: flex; flex-direction: column; gap: 5px; align-items: center; box-sizing: border-box; min-width: 0; width: 100%; padding: 8px 20px; text-align: center; }
+.stats div + div { border-left: 1px solid rgba(255, 255, 255, .16); }
+.stats dt { color: var(--bag-orange); font-size: 24px; font-weight: 900; text-align: center; }
+.stats dd { margin: 0; overflow-wrap: anywhere; color: #e9edf4; font-size: 9px; font-weight: 800; line-height: 1.35; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 
 .catalogue { padding: 92px 0 0; }
 .catalogueIntro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .62fr); gap: 70px; align-items: end; margin-bottom: 52px; }
@@ -103,11 +102,9 @@
   .hero h1 { font-size: clamp(48px, 15.5vw, 70px); }
   .hero h1 span { -webkit-text-stroke-width: 1px; }
   .heroCopy { margin-top: 24px; font-size: 14px; }
-  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
-  .stats div { display: grid; gap: 2px; padding-right: 10px; }
-  .stats div + div { padding-left: 12px; }
+  .stats div { padding: 8px 6px; }
   .stats dt { font-size: 21px; }
-  .stats dd { overflow-wrap: anywhere; font-size: 7px; line-height: 1.35; }
+  .stats dd { font-size: 7px; }
   .catalogue { padding-top: 68px; }
   .catalogueIntro { grid-template-columns: 1fr; gap: 28px; margin-bottom: 38px; }
   .catalogueIntro h2, .process h2 { font-size: clamp(50px, 15vw, 68px); }
@@ -123,10 +120,9 @@
 @media (max-width: 380px) {
   .shell { width: calc(100% - 20px); }
   .hero h1 { font-size: clamp(42px, 14vw, 56px); }
-  .stats { grid-template-columns: 1fr; }
-  .stats div { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; padding: 9px 0; }
-  .stats div + div { padding-left: 0; border-top: 1px solid rgba(255, 255, 255, .16); border-left: 0; }
-  .stats dd { font-size: 8px; }
+  .stats div { padding-right: 4px; padding-left: 4px; }
+  .stats div + div { padding-left: 4px; }
+  .stats dd { font-size: 7px; }
   .cardAction { right: 12px; bottom: 12px; left: 12px; padding: 11px 12px; font-size: 9px; }
 }
 
