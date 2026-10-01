@@ -205,11 +205,11 @@ export default function ContactBriefModal() {
             <button type="button" onClick={closeModal} className="mt-7 rounded-md bg-white px-5 py-3 text-sm font-extrabold tracking-wide text-[#070a10]">CLOSE</button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <form onSubmit={handleSubmit} className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2">
             <Field label="Full name" name="name" autoComplete="name" required maxLength={120} placeholder="Your name" />
             <Field label="Work email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder="you@company.com" />
             <Field label="Company name" name="company" autoComplete="organization" maxLength={120} placeholder="Company (optional)" />
-            <label className="grid gap-1.5 text-sm font-semibold text-white">Product category
+            <label className="grid min-w-0 gap-1.5 text-sm font-semibold text-white">Product category
               <select
                 name="productInterest"
                 required
@@ -220,13 +220,13 @@ export default function ContactBriefModal() {
                   setSubcategory('');
                   setCustomSubcategory('');
                 }}
-                className="h-10 rounded-md border border-white/15 bg-[#070a10] px-3 text-sm text-white outline-none focus:border-[#4e9dff]"
+                className="h-10 w-full min-w-0 max-w-full rounded-md border border-white/15 bg-[#070a10] px-3 text-sm text-white outline-none focus:border-[#4e9dff]"
               >
                 <option value="" disabled>Select a category</option>
                 {productCategories.map((option) => <option key={option} value={option}>{option}</option>)}
               </select>
             </label>
-            <label className="grid gap-1.5 text-sm font-semibold text-white">Selected sub-category
+            <label className="grid min-w-0 gap-1.5 text-sm font-semibold text-white">Selected sub-category
               <select
                 required
                 disabled={!category}
@@ -235,7 +235,7 @@ export default function ContactBriefModal() {
                   setSubcategory(event.target.value);
                   if (event.target.value !== 'Other') setCustomSubcategory('');
                 }}
-                className="h-10 rounded-md border border-white/15 bg-[#070a10] px-3 text-sm text-white outline-none disabled:cursor-not-allowed disabled:opacity-45 focus:border-[#4e9dff]"
+                className="h-10 w-full min-w-0 max-w-full rounded-md border border-white/15 bg-[#070a10] px-3 text-sm text-white outline-none disabled:cursor-not-allowed disabled:opacity-45 focus:border-[#4e9dff]"
               >
                 <option value="" disabled>{category ? 'Select a sub-category' : 'Choose a product category first'}</option>
                 {category && PRODUCT_SUBCATEGORIES[category].map((option) => <option key={option} value={option}>{option}</option>)}
@@ -259,8 +259,8 @@ export default function ContactBriefModal() {
             )}
             <Field label="Approximate quantity" name="quantity" maxLength={100} placeholder="e.g. 500 units" />
             <Field label="Destination market" name="market" maxLength={120} placeholder="e.g. United Kingdom" />
-            <label className="grid gap-1.5 text-sm font-semibold text-white sm:col-span-2">Specification details / requirements
-              <textarea name="message" rows={3} required minLength={5} maxLength={4000} placeholder="Materials, product details, branding, packaging, or any key requirements." className="min-h-24 resize-y rounded-md border border-white/15 bg-[#070a10] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#788393] focus:border-[#4e9dff]" />
+            <label className="grid min-w-0 gap-1.5 text-sm font-semibold text-white sm:col-span-2">Specification details / requirements
+              <textarea name="message" rows={3} required minLength={5} maxLength={4000} placeholder="Materials, product details, branding, packaging, or any key requirements." className="min-h-24 w-full min-w-0 max-w-full resize-y rounded-md border border-white/15 bg-[#070a10] px-3 py-2.5 text-sm text-white outline-none placeholder:text-[#788393] focus:border-[#4e9dff]" />
             </label>
             <label className="hidden" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
             {status === 'error' && <p className="rounded-md border border-red-400/40 bg-red-500/10 px-3 py-2 text-sm text-red-100 sm:col-span-2" role="alert">{message}</p>}
@@ -278,5 +278,5 @@ export default function ContactBriefModal() {
 }
 
 function Field({ label, ...props }: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
-  return <label className="grid gap-1.5 text-sm font-semibold text-white">{label}<input {...props} className="h-10 rounded-md border border-white/15 bg-[#070a10] px-3 text-sm font-normal text-white outline-none placeholder:text-[#788393] focus:border-[#4e9dff]" /></label>;
+  return <label className="grid min-w-0 gap-1.5 text-sm font-semibold text-white">{label}<input {...props} className="h-10 w-full min-w-0 max-w-full rounded-md border border-white/15 bg-[#070a10] px-3 text-sm font-normal text-white outline-none placeholder:text-[#788393] focus:border-[#4e9dff]" /></label>;
 }
