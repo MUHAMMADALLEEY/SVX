@@ -57,6 +57,7 @@ export default function Home() {
               alt="SVX product collection"
               width={1600}
               height={900}
+              sizes="(max-width: 640px) calc(100vw - 40px), 92vw"
               className="w-full object-cover"
               referrerPolicy="no-referrer"
             />

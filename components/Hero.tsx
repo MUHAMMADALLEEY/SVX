@@ -80,6 +80,7 @@ export default function Hero() {
               alt={slide.alt}
               fill
               priority={index === 0}
+              sizes="100vw"
               className={`object-cover ${
                 index === 3 ? 'object-[100%_center]' : 'object-center'
               }`}
