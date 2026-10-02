@@ -238,12 +238,11 @@ export default function Home() {
 
         <section className="brand-wall" id="brands">
           <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>
-          <h2>25 LEADING NAMES</h2>
+          <h2>22 LEADING NAMES</h2>
           <div
             className="brand-logo-grid"
             aria-label="Brands and retailers supported by the team's experience"
           >
-            <span>Adidas</span>
             <span>Reebok</span>
             <span>STANCE</span>
             <span>FILA</span>
@@ -253,10 +252,8 @@ export default function Home() {
             <span>EVERLAST</span>
             <span>KARRIMOR</span>
             <span>SONDICO</span>
-            <span>JACK WILLS</span>
             <span>NO FEAR</span>
             <span>DKNY</span>
-            <span>WRANGLER</span>
             <span>REAL MADRID</span>
             <span>
               NATIONAL
@@ -271,10 +268,10 @@ export default function Home() {
               <br />
               ARMANI
             </span>
-            <span>HARLEY-DAVIDSON</span>
             <span>PRIMARK</span>
-            <span>SPRINTER</span>
-            <span>JD SPORTS</span>
+            <span>SPRINTER (JD)sp</span>
+            <span>LPP</span>
+            <span>K-Ways</span>
             <span>SPORTS DIRECT</span>
           </div>
         </section>

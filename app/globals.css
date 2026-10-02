@@ -1408,32 +1408,33 @@ nav a:hover {
   font: 900 clamp(0.72rem, 1.1vw, 1.1rem) / 1.05 Arial, sans-serif;
 }
 
-.brand-logo-grid span:nth-child(2),
-.brand-logo-grid span:nth-child(7),
-.brand-logo-grid span:nth-child(9),
+.brand-logo-grid span:nth-child(1),
+.brand-logo-grid span:nth-child(6),
+.brand-logo-grid span:nth-child(8),
+.brand-logo-grid span:nth-child(16),
 .brand-logo-grid span:nth-child(19),
-.brand-logo-grid span:nth-child(23) {
+.brand-logo-grid span:nth-child(20) {
   color: #e32935;
 }
 
-.brand-logo-grid span:nth-child(4),
-.brand-logo-grid span:nth-child(10),
+.brand-logo-grid span:nth-child(3),
+.brand-logo-grid span:nth-child(9),
+.brand-logo-grid span:nth-child(15),
 .brand-logo-grid span:nth-child(18),
-.brand-logo-grid span:nth-child(24),
-.brand-logo-grid span:nth-child(25) {
+.brand-logo-grid span:nth-child(22) {
   color: #17459b;
 }
 
-.brand-logo-grid span:nth-child(15) {
+.brand-logo-grid span:nth-child(12) {
   color: #c9a137;
 }
 
-.brand-logo-grid span:nth-child(22) {
+.brand-logo-grid span:nth-child(14) {
   color: #51a7d3;
 }
 
-.brand-logo-grid span:nth-child(16),
-.brand-logo-grid span:nth-child(20) {
+.brand-logo-grid span:nth-child(13),
+.brand-logo-grid span:nth-child(17) {
   font-size: 0.72rem;
 }
 
