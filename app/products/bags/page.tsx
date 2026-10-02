@@ -24,6 +24,11 @@ const bagCategories: BagCategory[] = [
   { title: 'Hydration Backpacks', label: 'Running', image: '/images/bags/B10.webp', description: 'Lightweight close-fitting packs for running, endurance and outdoor training.', features: ['Front hydration pockets', 'Breathable mesh harness', 'Reflective detail options'] },
   { title: 'Travel Carry-Ons', label: 'Travel', image: '/images/bags/B11.webp', description: 'Cabin-ready travel packs with secure, efficient organisation for every journey.', features: ['Clamshell access', 'Compression straps', 'Luggage pass-through'] },
   { title: 'Crossbody Bags', label: 'Accessory', image: '/images/bags/B13.webp', description: 'Compact everyday bags for phones, documents and essential personal items.', features: ['Adjustable shoulder strap', 'Secure zipped pockets', 'Retail colour programmes'] },
+  { title: 'Technical Waist Packs', label: 'Waist', image: '/images/bags/B14.webp', description: 'Low-profile waist packs that keep essentials secure and accessible during travel, training and daily use.', features: ['Padded breathable belt', 'Secure dual-zip storage', 'Adjustable quick-release fit'] },
+  { title: 'Anti-Theft Sling Bags', label: 'Sling', image: '/images/bags/B15.webp', description: 'Streamlined crossbody sling bags with organised protection for technology and everyday essentials.', features: ['Padded device compartment', 'Body-side secure access', 'Ambidextrous adjustable strap'] },
+  { title: 'Multi-Pocket Running Belts', label: 'Performance', image: '/images/bags/B16.webp', description: 'Technical running belts engineered for stable storage, ventilation and convenient device access.', features: ['Multiple zipped compartments', 'Breathable mesh support', 'Reflective performance details'] },
+  { title: 'Garment Duffle Bags', label: 'Business Travel', image: '/images/bags/B17.webp', description: 'Convertible garment duffles that combine crease-conscious clothing storage with organised travel capacity.', features: ['Integrated garment section', 'Separate footwear compartment', 'Cabin-ready carry system'] },
+  { title: 'Waterproof Phone Sling Bags', label: 'Outdoor', image: '/images/bags/B18.webp', description: 'Compact weather-ready sling bags with a visible phone compartment for cycling, travel and outdoor activity.', features: ['Touch-compatible phone window', 'Water-resistant construction', 'Ventilated adjustable strap'] },
 ];
 
 const developmentSteps = [
@@ -36,7 +41,7 @@ const developmentSteps = [
 
 export const metadata: Metadata = {
   title: 'Custom Bags Product Development | SVX',
-  description: 'Explore 13 custom SVX bag categories for football, training, school, teamwear, business, running and travel programmes.',
+  description: 'Explore 18 custom SVX bag categories for football, training, school, teamwear, business, running and travel programmes.',
   alternates: { canonical: '/products/bags' },
 };
 
@@ -50,7 +55,7 @@ export default function BagsPage() {
       headlineAccent="Perform better."
       heroCopy="From team football equipment to technical travel and performance packs, SVX develops construction, materials, organisation, branding and packaging around each buyer's market."
       stats={[
-        { value: '13', label: 'Product categories' },
+        { value: '18', label: 'Product categories' },
         { value: '30', label: 'Years of experience' },
         { value: '1', label: 'Accountable partner' },
       ]}

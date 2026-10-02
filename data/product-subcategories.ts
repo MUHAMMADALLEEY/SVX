@@ -50,6 +50,11 @@ export const PRODUCT_SUBCATEGORIES = {
     "Hydration Backpacks",
     "Travel Carry-Ons",
     "Crossbody Bags",
+    "Technical Waist Packs",
+    "Anti-Theft Sling Bags",
+    "Multi-Pocket Running Belts",
+    "Garment Duffle Bags",
+    "Waterproof Phone Sling Bags",
   ],
   Apparel: [
     "AeroGrid T-Shirt",
