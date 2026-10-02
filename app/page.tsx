@@ -238,7 +238,7 @@ export default function Home() {
 
         <section className="brand-wall" id="brands">
           <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>
-          <h2>22 LEADING NAMES</h2>
+          <h2>24 LEADING NAMES</h2>
           <div
             className="brand-logo-grid"
             aria-label="Brands and retailers supported by the team's experience"
@@ -254,7 +254,7 @@ export default function Home() {
             <span>SONDICO</span>
             <span>NO FEAR</span>
             <span>DKNY</span>
-            <span>REAL MADRID</span>
+            <span>REAL MADRID FC</span>
             <span>
               NATIONAL
               <br />
@@ -273,6 +273,8 @@ export default function Home() {
             <span>LPP</span>
             <span>K-Ways</span>
             <span>SPORTS DIRECT</span>
+            <span>BARCELONA FC</span>
+            <span>BENCH</span>
           </div>
         </section>
       </main>

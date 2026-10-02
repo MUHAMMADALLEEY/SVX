@@ -1882,9 +1882,6 @@ footer .footer-email:hover {
     min-height: 72px;
     font-size: 0.78rem;
   }
-  .brand-logo-grid span:last-child {
-    grid-column: 1 / -1;
-  }
   footer {
     align-items: center;
     flex-direction: column;
