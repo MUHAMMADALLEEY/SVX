@@ -88,6 +88,86 @@ button {
   font: inherit;
 }
 
+.custom-cursor,
+.custom-cursor-ring,
+.custom-cursor-dot {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  summary,
+  [role='button'] {
+    cursor: none !important;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  .custom-cursor-ring,
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .custom-cursor-ring {
+    width: 42px;
+    height: 42px;
+    margin: -21px 0 0 -21px;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    background: rgba(8, 109, 255, 0.08);
+    box-shadow: 0 0 26px rgba(8, 109, 255, 0.18);
+    transition: width 0.22s ease, height 0.22s ease, margin 0.22s ease,
+      border-color 0.22s ease, background 0.22s ease, opacity 0.18s ease;
+  }
+
+  .custom-cursor-dot {
+    width: 7px;
+    height: 7px;
+    margin: -3.5px 0 0 -3.5px;
+    background: var(--orange);
+    box-shadow: 0 0 14px rgba(255, 76, 24, 0.65);
+    transition: width 0.22s ease, height 0.22s ease, margin 0.22s ease,
+      background 0.22s ease, opacity 0.18s ease;
+  }
+
+  .custom-cursor-ring.is-visible,
+  .custom-cursor-dot.is-visible {
+    opacity: 1;
+  }
+
+  .custom-cursor-ring.is-interactive {
+    width: 58px;
+    height: 58px;
+    margin: -29px 0 0 -29px;
+    border-color: rgba(78, 157, 255, 0.95);
+    background: rgba(8, 109, 255, 0.18);
+  }
+
+  .custom-cursor-dot.is-interactive {
+    width: 5px;
+    height: 5px;
+    margin: -2.5px 0 0 -2.5px;
+    background: #ffffff;
+  }
+}
+
 /* Header */
 header {
   position: fixed;
@@ -328,30 +408,18 @@ nav a:hover {
   overflow: hidden;
 }
 
-.hero-slides {
+.hero-media {
   position: absolute;
   inset: 0;
+  background: #05070b;
 }
 
-.hero-slides .hero-bg {
-  position: absolute;
-  inset: 0;
+.hero-video {
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0;
-  transform: scale(1.025);
-  transition: opacity 0.9s ease, transform 7s ease;
-}
-
-.hero-slides .hero-bg.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.hero-slides .garment-slide {
-  object-position: 100% center;
 }
 
 .hero-shade {
@@ -428,29 +496,6 @@ nav a:hover {
 .text-link:hover {
   color: #4e9dff;
   border-color: #4e9dff;
-}
-
-.slide-dots {
-  position: absolute;
-  z-index: 4;
-  right: 34px;
-  bottom: 126px;
-  display: flex;
-  gap: 9px;
-}
-
-.slide-dots button {
-  width: 30px;
-  height: 4px;
-  padding: 0;
-  border: 0;
-  background: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  transition: background 0.3s ease, width 0.3s ease;
-}
-
-.slide-dots button.active {
-  background: var(--blue);
 }
 
 .hero-proof {
@@ -1535,7 +1580,7 @@ footer .footer-email:hover {
   .hero {
     height: 900px;
   }
-  .hero-bg {
+  .hero-video {
     object-position: 58% center;
   }
   .intro,
@@ -1625,12 +1670,9 @@ footer .footer-email:hover {
     height: auto;
     min-height: 100svh;
   }
-  .hero-slides .hero-bg {
+  .hero-video {
     object-position: 62% center;
     filter: saturate(0.85);
-  }
-  .hero-slides .garment-slide {
-    object-position: 88% center;
   }
   .hero-shade {
     background: linear-gradient(
@@ -1685,17 +1727,6 @@ footer .footer-email:hover {
     min-height: 44px;
     padding: 8px 2px;
     font-size: 0.76rem;
-  }
-  .slide-dots {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    margin: 0 20px 24px;
-  }
-  .slide-dots button {
-    width: 38px;
-    height: 5px;
   }
   .hero-proof {
     position: relative;
@@ -1961,10 +1992,6 @@ footer .footer-email:hover {
   }
   .reveal {
     transition: none;
-  }
-  .hero-slides .hero-bg {
-    transition: none;
-    transform: none;
   }
   .orbit-sweep,
   .eleven .node.active {
