@@ -35,6 +35,23 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*.mp4',
+        headers: [
+          {
+            key: 'Accept-Ranges',
+            value: 'bytes',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
     // Do not modify—file watching is disabled to prevent flickering during agent edits.

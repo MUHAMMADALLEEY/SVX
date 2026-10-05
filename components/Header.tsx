@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 import BrandLogo from '@/components/BrandLogo';
 import { openContactBrief } from '@/components/ContactBriefModal';
 
@@ -128,7 +129,11 @@ export default function Header() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? 'CLOSE' : 'MENU'}
+          {menuOpen ? (
+            <X aria-hidden="true" strokeWidth={2.4} />
+          ) : (
+            <Menu aria-hidden="true" strokeWidth={2.4} />
+          )}
         </button>
       </div>
     </header>
