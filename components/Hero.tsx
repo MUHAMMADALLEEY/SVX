@@ -10,33 +10,100 @@ export default function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Mobile browsers require muted and defaultMuted on the DOM element for autoplay
-    video.defaultMuted = true;
-    video.muted = true;
+    const enforceInlineMuted = () => {
+      video.defaultMuted = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.loop = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', 'true');
+      video.setAttribute('autoplay', '');
+    };
 
-    const attemptPlay = () => {
-      if (video.paused) {
-        video.play().catch(() => {
-          // Autoplay was restricted by browser policy; user interaction listeners below will resume it
-        });
+    enforceInlineMuted();
+
+    const interactionEvents = [
+      'touchstart',
+      'touchend',
+      'pointerdown',
+      'pointerup',
+      'mousedown',
+      'click',
+      'scroll',
+      'keydown',
+    ] as const;
+
+    const removeInteractionListeners = () => {
+      for (const event of interactionEvents) {
+        window.removeEventListener(event, handleInteraction);
       }
     };
 
-    attemptPlay();
+    const attemptPlay = () => {
+      enforceInlineMuted();
+      if (!video.paused && !video.ended) {
+        removeInteractionListeners();
+        return;
+      }
 
-    // In case the mobile browser defers autoplay until user interaction
-    const handleFirstInteraction = () => {
-      attemptPlay();
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            removeInteractionListeners();
+          })
+          .catch(() => {
+            // Keep listeners active until playback succeeds
+          });
+      }
     };
 
-    window.addEventListener('touchstart', handleFirstInteraction, {once: true, passive: true});
-    window.addEventListener('scroll', handleFirstInteraction, {once: true, passive: true});
-    window.addEventListener('click', handleFirstInteraction, {once: true, passive: true});
+    function handleInteraction() {
+      attemptPlay();
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        attemptPlay();
+      }
+    };
+
+    const handlePause = () => {
+      if (document.visibilityState === 'visible' && !video.ended) {
+        attemptPlay();
+      }
+    };
+
+    // 1. Attempt immediately and whenever media buffers enough frames
+    attemptPlay();
+    video.addEventListener('loadedmetadata', attemptPlay);
+    video.addEventListener('loadeddata', attemptPlay);
+    video.addEventListener('canplay', attemptPlay);
+    video.addEventListener('canplaythrough', attemptPlay);
+    video.addEventListener('pause', handlePause);
+
+    // 2. Resume when returning to tab or unlocking phone
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pageshow', attemptPlay);
+    window.addEventListener('focus', attemptPlay);
+
+    // 3. Keep gesture listeners active (do not remove until play() actually succeeds)
+    for (const event of interactionEvents) {
+      window.addEventListener(event, handleInteraction, {passive: true});
+    }
 
     return () => {
-      window.removeEventListener('touchstart', handleFirstInteraction);
-      window.removeEventListener('scroll', handleFirstInteraction);
-      window.removeEventListener('click', handleFirstInteraction);
+      video.removeEventListener('loadedmetadata', attemptPlay);
+      video.removeEventListener('loadeddata', attemptPlay);
+      video.removeEventListener('canplay', attemptPlay);
+      video.removeEventListener('canplaythrough', attemptPlay);
+      video.removeEventListener('pause', handlePause);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('pageshow', attemptPlay);
+      window.removeEventListener('focus', attemptPlay);
+      removeInteractionListeners();
     };
   }, []);
 
@@ -51,6 +118,8 @@ export default function Hero() {
           muted
           loop
           playsInline
+          disablePictureInPicture
+          disableRemotePlayback
           preload="auto"
           poster="/hero-background-poster.jpg"
         >

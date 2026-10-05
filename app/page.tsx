@@ -29,11 +29,24 @@ export default function Home() {
               RESPONSIBLE SUPPLY
             </DisplayHeading>
           </div>
-          <p>
-            SVX helps buyers turn sustainability goals into viable product
-            programmes, balancing lower-impact materials with performance,
-            compliance, price and delivery.
-          </p>
+          <div className="intro-aside">
+            {/* <p>
+              SVX helps buyers turn sustainability goals into viable product
+              programmes, balancing lower-impact materials with performance,
+              compliance, price and delivery.
+            </p> */}
+
+            <div className="sustainability-visuals" aria-label="Sustainability programme focus areas">
+              <Image
+                src="/assets/recycle-symbol.webp"
+                alt="Recycle symbol for eco-friendly yarns and recycled materials"
+                width={1200}
+                height={1200}
+                sizes="(max-width: 620px) 82vw, (max-width: 1000px) 460px, 34vw"
+                className="sustainability-image"
+              />
+            </div>
+          </div>
         </section>
 
         <OrbitSection />

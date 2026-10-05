@@ -573,12 +573,37 @@ nav a:hover {
   margin: 0 0 20px;
 }
 
-.intro > p:last-child {
+.intro-aside {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.intro-aside > p {
   max-width: 520px;
   margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.7;
+}
+
+.sustainability-visuals {
+  position: relative;
+  display: grid;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: visible;
+}
+
+.sustainability-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 0 34px rgba(11, 178, 88, 0.2));
 }
 
 /* Orbit Section */
@@ -1586,6 +1611,16 @@ footer .footer-email:hover {
   .section-head {
     grid-template-columns: 1fr;
   }
+  .intro-aside {
+    align-self: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: none;
+    padding-top: 12px;
+  }
+  .sustainability-visuals {
+    width: min(100%, 380px);
+  }
   .orbit-section {
     grid-template-columns: 1fr;
     padding-top: 100px;
@@ -1753,6 +1788,18 @@ footer .footer-email:hover {
   .buyers,
   .process {
     padding: 85px 20px;
+  }
+  .intro-aside {
+    justify-content: center;
+    padding-top: 6px;
+  }
+  .intro-aside > p {
+    max-width: 340px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .sustainability-visuals {
+    width: min(100%, 300px);
   }
   .orbit-section {
     scroll-margin-top: 74px;
