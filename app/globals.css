@@ -448,40 +448,11 @@ nav a:hover {
   object-position: center;
 }
 
-.hero-video-play {
-  position: absolute;
-  z-index: 4;
-  top: 50%;
-  right: clamp(20px, 5vw, 72px);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 12px 18px;
-  transform: translateY(-50%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 999px;
-  background: rgba(7, 10, 16, 0.72);
-  color: var(--white);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
 
-.hero-video-play:hover,
-.hero-video-play:focus-visible {
-  border-color: #4e9dff;
-  background: rgba(8, 109, 255, 0.78);
-  outline: none;
-}
 
-.hero-video-play span {
-  font-size: 0.68rem;
-}
+
+
+
 
 .hero-shade {
   position: absolute;
@@ -1707,12 +1678,7 @@ footer .footer-email:hover {
     object-position: 62% center;
     filter: saturate(0.85);
   }
-  .hero-video-play {
-    top: auto;
-    right: 20px;
-    bottom: 154px;
-    transform: none;
-  }
+  
   .hero-shade {
     background: linear-gradient(
         90deg,

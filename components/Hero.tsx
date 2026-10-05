@@ -1,60 +1,44 @@
 'use client';
 
-import {useCallback, useEffect, useRef, useState} from 'react';
+import {useEffect, useRef} from 'react';
 import DisplayHeading from '@/components/DisplayHeading';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [showPlayButton, setShowPlayButton] = useState(false);
-
-  const startPlayback = useCallback(async () => {
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    // Set both properties before play() for reliable muted autoplay in Safari.
-    video.defaultMuted = true;
-    video.muted = true;
-
-    try {
-      await video.play();
-      setShowPlayButton(false);
-    } catch {
-      // iOS can still block autoplay in Low Power Mode or by user preference.
-      setShowPlayButton(true);
-    }
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
     if (!video) return;
 
-    const updatePlayback = () => {
-      if (reducedMotion.matches) {
-        video.pause();
-        video.currentTime = 0;
-        setShowPlayButton(true);
-      } else {
-        void startPlayback();
+    // Mobile browsers require muted and defaultMuted on the DOM element for autoplay
+    video.defaultMuted = true;
+    video.muted = true;
+
+    const attemptPlay = () => {
+      if (video.paused) {
+        video.play().catch(() => {
+          // Autoplay was restricted by browser policy; user interaction listeners below will resume it
+        });
       }
     };
 
-    const handlePlaying = () => setShowPlayButton(false);
-    const handleError = () => setShowPlayButton(true);
+    attemptPlay();
 
-    updatePlayback();
-    video.addEventListener('playing', handlePlaying);
-    video.addEventListener('error', handleError);
-    reducedMotion.addEventListener('change', updatePlayback);
+    // In case the mobile browser defers autoplay until user interaction
+    const handleFirstInteraction = () => {
+      attemptPlay();
+    };
+
+    window.addEventListener('touchstart', handleFirstInteraction, {once: true, passive: true});
+    window.addEventListener('scroll', handleFirstInteraction, {once: true, passive: true});
+    window.addEventListener('click', handleFirstInteraction, {once: true, passive: true});
 
     return () => {
-      video.removeEventListener('playing', handlePlaying);
-      video.removeEventListener('error', handleError);
-      reducedMotion.removeEventListener('change', updatePlayback);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+      window.removeEventListener('scroll', handleFirstInteraction);
+      window.removeEventListener('click', handleFirstInteraction);
     };
-  }, [startPlayback]);
+  }, []);
 
   return (
     <section className="hero">
@@ -73,21 +57,10 @@ export default function Hero() {
           <source
             src="/hero-background-mobile.mp4"
             type="video/mp4"
-            media="(max-width: 620px)"
+            media="(max-width: 768px)"
           />
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
-        {showPlayButton && (
-          <button
-            className="hero-video-play"
-            type="button"
-            onClick={() => void startPlayback()}
-            aria-label="Play background video"
-          >
-            <span aria-hidden="true">&#9654;</span>
-            Play video
-          </button>
-        )}
       </div>
 
       <div className="hero-shade" />
