@@ -6,6 +6,7 @@ import OrbitSection from '@/components/OrbitSection';
 import ScrollReveal from '@/components/ScrollReveal';
 import BrandLogo from '@/components/BrandLogo';
 import { ContactBriefButton } from '@/components/ContactBriefModal';
+import DisplayHeading from '@/components/DisplayHeading';
 import ProductCardVisual from '@/components/ProductCardVisual';
 import { PRODUCT_CATEGORIES } from '@/data/product-categories';
 
@@ -18,19 +19,20 @@ export default function Home() {
         <Hero />
 
         <section className="intro">
-          <p className="eyebrow">BUILT FOR BUYERS</p>
-          <h2>
-            MANFACTURE ECO SYSTEM
-            <br />
-            MEETS THE DIGITAL
-            <br />
-            SUPPLY CHAIN
-          </h2>
+          <div className="intro-heading">
+            <p className="eyebrow">BUILT FOR BUYERS</p>
+            <DisplayHeading>
+              ECO-FRIENDLY YARNS
+              <br />
+              RECYCLED MATERIALS
+              <br />
+              RESPONSIBLE SUPPLY
+            </DisplayHeading>
+          </div>
           <p>
-            SVX supports established brands, growing labels, retailers,
-            supermarkets, clubs, schools, institutions, distributors and specialist
-            organisations—adapting the route to the customer, category and
-            commercial target.
+            SVX helps buyers turn sustainability goals into viable product
+            programmes, balancing lower-impact materials with performance,
+            compliance, price and delivery.
           </p>
         </section>
 
@@ -39,11 +41,11 @@ export default function Home() {
         <section className="products" id="products">
           <div className="section-head">
             <p className="eyebrow">PRODUCT CATEGORIES</p>
-            <h2>
+            <DisplayHeading>
               FROM SPECIALIST
               <br />
               TO STORE-READY.
-            </h2>
+            </DisplayHeading>
             <p>
               Own-label, private-label, promotional and licensed-style
               programmes developed around the buyer’s standard not a fixed
@@ -85,14 +87,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="buyers" id="buyers">
+        {/* <section className="buyers" id="buyers">
           <div className="buyer-intro">
             <p className="eyebrow">CUSTOMER FIT</p>
-            <h2>
+            <DisplayHeading>
               DIFFERENT NEEDS.
               <br />
               ONE ACCOUNTABLE PARTNER.
-            </h2>
+            </DisplayHeading>
             <p>
               We understand that a supermarket programme, specialist brand and
               institutional order each need a different commercial rhythm.
@@ -125,18 +127,18 @@ export default function Home() {
               <span>Guidance · development · scalable routes</span>
             </article>
           </div>
-        </section>
+        </section> */}
 
         {/* <section className="proof">
           <div className="proof-quote">
             <span>“</span>
-            <h2>
+            <DisplayHeading>
               EXPERIENCED TEAM
               <br />
               GLOBAL NETWORK
               <br />
               DELIVERED TO YOUR DOOR
-            </h2>
+            </DisplayHeading>
           </div>
 
           <div className="proof-body">
@@ -176,11 +178,11 @@ export default function Home() {
         <section className="process" id="process">
           <div className="section-head">
             <p className="eyebrow">A CLEAR ROUTE TO MARKET</p>
-            <h2>
+            <DisplayHeading>
               BRIEF TO
               <br />
               DELIVERY.
-            </h2>
+            </DisplayHeading>
           </div>
 
           <ol>
@@ -223,11 +225,11 @@ export default function Home() {
 
         {/* <section className="contact" id="contact">
           <p className="eyebrow">A BETTER BRIEF STARTS HERE</p>
-          <h2>
+          <DisplayHeading>
             WHAT ARE YOU
             <br />
             READY TO MAKE?
-          </h2>
+          </DisplayHeading>
           <p>
             Share the product, target price, approximate quantity, destination
             market and required date. SVX will shape the smartest route forward.
@@ -239,7 +241,7 @@ export default function Home() {
 
         <section className="brand-wall" id="brands">
           <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>
-          <h2>24 LEADING NAMES</h2>
+          <DisplayHeading variant="compact">25 LEADING NAMES</DisplayHeading>
           <div
             className="brand-logo-grid"
             aria-label="Brands and retailers supported by the team's experience"
@@ -276,6 +278,7 @@ export default function Home() {
             <span>SPORTS DIRECT</span>
             <span>BARCELONA FC</span>
             <span>BENCH</span>
+            <span>ROYAL PADEL</span>
           </div>
         </section>
       </main>

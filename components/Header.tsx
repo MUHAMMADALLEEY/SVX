@@ -92,11 +92,11 @@ export default function Header() {
           </div>
         </div>
         <Link
-          href="/#buyers"
+          href="/#brands"
           onClick={closeNavigation}
           className="hover:text-[#4e9dff] transition-colors py-1"
         >
-          Buyers
+          Brands
         </Link>
         <Link
           href="/#process"

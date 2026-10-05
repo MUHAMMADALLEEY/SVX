@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import BrandLogo from '@/components/BrandLogo';
+import DisplayHeading from '@/components/DisplayHeading';
 import type { IconType } from 'react-icons';
 import {
   FaBoxOpen,
@@ -149,14 +150,14 @@ export default function OrbitSection() {
   return (
     <section className="orbit-section" id="network">
       <div className="orbit-copy">
-        <p className="eyebrow">THE SVX VALUE LOOP</p>
-        <h2>
-          ECO-FRIENDLY YARNS
+        <p className="eyebrow">THE SVX VALUE PROPOSITION</p>
+        <DisplayHeading>
+          MANUFACTURE ECO SYSTEM
           <br />
-          RECYCLED MATERIALS
+          MEETS THE DIGITAL
           <br />
-          RESPONSIBLE SUPPLY
-        </h2>
+          SUPPLY CHAIN
+        </DisplayHeading>
         <p>
           Every stage informs the next. Buyer requirements stay visible from
           consulting and design through production, traceability and delivery.

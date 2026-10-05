@@ -9,6 +9,9 @@
   --blue: #086dff;
   --orange: #ff4c18;
   --max: 1480px;
+  --heading-hero: clamp(3.9rem, 6.2vw, 7.25rem);
+  --heading-section: clamp(4.2rem, 6.5vw, 7rem);
+  --heading-compact: clamp(2.8rem, 4vw, 5.2rem);
 }
 
 * {
@@ -46,23 +49,31 @@ main > section,
   min-width: 0;
 }
 
-.hero h1,
-.intro h2,
-.orbit-copy h2,
-.section-head h2,
-.buyer-intro h2,
-.proof h2,
-.contact h2 {
-  overflow-wrap: break-word;
+.display-heading {
+  max-width: 100%;
+  margin: 20px 0;
+  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-size: var(--heading-section);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
 }
 
-.hero h1,
-.intro h2,
-.orbit-copy h2,
-.section-head h2,
-.buyer-intro h2,
-.proof h2,
-.contact h2,
+.display-heading--hero {
+  font-size: var(--heading-hero);
+  line-height: 0.86;
+}
+
+.display-heading--compact {
+  font-size: var(--heading-compact);
+  line-height: 0.86;
+}
+
+.display-heading,
 .hero-proof b,
 .stage-detail > span,
 .stage-detail b,
@@ -422,6 +433,41 @@ nav a:hover {
   object-position: center;
 }
 
+.hero-video-play {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  right: clamp(20px, 5vw, 72px);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 18px;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(7, 10, 16, 0.72);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.hero-video-play:hover,
+.hero-video-play:focus-visible {
+  border-color: #4e9dff;
+  background: rgba(8, 109, 255, 0.78);
+  outline: none;
+}
+
+.hero-video-play span {
+  font-size: 0.68rem;
+}
+
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -443,27 +489,10 @@ nav a:hover {
   padding: 175px 34px;
 }
 
-.hero h1,
-.intro h2,
-.orbit-copy h2,
-.section-head h2,
-.buyer-intro h2,
-.proof h2,
-.contact h2 {
-  font: 900 clamp(4.6rem, 8vw, 9rem) / 0.8 'Barlow Condensed', sans-serif;
-  letter-spacing: -0.02em;
-  margin: 20px 0;
-}
-
 .hero h1 i {
   font-style: normal;
   color: transparent;
   -webkit-text-stroke: 2px white;
-}
-
-.digital-headline {
-  font-size: clamp(3.9rem, 6.5vw, 7.25rem) !important;
-  line-height: 0.86 !important;
 }
 
 .hero-copy > p:not(.eyebrow) {
@@ -545,18 +574,22 @@ nav a:hover {
   margin: auto;
   padding: 150px 34px;
   display: grid;
-  grid-template-columns: 0.33fr 1.05fr 0.55fr;
-  gap: 58px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.55fr);
+  gap: clamp(48px, 8vw, 120px);
+  align-items: center;
 }
 
-.intro h2 {
-  font-size: clamp(4.4rem, 7vw, 7.8rem);
+.intro .display-heading {
   margin: 0;
-  line-height: 0.85;
+}
+
+.intro-heading .eyebrow {
+  margin: 0 0 20px;
 }
 
 .intro > p:last-child {
+  max-width: 520px;
+  margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.7;
@@ -578,11 +611,6 @@ nav a:hover {
     #080c13 58%
   );
   overflow: hidden;
-}
-
-.orbit-copy h2 {
-  font-size: clamp(4.2rem, 6.3vw, 7rem);
-  line-height: 0.85;
 }
 
 .orbit-copy > p:not(.eyebrow) {
@@ -916,10 +944,8 @@ nav a:hover {
   margin-bottom: 65px;
 }
 
-.section-head h2 {
-  font-size: clamp(4.5rem, 7vw, 7.8rem);
+.section-head .display-heading {
   margin: 0;
-  line-height: 0.85;
 }
 
 .section-head > p:last-child {
@@ -1220,11 +1246,6 @@ nav a:hover {
   gap: 90px;
 }
 
-.buyer-intro h2 {
-  font-size: clamp(4.4rem, 6.5vw, 7rem);
-  line-height: 0.85;
-}
-
 .buyer-intro > p:last-child {
   color: #5e6773;
   line-height: 1.6;
@@ -1284,10 +1305,8 @@ nav a:hover {
   user-select: none;
 }
 
-.proof-quote h2 {
-  font-size: clamp(4.8rem, 7vw, 7.8rem);
+.proof-quote .display-heading {
   position: relative;
-  line-height: 0.85;
   margin: 0;
 }
 
@@ -1389,11 +1408,6 @@ nav a:hover {
   color: #fff;
 }
 
-.contact h2 {
-  font-size: clamp(5rem, 8vw, 9rem);
-  line-height: 0.85;
-}
-
 .contact > p:not(.eyebrow) {
   max-width: 720px;
   margin: 0 auto;
@@ -1427,10 +1441,9 @@ nav a:hover {
   color: #dbeaff;
 }
 
-.brand-wall h2 {
+.brand-wall .display-heading {
   margin: 12px 0 34px;
   color: #fff;
-  font: 900 clamp(2.8rem, 4vw, 5.2rem) / 0.86 var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
 }
 
 .brand-logo-grid {
@@ -1645,6 +1658,12 @@ footer .footer-email:hover {
 }
 
 @media (max-width: 620px) {
+  :root {
+    --heading-hero: clamp(2.75rem, 15.5vw, 4.2rem);
+    --heading-section: clamp(2.25rem, 15.5vw, 4.25rem);
+    --heading-compact: clamp(2.5rem, 13vw, 3.6rem);
+  }
+
   header {
     position: fixed;
     max-width: 100vw;
@@ -1674,6 +1693,12 @@ footer .footer-email:hover {
     object-position: 62% center;
     filter: saturate(0.85);
   }
+  .hero-video-play {
+    top: auto;
+    right: 20px;
+    bottom: 154px;
+    transform: none;
+  }
   .hero-shade {
     background: linear-gradient(
         90deg,
@@ -1692,13 +1717,10 @@ footer .footer-email:hover {
     max-width: 310px;
   }
   .hero h1 {
-    font-size: clamp(4.25rem, 21vw, 5.25rem);
-    line-height: 0.78;
     margin: 15px 0 20px;
   }
-  .digital-headline {
-    font-size: clamp(3.25rem, 15.8vw, 4.2rem) !important;
-    line-height: 0.82 !important;
+  .display-heading--hero {
+    line-height: 0.82;
   }
   .digital-headline i {
     font-size: 0.72em;
@@ -1751,13 +1773,6 @@ footer .footer-email:hover {
   .buyers,
   .process {
     padding: 85px 20px;
-  }
-  .intro h2,
-  .orbit-copy h2,
-  .section-head h2,
-  .buyer-intro h2 {
-    font-size: clamp(3.3rem, 16vw, 4.25rem);
-    line-height: 0.85;
   }
   .orbit-section {
     scroll-margin-top: 74px;
@@ -1880,9 +1895,6 @@ footer .footer-email:hover {
   .proof-body {
     padding: 75px 25px;
   }
-  .proof-quote h2 {
-    font-size: 4.7rem;
-  }
   .proof-bars div {
     grid-template-columns: 1fr;
     gap: 5px;
@@ -1894,16 +1906,12 @@ footer .footer-email:hover {
   .contact {
     padding: 100px 20px;
   }
-  .contact h2 {
-    font-size: clamp(3.8rem, 18vw, 4.9rem);
-  }
   .brand-wall {
     scroll-margin-top: 74px;
     padding: 72px 20px;
   }
-  .brand-wall h2 {
+  .brand-wall .display-heading {
     margin-bottom: 34px;
-    font-size: 3.6rem;
   }
   .brand-logo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
