@@ -80,8 +80,8 @@ export default function Header() {
           <div id="product-range-menu" className="nav-product-dropdown">
             <p>Product ranges</p>
             <div className="nav-product-grid">
-              <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>22 specialist products</span></Link>
-              <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>13 carry solutions</span></Link>
+              <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>35 specialist products</span></Link>
+              <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>18 carry solutions</span></Link>
               <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>11 purpose-built ranges</span></Link>
               {/* <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>
               <Link href="/products/sports-products" onClick={closeNavigation}><strong>Sports Products</strong><span>19 product groups</span></Link>

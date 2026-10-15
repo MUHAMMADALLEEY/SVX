@@ -138,9 +138,10 @@ const sportsProducts: CatalogueItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Custom Sports Products Development | SVX",
-  description: "Explore 19 SVX sports-product programmes spanning training, balls, protection, rackets, boxing, recovery and equipment carry.",
-  alternates: { canonical: "/products/sports-products" },
+  title: 'Custom Sports Training & Club Equipment Manufacturing',
+  description:
+    'Explore 19 custom sports-product programmes spanning agility kits, balls, protection, rackets, recovery, and club equipment carry solutions.',
+  alternates: { canonical: '/products/sports-products' },
 };
 
 export default function SportsProductsPage() {

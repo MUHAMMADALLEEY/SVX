@@ -120,7 +120,7 @@ export default function Hero() {
           playsInline
           disablePictureInPicture
           disableRemotePlayback
-          preload="auto"
+          preload="metadata"
           poster="/hero-background-poster.jpg"
         >
           <source

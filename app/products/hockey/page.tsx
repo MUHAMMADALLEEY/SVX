@@ -33,9 +33,10 @@ const hockeyProducts: CatalogueItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Custom Hockey Equipment Development | SVX",
-  description: "Explore SVX field hockey sticks, team bundles, balls and hockey bags developed for retail, club and academy programmes.",
-  alternates: { canonical: "/products/hockey" },
+  title: 'Custom Field Hockey Sticks & Equipment Manufacturing',
+  description:
+    'Explore carbon-composite and wooden field hockey sticks, team bundles, practice balls, and multi-stick hockey bags developed for retail and club programmes.',
+  alternates: { canonical: '/products/hockey' },
 };
 
 export default function HockeyPage() {
@@ -43,7 +44,7 @@ export default function HockeyPage() {
     <ProductCataloguePage
       category="Hockey"
       categorySlug="hockey"
-      heroEyebrow="SVX field hockey · made in Sialkot"
+      heroEyebrow="SVX field hockey · product development"
       headline="Hockey."
       headlineAccent="Equipment."
       heroCopy="Original wooden, hybrid and carbon-composite stick programmes supported by team quantities, balls and organised multi-stick transport."

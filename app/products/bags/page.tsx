@@ -40,8 +40,9 @@ const developmentSteps = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Custom Bags Product Development | SVX',
-  description: 'Explore 18 custom SVX bag categories for football, training, school, teamwear, business, running and travel programmes.',
+  title: 'Custom Sports Bags, Backpacks & Holdalls Manufacturing',
+  description:
+    'Explore 18 custom bag categories for football, gym, training, school, teamwear, business tech packs, running, and travel programmes.',
   alternates: { canonical: '/products/bags' },
 };
 

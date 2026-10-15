@@ -32,8 +32,9 @@ const developmentSteps = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Custom Football Product Development | SVX',
-  description: 'Explore eleven purpose-built custom football programmes for professional, competition, club, academy, training, junior and promotional use.',
+  title: 'Custom Footballs & Match Balls OEM Manufacturing',
+  description:
+    'Explore 11 purpose-built custom football programmes for professional matches, FIFA-standard tournaments, club training, academy, and promotional use.',
   alternates: { canonical: '/products/footballs' },
 };
 

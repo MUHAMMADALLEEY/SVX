@@ -18,6 +18,7 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 });
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -25,8 +26,9 @@ export const metadata: Metadata = {
     default: 'SVX | Manufacturing & Sourcing',
     template: '%s | SVX',
   },
-  description: 'SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.',
-  alternates: {canonical: '/'},
+  description:
+    'SVX is a buyer-focused OEM/ODM manufacturing and sourcing partner for custom socks, match and training footballs, and technical sports bags.',
+  alternates: { canonical: '/' },
   icons: {
     icon: [
       {url: '/icon.svg?v=2', type: 'image/svg+xml'},
@@ -35,14 +37,27 @@ export const metadata: Metadata = {
     apple: [{url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png'}],
   },
   openGraph: {
-    title: 'SVX | Manufacturing & Sourcing',
-    description: 'SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.',
+    title: 'SVX | Custom Socks, Footballs & Bags Manufacturing',
+    description:
+      'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, footballs, and sports bags.',
     type: 'website',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/assets/product-world.png',
+        width: 1200,
+        height: 630,
+        alt: 'SportsVentureX Product Programme & Sourcing Laboratory',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SVX | Manufacturing & Sourcing',
-    description: 'SVX is a buyer-focused manufacturing and sourcing partner for socks, sportswear, footballs, bags and multi-category retail programmes.',
+    title: 'SVX | Custom Socks, Footballs & Bags Manufacturing',
+    description:
+      'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, footballs, and sports bags.',
+    images: ['/assets/product-world.png'],
   },
 };
 
@@ -56,6 +71,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         suppressHydrationWarning
         className="bg-[#070a10] text-[#f5f7fa] font-sans antialiased"
       >
+        <JsonLd />
         {children}
         <CustomCursor />
         <ContactBriefModal />

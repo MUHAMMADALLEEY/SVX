@@ -24,13 +24,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!category) {
     return {
-      title: 'Category Not Found | SVX',
+      title: 'Category Not Found',
     };
   }
 
   return {
-    title: `${category.title} Programme | SVX Manufacturing & Sourcing`,
+    title: `${category.title} Manufacturing & Sourcing Programme`,
     description: category.description,
+    alternates: {
+      canonical: `/products/${slug}`,
+    },
   };
 }
 

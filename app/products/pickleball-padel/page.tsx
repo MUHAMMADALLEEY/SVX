@@ -40,9 +40,10 @@ const racketProducts: CatalogueItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Custom Pickleball & Padel Rackets | SVX",
-  description: "Explore SVX pickleball paddles, padel rackets, balls, covers and complete carry sets manufactured in Sialkot, Pakistan.",
-  alternates: { canonical: "/products/pickleball-padel" },
+  title: 'Custom Pickleball Paddles & Padel Rackets Manufacturing',
+  description:
+    'Explore carbon-face pickleball paddles, padel rackets, practice balls, covers, and complete retail carry sets developed for clubs and retail programmes.',
+  alternates: { canonical: '/products/pickleball-padel' },
 };
 
 export default function PickleballPadelPage() {

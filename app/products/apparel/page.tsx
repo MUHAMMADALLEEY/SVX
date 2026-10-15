@@ -127,10 +127,10 @@ const developmentSteps = [
 ];
 
 export const metadata: Metadata = {
-  title: "SVX Apparel | Complete Product Range",
+  title: 'Custom Sports Apparel & Teamwear OEM Manufacturing',
   description:
-    "Explore the SVX apparel collection: performance T-shirts, sweatshirts, football kits, hoodies, joggers, towels, robes, polos and workwear.",
-  alternates: { canonical: "/products/apparel" },
+    'Explore the complete custom apparel collection: performance T-shirts, sweatshirts, football kits, hoodies, joggers, towels, polos, and workwear.',
+  alternates: { canonical: '/products/apparel' },
 };
 
 export default function ApparelPage() {

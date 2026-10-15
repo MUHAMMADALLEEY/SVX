@@ -63,8 +63,56 @@ export default function ProductCataloguePage({
   const categoryHeadingId = `${categorySlug}-category-heading`;
   const processHeadingId = `${categorySlug}-process-heading`;
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.sportsventurex.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: 'https://www.sportsventurex.com/#products',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: category,
+        item: `https://www.sportsventurex.com/products/${categorySlug}`,
+      },
+    ],
+  };
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${category} Manufacturing & Sourcing Programme`,
+    description: heroCopy,
+    url: `https://www.sportsventurex.com/products/${categorySlug}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: items.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: item.title,
+        description: item.description,
+      })),
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([breadcrumbSchema, collectionSchema]),
+        }}
+      />
       <Header />
       <main className={styles.page}>
         <section className={styles.hero}>

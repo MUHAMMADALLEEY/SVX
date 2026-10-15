@@ -57,8 +57,9 @@ const developmentSteps = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Custom Socks Product Development | SVX',
-  description: 'Explore 35 unique sock products developed by SVX for football, performance, running, training, outdoor, lifestyle and dress collections.',
+  title: 'Custom Sports Socks OEM & Private Label Manufacturing',
+  description:
+    'Explore 35 specialized custom sock categories developed by SVX for football, performance,training, outdoor,lifestyle, running, compression, workwear, and retail programmes.',
   alternates: { canonical: '/products/socks' },
 };
 

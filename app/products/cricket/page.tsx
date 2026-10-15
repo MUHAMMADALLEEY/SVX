@@ -33,9 +33,10 @@ const cricketProducts: CatalogueItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Custom Cricket Equipment Development | SVX",
-  description: "Explore SVX cricket bats, technical pads, protective equipment and cricket bags manufactured in Pakistan.",
-  alternates: { canonical: "/products/cricket" },
+  title: 'Custom Cricket Equipment & Bat OEM Manufacturing',
+  description:
+    'Explore English and Kashmir willow cricket bats, technical pads, protective equipment, and cricket bags developed for global team programmes.',
+  alternates: { canonical: '/products/cricket' },
 };
 
 export default function CricketPage() {
@@ -43,14 +44,14 @@ export default function CricketPage() {
     <ProductCataloguePage
       category="Cricket"
       categorySlug="cricket"
-      heroEyebrow="SVX cricket · made in Pakistan"
+      heroEyebrow="SVX cricket · product development"
       headline="Cricket."
       headlineAccent="Equipment."
       heroCopy="A coordinated professional range combining bat craftsmanship, lightweight impact protection and purpose-built transport."
       stats={[
         { value: "04", label: "Product groups" },
         { value: "SVX", label: "Custom branding" },
-        { value: "PK", label: "Manufacturing" },
+        { value: "Global", label: "Manufacturing" },
       ]}
       catalogueEyebrow="Complete cricket capability"
       catalogueHeading={["Select a", "product"]}
@@ -63,7 +64,7 @@ export default function CricketPage() {
         "Approve colours, branding and packaging",
         "Sample, test, produce and deliver",
       ]}
-      footerLine="CRICKET · PRODUCT DEVELOPMENT · PAKISTAN"
+      footerLine="CRICKET · PRODUCT DEVELOPMENT · GLOBAL SOURCING"
     />
   );
 }
