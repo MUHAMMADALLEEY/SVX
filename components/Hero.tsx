@@ -123,11 +123,23 @@ export default function Hero() {
           preload="metadata"
           poster="/hero-background-poster.jpg"
         >
+          {/* 1. Mobile: Try high-efficiency WebM first */}
+          <source
+            src="/main.webm"
+            type="video/webm"
+            media="(max-width: 768px)"
+          />
+          {/* 2. Mobile: Fallback to lightweight MP4 */}
           <source
             src="/hero-background-mobile.mp4"
             type="video/mp4"
             media="(max-width: 768px)"
           />
+
+          {/* 3. Desktop: Primary high-efficiency WebM */}
+          <source src="/main.webm" type="video/webm" />
+
+          {/* 4. Desktop: Fallback to desktop MP4 */}
           <source src="/hero-background.mp4" type="video/mp4" />
         </video>
       </div>
