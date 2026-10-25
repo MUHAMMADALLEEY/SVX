@@ -6,7 +6,6 @@ import Hero from '@/components/Hero';
 import OrbitSection from '@/components/OrbitSection';
 import ScrollReveal from '@/components/ScrollReveal';
 import Footer from '@/components/Footer';
-import { ContactBriefButton } from '@/components/ContactBriefModal';
 import DisplayHeading from '@/components/DisplayHeading';
 import ProductCardVisual from '@/components/ProductCardVisual';
 import { PRODUCT_CATEGORIES } from '@/data/product-categories';
@@ -15,7 +14,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'SVX | Custom Sports Goods, Socks, Footballs & Bags Manufacturing',
   description:
-    'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, match footballs, technical sports bags, and team apparel.',
+    'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, match footballs, and technical sports bags.',
   alternates: {
     canonical: '/',
   },
@@ -64,8 +63,6 @@ export default function Home() {
             </DisplayHeading>
           </div>
           <div className="intro-aside">
-          
-
             <div className="sustainability-visuals" aria-label="Sustainability programme focus areas">
               <Image
                 src="/assets/recycle-symbol.webp"
@@ -131,7 +128,6 @@ export default function Home() {
           </div>
         </section>
 
-
         <section className="process" id="process">
           <div className="section-head">
             <p className="eyebrow">A CLEAR ROUTE TO MARKET</p>
@@ -179,7 +175,6 @@ export default function Home() {
             </li>
           </ol>
         </section>
-
 
         <section className="brand-wall" id="brands">
           <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>

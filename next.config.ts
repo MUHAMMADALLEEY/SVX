@@ -30,8 +30,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/products/t-shirts',
-        destination: '/products/apparel',
+        source: '/products',
+        destination: '/#products',
         permanent: true,
       },
     ];

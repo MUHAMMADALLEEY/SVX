@@ -15,7 +15,7 @@ SVX serves global & national sportswear brands, retail supermarket chains, profe
 
 ## 2. Core Manufacturing Capabilities & Technical Specifications
 
-### A. Custom Sports & Technical Socks (22 Development Categories)
+### A. Custom Sports & Technical Socks (35 Development Categories)
 - **Knitting Machinery**: High-speed automated Italian and Korean single and double cylinder computerized knitting machines in 96N (chunky work/boot), 144N (durable athletic/team), 168N (performance sports), and 200N (ultra-fine dress & compression).
 - **Yarn & Fiber Specifications**:
   - Combed natural cotton & GOTS-certified 100% organic cotton
@@ -30,11 +30,12 @@ SVX serves global & national sportswear brands, retail supermarket chains, profe
   - Targeted Achilles and metatarsal terry loop shock-absorbing cushions
   - Graduated compression profiles (Class 1: 15-20 mmHg; Class 2: 20-30 mmHg)
   - Heat-bonded silicone micro-grip patterns on sole and heel for football/padel agility
+  - Integrated shin-guard pockets for match protection
 - **Branding & Packaging**:
   - High-definition jacquard knit branding, silicone heat transfers, technical embroidery
   - Custom branded FSC cardboard header cards, band wraps, barcoded retail multi-packs
 
-### B. Match & Training Footballs (8 Development Directions)
+### B. Match & Training Footballs (11 Development Directions)
 - **Panel Construction Technologies**:
   - **Thermo-Bonded Seamless Match Balls**: High-precision thermal adhesive activation creates zero-water-absorption seams, optimal aerodynamic sphericity, and true flight stability in wet weather.
   - **Hybrid Construction Balls**: Machine-stitched panel edges with thermally bonded EVA seam sealing, combining durability and cost efficiency for academy training.
@@ -48,7 +49,7 @@ SVX serves global & national sportswear brands, retail supermarket chains, profe
   - Engineered to pass and exceed FIFA Basic, FIFA Quality, and FIFA Quality Pro testing protocols (weight, circumference, sphericity, loss of pressure, water absorption, bounce, and shape retention after 2,000 drum impacts).
 - **Categories**: Size 5 Match, Size 4 Youth/Academy, Size 3 Junior, Low-Bounce Futsal (Size 4 filled with synthetic fiber), Mini Skill Balls, and Promotional Event Footballs.
 
-### C. Technical Sports Bags & Carry Systems (13 Categories)
+### C. Technical Sports Bags & Carry Systems (18 Categories)
 - **Fabrics & Substrates**:
   - Heavyweight 600D, 900D, and 1680D ballistic Oxford polyester with PU (polyurethane) and PVC waterproof internal coatings
   - Ripstop honeycomb nylon for lightweight endurance packs
@@ -64,6 +65,7 @@ SVX serves global & national sportswear brands, retail supermarket chains, profe
   - Thermal-insulated drink bottle sleeves
   - Padded shock-resistant 15.6" laptop and tablet compartments
   - Expandable ball pocket / helmet netting with quick-release clips
+  - Technical running waist packs, anti-theft sling bags, and convertible garment duffles
 
 ---
 

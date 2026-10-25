@@ -161,7 +161,7 @@ export default function Hero() {
         </DisplayHeading>
         <p>
           One commercial team connecting buyer ambition to capable factories,
-          controlled production, digital visibility and retail-ready delivery.
+          Controlled production, digital visibility and retail-ready delivery.
         </p>
         <div className="hero-actions">
           <a className="cta" href="#brands">

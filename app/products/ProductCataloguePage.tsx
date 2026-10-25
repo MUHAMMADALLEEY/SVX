@@ -110,11 +110,14 @@ export default function ProductCataloguePage({
             name: siteConfig.name,
           },
           offers: {
-            '@type': 'AggregateOffer',
+            '@type': 'Offer',
+            price: '0.00',
             priceCurrency: 'USD',
             availability: 'https://schema.org/InStock',
+            url: absoluteUrl(`/products/${categorySlug}`),
             priceSpecification: {
               '@type': 'PriceSpecification',
+              priceCurrency: 'USD',
               description: 'Commercial B2B volume pricing quoted based on custom tech pack, material grade, and delivery requirements.',
             },
           },

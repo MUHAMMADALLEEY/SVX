@@ -87,14 +87,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       lang="en"
       className={`scroll-smooth ${barlowCondensed.variable} ${inter.variable}`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         suppressHydrationWarning
         className="bg-[#070a10] text-[#f5f7fa] font-sans antialiased"

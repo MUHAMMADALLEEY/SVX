@@ -1,6 +1,11 @@
 import { siteConfig } from '@/lib/site-config';
 
 export default function JsonLd() {
+  const sameAsProfiles = [
+    siteConfig.linkedinUrl,
+    siteConfig.facebookUrl,
+  ].filter(Boolean);
+
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -13,7 +18,7 @@ export default function JsonLd() {
     description:
       'Buyer-focused B2B OEM/ODM contract manufacturing and global sourcing partner specializing in custom technical socks, match and training footballs, and technical sports bags.',
     email: siteConfig.contactEmail,
-    sameAs: [siteConfig.linkedinUrl],
+    sameAs: sameAsProfiles,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'London',
@@ -28,7 +33,7 @@ export default function JsonLd() {
     areaServed: ['GB', 'US', 'EU', 'Global'],
     award: [
       'BSCI & Sedex SMETA Audited Global Facilities',
-      'OEKO-TEX Standard',
+      'OEKO-TEX Standard 100',
       'FIFA Quality & FIFA Basic Performance Standards',
     ],
     knowsAbout: [
@@ -54,7 +59,7 @@ export default function JsonLd() {
             name: 'Custom Technical Socks OEM/ODM Manufacturing',
             url: `${siteConfig.url}/products/socks`,
             description:
-              'Full-specification custom sock development across 22 categories: performance athletic, grip socks, medical/travel compression, organic cotton, and merino wool utilizing 96N-200N jacquard knitting with seamless hand-linked toes.',
+              'Full-specification custom sock development across 35 categories: performance athletic, grip socks, medical/travel compression, organic cotton, and merino wool utilizing 96N-200N jacquard knitting with seamless hand-linked toes.',
           },
         },
         {
@@ -64,7 +69,7 @@ export default function JsonLd() {
             name: 'Custom Match & Training Footballs OEM/ODM Manufacturing',
             url: `${siteConfig.url}/products/footballs`,
             description:
-              'Engineering thermo-bonded seamless match balls, sealed hybrid balls, and traditional 32-panel hand-stitched footballs meeting FIFA Basic, Quality, and Quality Pro standards with textured PU/microfiber covers.',
+              'Engineering thermo-bonded seamless match balls, sealed hybrid balls, and traditional 32-panel hand-stitched footballs across 11 categories meeting FIFA Basic, Quality, and Quality Pro standards with textured PU/microfiber covers.',
           },
         },
         {
@@ -74,7 +79,7 @@ export default function JsonLd() {
             name: 'Technical Sports Bags & Carry Equipment OEM/ODM Manufacturing',
             url: `${siteConfig.url}/products/bags`,
             description:
-              'Bespoke development of club backpacks, wet/dry ventilated boot bags, technical kit duffles, and tournament luggage in water-resistant 600D, 900D, and 1680D ballistic Oxford polyester with waterproof zippers.',
+              'Bespoke development of 18 carry solutions including club backpacks, wet/dry ventilated boot bags, technical kit duffles, and tournament luggage in water-resistant 600D, 900D, and 1680D ballistic Oxford polyester with waterproof zippers.',
           },
         },
       ],
@@ -91,7 +96,7 @@ export default function JsonLd() {
     publisher: {
       '@id': `${siteConfig.url}/#organization`,
     },
-    inLanguage: 'en-US',
+    inLanguage: 'en',
   };
 
   return (

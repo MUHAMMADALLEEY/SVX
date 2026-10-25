@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
           "CCBot",
           "Meta-ExternalAgent",
         ],
-        allow: ["/", "/products/", "/llms.txt", "/llms-full.txt"],
+        allow: "/",
         disallow: ["/api/"],
       },
     ],

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'SportsVentureX B2B Privacy Policy. Details how we collect, process, and safeguard commercial inquiry data and tech packs in compliance with UK GDPR.',
   alternates: {
-    canonical: absoluteUrl('/privacy-policy'),
+    canonical: '/privacy-policy',
   },
   openGraph: {
     title: 'Privacy Policy | SportsVentureX',
