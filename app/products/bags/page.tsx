@@ -44,13 +44,27 @@ export const metadata: Metadata = {
   description:
     'Explore 18 custom bag categories for football, gym, training, school, teamwear, business tech packs, running, and travel programmes.',
   alternates: { canonical: '/products/bags' },
+  openGraph: {
+    title: 'Custom Sports Bags, Backpacks & Holdalls Manufacturing | SVX',
+    description:
+      'Explore 18 custom bag categories for football, gym, training, school, teamwear, business tech packs, running, and travel programmes.',
+    url: '/products/bags',
+    images: [{ url: '/images/bags/B2.webp', width: 1200, height: 800, alt: 'SVX Custom Sports Bags Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Sports Bags, Backpacks & Holdalls Manufacturing | SVX',
+    description:
+      'Explore 18 custom bag categories for football, gym, training, school, teamwear, and travel programmes.',
+    images: ['/images/bags/B2.webp'],
+  },
 };
 
 export default function BagsPage() {
   return (
     <ProductCataloguePage
       category="Bags"
-      categorySlug="bag"
+      categorySlug="bags"
       heroEyebrow="SVX bags · product development"
       headline="Carry more."
       headlineAccent="Perform better."

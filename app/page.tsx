@@ -1,14 +1,48 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import OrbitSection from '@/components/OrbitSection';
 import ScrollReveal from '@/components/ScrollReveal';
-import BrandLogo from '@/components/BrandLogo';
+import Footer from '@/components/Footer';
 import { ContactBriefButton } from '@/components/ContactBriefModal';
 import DisplayHeading from '@/components/DisplayHeading';
 import ProductCardVisual from '@/components/ProductCardVisual';
 import { PRODUCT_CATEGORIES } from '@/data/product-categories';
+import { siteConfig } from '@/lib/site-config';
+
+export const metadata: Metadata = {
+  title: 'SVX | Custom Sports Goods, Socks, Footballs & Bags Manufacturing',
+  description:
+    'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, match footballs, technical sports bags, and team apparel.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'SVX | Custom Sports Goods, Socks, Footballs & Bags Manufacturing',
+    description:
+      'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, footballs, and sports bags.',
+    type: 'website',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: '/assets/product-world.png',
+        width: 1200,
+        height: 630,
+        alt: 'SportsVentureX Product Programme & Sourcing Laboratory',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SVX | Custom Sports Goods, Socks, Footballs & Bags Manufacturing',
+    description:
+      'Buyer-focused OEM/ODM sports goods manufacturing and global sourcing partner across custom socks, footballs, and sports bags.',
+    images: ['/assets/product-world.png'],
+  },
+};
 
 export default function Home() {
   return (
@@ -30,11 +64,7 @@ export default function Home() {
             </DisplayHeading>
           </div>
           <div className="intro-aside">
-            {/* <p>
-              SVX helps buyers turn sustainability goals into viable product
-              programmes, balancing lower-impact materials with performance,
-              compliance, price and delivery.
-            </p> */}
+          
 
             <div className="sustainability-visuals" aria-label="Sustainability programme focus areas">
               <Image
@@ -69,11 +99,12 @@ export default function Home() {
           <div className="product-visual">
             <Image
               src="/assets/product-world.png"
-              alt="SVX product collection"
+              alt="SportsVentureX custom sports goods, technical socks, match footballs, and bags manufacturing lab"
               width={1600}
               height={900}
-              sizes="(max-width: 640px) calc(100vw - 40px), 92vw"
-              className="w-full object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1200px) 92vw, 1480px"
+              className="w-full h-auto aspect-video object-cover"
+              priority
               referrerPolicy="no-referrer"
             />
             <div className="image-tag">SVX PRODUCT LAB / 2026</div>
@@ -100,93 +131,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section className="buyers" id="buyers">
-          <div className="buyer-intro">
-            <p className="eyebrow">CUSTOMER FIT</p>
-            <DisplayHeading>
-              DIFFERENT NEEDS.
-              <br />
-              ONE ACCOUNTABLE PARTNER.
-            </DisplayHeading>
-            <p>
-              We understand that a supermarket programme, specialist brand and
-              institutional order each need a different commercial rhythm.
-            </p>
-          </div>
-
-          <div className="buyer-matrix">
-            <article>
-              <b>GLOBAL &amp; NATIONAL BRANDS</b>
-              <span>Product engineering · standards · scale</span>
-            </article>
-            <article>
-              <b>RETAILERS &amp; DEPARTMENT STORES</b>
-              <span>Range building · value · critical path</span>
-            </article>
-            <article>
-              <b>SUPERMARKETS &amp; MASS RETAIL</b>
-              <span>Volume · consistency · packaging</span>
-            </article>
-            <article>
-              <b>CLUBS, SCHOOLS &amp; ACADEMIES</b>
-              <span>Customisation · durability · access</span>
-            </article>
-            <article>
-              <b>INSTITUTIONS &amp; ORGANISATIONS</b>
-              <span>Specification · compliance · reliability</span>
-            </article>
-            <article>
-              <b>START-UPS &amp; GROWING LABELS</b>
-              <span>Guidance · development · scalable routes</span>
-            </article>
-          </div>
-        </section> */}
-
-        {/* <section className="proof">
-          <div className="proof-quote">
-            <span>“</span>
-            <DisplayHeading>
-              EXPERIENCED TEAM
-              <br />
-              GLOBAL NETWORK
-              <br />
-              DELIVERED TO YOUR DOOR
-            </DisplayHeading>
-          </div>
-
-          <div className="proof-body">
-            <p className="eyebrow">EXPERIENCE WITHOUT THE NAME-DROPPING</p>
-            <p className="large">
-              Our team experience spans more than 50 brand programmes and supply
-              into many stores across multiple markets.
-            </p>
-            <p>
-              That history is used where it matters: clearer costing, more
-              commercial product decisions, practical quality control and fewer
-              avoidable delays. Customer confidentiality comes first, so
-              relationships are described by capability—not displayed as trophies.
-            </p>
-
-            <div className="proof-bars">
-              <div>
-                <span>BUYER ALIGNMENT</span>
-                <i style={{ '--w': '96%' } as React.CSSProperties} />
-              </div>
-              <div>
-                <span>FACTORY VISIBILITY</span>
-                <i style={{ '--w': '94%' } as React.CSSProperties} />
-              </div>
-              <div>
-                <span>CATEGORY FLEXIBILITY</span>
-                <i style={{ '--w': '91%' } as React.CSSProperties} />
-              </div>
-              <div>
-                <span>DELIVERY DISCIPLINE</span>
-                <i style={{ '--w': '95%' } as React.CSSProperties} />
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         <section className="process" id="process">
           <div className="section-head">
@@ -236,25 +180,13 @@ export default function Home() {
           </ol>
         </section>
 
-        {/* <section className="contact" id="contact">
-          <p className="eyebrow">A BETTER BRIEF STARTS HERE</p>
-          <DisplayHeading>
-            WHAT ARE YOU
-            <br />
-            READY TO MAKE?
-          </DisplayHeading>
-          <p>
-            Share the product, target price, approximate quantity, destination
-            market and required date. SVX will shape the smartest route forward.
-          </p>
-          <ContactBriefButton className="cta light">
-            SEND YOUR BRIEF <span>↗</span>
-          </ContactBriefButton>
-        </section> */}
 
         <section className="brand-wall" id="brands">
           <p className="eyebrow">BRAND &amp; RETAIL EXPERIENCE</p>
           <DisplayHeading variant="compact">25 LEADING NAMES</DisplayHeading>
+          <p className="mt-2 text-sm text-[#8f99a8] max-w-xl">
+            Commercial manufacturing and sourcing expertise delivering programmes for international sporting labels and retail distributors.
+          </p>
           <div
             className="brand-logo-grid"
             aria-label="Brands and retailers supported by the team's experience"
@@ -296,14 +228,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer>
-        <div className="flex items-center text-white h-10">
-          <BrandLogo className="h-8 w-auto" />
-        </div>
-        <span>MANUFACTURING · SOURCING · PRODUCT DEVELOPMENT</span>
-        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
-        <span>LONDON (UK) COMMERCIAL OFFICE · GLOBAL MANUFACTURING NETWORK</span>
-      </footer>
+      <Footer />
 
       <ScrollReveal />
     </>

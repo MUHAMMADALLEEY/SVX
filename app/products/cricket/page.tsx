@@ -37,6 +37,20 @@ export const metadata: Metadata = {
   description:
     'Explore English and Kashmir willow cricket bats, technical pads, protective equipment, and cricket bags developed for global team programmes.',
   alternates: { canonical: '/products/cricket' },
+  openGraph: {
+    title: 'Custom Cricket Equipment & Bat OEM Manufacturing | SVX',
+    description:
+      'Explore English and Kashmir willow cricket bats, technical pads, protective equipment, and cricket bags developed for global team programmes.',
+    url: '/products/cricket',
+    images: [{ url: '/images/cricket/cricket-04.webp', width: 1200, height: 800, alt: 'SVX Custom Cricket Equipment Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Cricket Equipment & Bat OEM Manufacturing | SVX',
+    description:
+      'Explore English and Kashmir willow cricket bats, technical pads, protective equipment, and cricket bags.',
+    images: ['/images/cricket/cricket-04.webp'],
+  },
 };
 
 export default function CricketPage() {

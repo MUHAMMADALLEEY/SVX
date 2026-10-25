@@ -36,13 +36,27 @@ export const metadata: Metadata = {
   description:
     'Explore 11 purpose-built custom football programmes for professional matches, FIFA-standard tournaments, club training, academy, and promotional use.',
   alternates: { canonical: '/products/footballs' },
+  openGraph: {
+    title: 'Custom Footballs & Match Balls OEM Manufacturing | SVX',
+    description:
+      'Explore 11 purpose-built custom football programmes for professional matches, FIFA-standard tournaments, club training, academy, and promotional use.',
+    url: '/products/footballs',
+    images: [{ url: '/images/footballs/F6.webp', width: 1200, height: 800, alt: 'SVX Custom Footballs Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Footballs & Match Balls OEM Manufacturing | SVX',
+    description:
+      'Explore 11 purpose-built custom football programmes for professional matches, FIFA-standard tournaments, club training, academy, and promotional use.',
+    images: ['/images/footballs/F6.webp'],
+  },
 };
 
 export default function FootballsPage() {
   return (
     <ProductCataloguePage
       category="Footballs"
-      categorySlug="football"
+      categorySlug="footballs"
       heroEyebrow="SVX football range · product development"
       headline="Every match."
       headlineAccent="One expert route."

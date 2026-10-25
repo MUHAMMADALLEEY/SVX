@@ -1,14 +1,35 @@
 import type {Metadata} from 'next';
-import {Barlow_Condensed, Inter} from 'next/font/google';
+import localFont from 'next/font/local';
+import {Inter} from 'next/font/google';
 import ContactBriefModal from '@/components/ContactBriefModal';
 import CustomCursor from '@/components/CustomCursor';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import {siteConfig} from '@/lib/site-config';
 import './globals.css';
 
-const barlowCondensed = Barlow_Condensed({
-  subsets: ['latin'],
-  weight: ['600', '700', '800', '900'],
+const barlowCondensed = localFont({
+  src: [
+    {
+      path: '../public/fonts/barlow-condensed-600.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/barlow-condensed-700.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/barlow-condensed-800.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/barlow-condensed-900.woff2',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
   variable: '--font-barlow-condensed',
   display: 'swap',
 });
@@ -28,7 +49,6 @@ export const metadata: Metadata = {
   },
   description:
     'SVX is a buyer-focused OEM/ODM manufacturing and sourcing partner for custom socks, match and training footballs, and technical sports bags.',
-  alternates: { canonical: '/' },
   icons: {
     icon: [
       {url: '/icon.svg?v=2', type: 'image/svg+xml'},
@@ -67,6 +87,14 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       lang="en"
       className={`scroll-smooth ${barlowCondensed.variable} ${inter.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="bg-[#070a10] text-[#f5f7fa] font-sans antialiased"

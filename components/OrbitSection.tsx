@@ -163,6 +163,15 @@ export default function OrbitSection() {
           consulting and design through production, traceability and delivery.
         </p>
 
+        {/* Crawler-accessible index of all 12 stages */}
+        <ol className="sr-only">
+          {stages.map((stage) => (
+            <li key={stage.num}>
+              <strong>{stage.num} {stage.title}:</strong> {stage.desc}
+            </li>
+          ))}
+        </ol>
+
         <div className="stage-detail" aria-live="polite">
           <span id="stageNumber">{active.num}</span>
           <div>
@@ -188,7 +197,8 @@ export default function OrbitSection() {
 
         <div className="orbit-core">
           <BrandLogo
-            className="w-[72%] h-auto max-h-[36px] text-[#0b1220]"
+            variant="dark"
+            className="w-[72%] h-auto max-h-[36px]"
             title="SVX"
           />
           <span>

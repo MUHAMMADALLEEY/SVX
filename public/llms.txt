@@ -1,32 +1,52 @@
-# SportsVentureX
+# SportsVentureX (SVX)
 
-> Buyer-focused product development, manufacturing, sourcing, and delivery support.
+> Buyer-focused B2B OEM/ODM contract manufacturing, product development, global sourcing, and critical-path delivery partner.
 
-SportsVentureX (SVX) develops custom socks, footballs, bags, and apparel for brands, retailers, clubs, schools, institutions, distributors, and specialist organisations. Support covers specification, costing, sampling, testing, production, quality control, packaging, and delivery coordination.
+SportsVentureX (SVX) is a contract sports goods manufacturer and global sourcing specialist headquartered with commercial operations in London, United Kingdom, coordinating vetted production facilities globally. SVX specializes strictly in three core product categories: **Custom Technical Socks**, **Match & Training Footballs**, and **Technical Sports Bags**.
 
-## Main pages
+## Main Pages
 
-- [Home](https://www.sportsventurex.com/): Company overview, manufacturing network, buyers, product programmes, process, and contact.
-- [Socks](https://www.sportsventurex.com/products/socks): 22 sock development categories.
-- [Footballs](https://www.sportsventurex.com/products/footballs): Eight football construction and use categories.
-- [Bags](https://www.sportsventurex.com/products/bags): Thirteen carry-product categories.
-- [Apparel](https://www.sportsventurex.com/products/apparel): Thirteen performance, lifestyle, workwear, and textile categories.
+- [Home](https://www.sportsventurex.com/): Company overview, manufacturing network, 12-stage digital supply chain, brand experience, and commercial inquiry brief.
+- [Socks Manufacturing](https://www.sportsventurex.com/products/socks): 22 specialist sock development categories (performance, grip, compression, merino wool, organic cotton, cycling, and lifestyle).
+- [Footballs Manufacturing](https://www.sportsventurex.com/products/footballs): 8 match, training, and specialist football construction categories (thermo-bonded, hybrid, hand-stitched, futsal).
+- [Bags Manufacturing](https://www.sportsventurex.com/products/bags): 13 technical sports carry solutions (waterproof Oxford backpacks, boot bags, team duffles, wheelie travel luggage).
+- [Privacy Policy](https://www.sportsventurex.com/privacy-policy): UK GDPR-compliant data governance for B2B commercial briefs and tech packs.
 
-## Products
+## Core Manufacturing Programmes
 
-- Custom performance, lifestyle, work, health, travel, and compression socks
-- Custom match, training, promotional, indoor, mini, and specialist footballs
-- Custom backpacks, duffles, travel, team, school, and technical bags
-- Custom performance apparel, teamwear, lifestyle, workwear, towels, and robes
+### 1. Custom Sports & Technical Socks OEM/ODM
+- **Knitting Technology**: 96N, 144N, 168N, and 200N single/double cylinder jacquard knitting machines.
+- **Yarn Capabilities**: Combed organic cotton (GOTS-certified), CoolMax polyester, merino wool, recycled nylon (GRS-certified), elastane, and conductive/antimicrobial yarns.
+- **Technical Features**: Hand-linked seamless toe closures, arch compression bands, graduated calf compression (15-20 mmHg / 20-30 mmHg), silicone micro-grip pads, and blister-prevention terry loop cushioning.
+- **Packaging**: Retail-ready branded header cards, hangtags, multi-pack banding, barcode labels, and FSC-certified polybags.
 
-## Services
+### 2. Match & Training Footballs OEM/ODM
+- **Construction Standards**: Thermo-bonded seamless panels (zero water absorption), hybrid machine-stitched with sealed seams, and traditional 32-panel hand-stitched match builds.
+- **Performance Levels**: Engineered to meet FIFA Basic, FIFA Quality, and FIFA Quality Pro aerodynamic, sphericity, bounce, and pressure retention standards.
+- **Materials**: Textured PU/TPU outer shells (1.0mm-1.5mm), high-density EVA foam backing (3.5mm-5.0mm), multi-ply polyester/cotton laminated layers, and reinforced Taiwan butyl or synthetic latex bladders.
+- **Use Cases**: Professional match balls, academy training balls, indoor/futsal balls (low rebound), beach footballs, and promotional event ranges.
 
-SVX can define a product and commercial target, develop and validate samples, place and monitor production, perform quality checkpoints, and coordinate delivery preparation.
+### 3. Technical Sports Bags & Backpacks OEM/ODM
+- **Fabrics & Materials**: Heavy-duty 600D, 900D, and 1680D ballistic Oxford polyester with PU/PVC water-resistant backings; ripstop nylon; lightweight TPU tarpaulin.
+- **Hardware & Components**: Branded SBS/YKK waterproof zippers, ergonomic air-mesh shoulder harnesses, padded laptop/tablet sleeves, wet/dry shoe compartments with brass ventilation eyelets, and reinforced webbing.
+- **Categories**: Player club backpacks, team kit holdalls, technical gym duffles, waterproof transition triathlon packs, boot bags, and tournament luggage.
 
-## Enquiries
+## Factory Compliance & International Standards
 
-For pricing, minimum order quantities, samples, lead times, branding, or a product brief, send an enquiry through the contact form on the home page. Exact commercial terms depend on the product and specification.
+Production facilities in the SVX global network operate under rigorous international labor, ethical, and environmental accreditations:
+- **BSCI (Business Social Compliance Initiative)** / **Sedex SMETA 4-Pillar Audited**
+- **ISO 9001:2015** (Quality Management Systems)
+- **OEKO-TEX Standard 100** (Harmful substance-free textile safety)
+- **GRS (Global Recycled Standard)** for recycled yarn programmes
 
-## Machine-readable full content
+## Commercial Process & Inquiries
 
-See [/llms-full.txt](/llms-full.txt) for the expanded site knowledge document.
+1. **Define**: Category, customer target, technical specifications, MOQ, target unit price, and required delivery date.
+2. **Develop**: Tech pack generation, material selection, rapid physical prototyping (sampling within 7-14 days).
+3. **Validate**: Fit, laboratory bounce/wear testing, compliance certification, and pre-production sample signoff.
+4. **Produce**: Factory line allocation, inline quality checks (AQL 2.5 standard), and weekly digital supply chain milestone visibility.
+5. **Deliver**: Pre-shipment inspection, export documentation, customs clearance, and DDP/FOB logistics coordination.
+
+- **Direct Sales Contact**: `sales@sportsventurex.com`
+- **Commercial Office**: London, United Kingdom
+- **Full Documentation**: [/llms-full.txt](https://www.sportsventurex.com/llms-full.txt)

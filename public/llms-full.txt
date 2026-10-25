@@ -1,66 +1,96 @@
-# SportsVentureX full site knowledge
+# SportsVentureX (SVX) — Complete Site & B2B Manufacturing Knowledge
 
-## Identity and purpose
+## 1. Identity, Purpose & Operational Scope
 
-SportsVentureX (SVX) is a buyer-focused product development, manufacturing, and sourcing partner. SVX supports established brands, growing labels, retailers, supermarkets, clubs, schools, institutions, distributors, and specialist organisations. Current website programmes cover socks, footballs, bags, and apparel.
+SportsVentureX (SVX) is an international OEM/ODM sports goods contract manufacturer, product development laboratory, and global supply chain partner. Commercial leadership, account directors, design consultation, and technical evaluation operate from London, United Kingdom, coordinating vetted production facilities across Europe and Asia.
 
-## Solutions
+The commercial product programme is strictly focused on three core sporting and athletic categories:
+1. **Custom Technical Socks** (Performance, Grip, Compression, Outdoor, Lifestyle)
+2. **Custom Match & Training Footballs** (FIFA-Standard, Thermo-Bonded, Hybrid, Hand-Stitched)
+3. **Technical Sports Bags & Carry Equipment** (Kit Bags, Club Backpacks, Boot Bags, Tour Duffels)
 
-### Define
-Clarify the category, customer, target price, quantity, destination market, specification, and launch date.
+SVX serves global & national sportswear brands, retail supermarket chains, professional football clubs, sports academies, institutional distributors, and high-growth athletic start-ups.
 
-### Develop
-Select materials, design, construction, technical details, sampling routes, and cost options.
+---
 
-### Validate
-Review fit, performance, testing, compliance, packaging, and approval requirements.
+## 2. Core Manufacturing Capabilities & Technical Specifications
 
-### Produce
-Place production with suitable factories, track the critical path, perform inline checks, and manage issues.
+### A. Custom Sports & Technical Socks (22 Development Categories)
+- **Knitting Machinery**: High-speed automated Italian and Korean single and double cylinder computerized knitting machines in 96N (chunky work/boot), 144N (durable athletic/team), 168N (performance sports), and 200N (ultra-fine dress & compression).
+- **Yarn & Fiber Specifications**:
+  - Combed natural cotton & GOTS-certified 100% organic cotton
+  - CoolMax® and moisture-wicking engineered polyamides
+  - Fine Australian Merino wool (thermal, antimicrobial, moisture-regulating)
+  - GRS-certified recycled polyester & recycled polyamide nylon
+  - Spandex / Elastane core-spun yarn for durable anatomical retention
+  - Silver-ion antimicrobial and anti-odor yarn treatments
+- **Technical Knit Constructions**:
+  - Hand-linked Rosso flat-toe seams (100% blister-prevention seamless finish)
+  - Anatomical Left/Right foot ergonomics with arch support ribbing
+  - Targeted Achilles and metatarsal terry loop shock-absorbing cushions
+  - Graduated compression profiles (Class 1: 15-20 mmHg; Class 2: 20-30 mmHg)
+  - Heat-bonded silicone micro-grip patterns on sole and heel for football/padel agility
+- **Branding & Packaging**:
+  - High-definition jacquard knit branding, silicone heat transfers, technical embroidery
+  - Custom branded FSC cardboard header cards, band wraps, barcoded retail multi-packs
 
-### Deliver
-Coordinate final inspection, documentation, logistics, and repeat-order learning.
+### B. Match & Training Footballs (8 Development Directions)
+- **Panel Construction Technologies**:
+  - **Thermo-Bonded Seamless Match Balls**: High-precision thermal adhesive activation creates zero-water-absorption seams, optimal aerodynamic sphericity, and true flight stability in wet weather.
+  - **Hybrid Construction Balls**: Machine-stitched panel edges with thermally bonded EVA seam sealing, combining durability and cost efficiency for academy training.
+  - **Hand-Stitched Traditional Match Balls**: Heavy-duty 4-ply pre-stretched polyester thread hand-stitched into 32-panel or 20-panel geometric layouts for maximum shape retention.
+- **Material Engineering**:
+  - Outer Casing: 1.0mm - 1.5mm micro-textured Korean PU (polyurethane) or textured Japanese microfiber with anti-abrasion and scuff-resistant cross-linked coatings.
+  - Cushioning Layers: 3.5mm - 5.0mm high-density microcellular EVA foam backing for soft touch and consistent energy return across extreme temperatures (-15°C to +40°C).
+  - Lamination: 3 to 4 plies of cross-laminated poly-cotton and woven polyester canvas bonded with pure natural latex.
+  - Bladders: Taiwan synthetic butyl rubber (air retention up to 6 months without reinflation) or high-grade natural latex bladders (instantaneous rebound and professional match feel).
+- **Standards & Testing**:
+  - Engineered to pass and exceed FIFA Basic, FIFA Quality, and FIFA Quality Pro testing protocols (weight, circumference, sphericity, loss of pressure, water absorption, bounce, and shape retention after 2,000 drum impacts).
+- **Categories**: Size 5 Match, Size 4 Youth/Academy, Size 3 Junior, Low-Bounce Futsal (Size 4 filled with synthetic fiber), Mini Skill Balls, and Promotional Event Footballs.
 
-## Process
+### C. Technical Sports Bags & Carry Systems (13 Categories)
+- **Fabrics & Substrates**:
+  - Heavyweight 600D, 900D, and 1680D ballistic Oxford polyester with PU (polyurethane) and PVC waterproof internal coatings
+  - Ripstop honeycomb nylon for lightweight endurance packs
+  - Heavy-duty waterproof matte TPU tarpaulin for all-weather team travel
+  - Reinforced 210D/420D nylon interior lining with bound seams
+- **Hardware & Ergonomics**:
+  - Heavy-gauge SBS or YKK reverse coil waterproof zippers with custom molded rubber zipper pulls
+  - Duraflex® acetal buckles, D-rings, and heavy-duty swivel clips
+  - Ergonomically shaped EVA foam padded shoulder straps with breathable 3D air-mesh backing
+  - Water-resistant molded EVA bottom tubs or reinforced diamond-PVC base panels
+- **Functional Compartments**:
+  - Isolated wet/dry ventilated shoe and boot tunnels with rust-proof brass ventilation grommets
+  - Thermal-insulated drink bottle sleeves
+  - Padded shock-resistant 15.6" laptop and tablet compartments
+  - Expandable ball pocket / helmet netting with quick-release clips
 
-1. Define the category, customer, commercial target, and timeline.
-2. Develop materials, design, construction, technical packs, samples, and costs.
-3. Validate fit, performance, testing, compliance, packaging, and approvals.
-4. Produce with factory placement, tracking, inline checks, and issue management.
-5. Deliver with final inspection, documents, logistics coordination, and repeat-order learning.
+---
 
-## Quality focus
+## 3. The SVX 5-Step Commercial Critical Path
 
-The quality focus includes material selection, sample refinement, brand consistency, production checks, and packaging readiness. The team focuses on feel, durability, finishing, and the confidence a product gives a brand.
+1. **Step 01 / DEFINE**: Buyer clarification of target product category, specific performance tier, benchmark samples, target FOB/DDP price point, total production volume, distribution markets, and launch deadline.
+2. **Step 02 / DEVELOP**: Material sourcing, CAD technical pack creation, colorway matching (Pantone PMS), digital 3D visualization, and rapid physical sampling delivered within 7 to 14 business days.
+3. **Step 03 / VALIDATE**: Physical sample inspection, tensile and abrasion testing, chemical safety validation (REACH / Prop 65 compliance), packaging mock-up review, and pre-production sample sign-off.
+4. **Step 04 / PRODUCE**: Factory line reservation, raw material batch inspection, scheduled inline quality checks during cutting/knitting/assembly, and active issue resolution through the 12-stage digital supply chain.
+5. **Step 05 / DELIVER**: Final AQL 2.5 quality control inspection, laboratory batch test certificates, export packing, freight booking (sea, air, rail), customs documentation, and post-delivery review.
 
-## Product range
+---
 
-### Footballs
-Eight development directions cover match, training, promotional, indoor, mini, beach, futsal, and specialist programmes. Construction options include thermo-bonded, hybrid, and hand-stitched builds. Final claims, testing, quantities, and commercial terms depend on the approved specification.
+## 4. Quality, Compliance & Factory Auditing Standards
 
-### Socks
-Twenty-two website categories cover organic cotton, technical, dress, sports, performance, health, team, work, women’s, outdoor, travel, comfort, gym, running, recycled-yarn, thermal, family, school, hiking, and compression directions. Yarn, construction, cushioning, sizing, colour, branding, and packaging can be customised.
+All facilities in the SVX global production ecosystem maintain third-party audited ethical, labor, and safety certifications:
+- **ISO 9001:2015**: Certified Quality Management Systems
+- **BSCI (Business Social Compliance Initiative)**: Audited ethical labor, fair remuneration, and safe factory conditions
+- **Sedex SMETA (4-Pillar)**: Audited labor standards, health & safety, environment, and business ethics
+- **OEKO-TEX® Standard 100**: Guaranteed absence of harmful substances and banned azo dyes in yarns and dyes
+- **GOTS (Global Organic Textile Standard)** & **GRS (Global Recycled Standard)**: Verified organic and post-consumer recycled material supply chains
 
-### Bags
-Thirteen website categories cover backpacks, duffles, travel, team, school, technical, and other carry solutions. Materials, compartments, padding, hardware, trims, colours, graphics, and packaging can be specified for a buyer brief.
+---
 
-### Apparel
-Thirteen website categories cover performance T-shirts, sweatshirts, football kits, hoodies, joggers, towels, robes, polo shirts, work trousers, workwear, technical jackets, base layers, and leggings. Fit, fabric, trims, colours, graphics, branding, and packaging can be developed around the brief.
+## 5. Contact & Commercial Operations
 
-## Frequently asked questions
-
-### Can SportsVentureX support custom branding?
-Yes. Custom branding is a core capability across product colourways, logos, labels, packaging, and finishing details.
-
-### Which products are included?
-The active website focuses on socks, footballs, bags, and apparel.
-
-### Is the contact form connected?
-Yes. Send an enquiry with product details and the SportsVentureX team will receive it directly.
-
-### What are the prices, minimum order quantities, and lead times?
-The public site does not publish fixed pricing, minimum order quantities, or lead times. These depend on product, construction, materials, branding, packaging, quantity, destination, compliance needs, and timing. Send a project brief for a tailored response.
-
-## Contact
-
-Use the project brief form for product details, brand requirements, target quantity, destination market, timing, and other questions, or email sales@sportsventurex.com. Exact commercial information is confirmed directly by the SVX team.
+- **Commercial Headquarters**: London, United Kingdom
+- **Direct Sourcing & Sales Email**: `sales@sportsventurex.com`
+- **Official Website**: `https://www.sportsventurex.com`
+- **LinkedIn Profile**: `https://www.linkedin.com/company/sportsventurex`

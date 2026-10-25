@@ -131,6 +131,20 @@ export const metadata: Metadata = {
   description:
     'Explore the complete custom apparel collection: performance T-shirts, sweatshirts, football kits, hoodies, joggers, towels, polos, and workwear.',
   alternates: { canonical: '/products/apparel' },
+  openGraph: {
+    title: 'Custom Sports Apparel & Teamwear OEM Manufacturing | SVX',
+    description:
+      'Explore the complete custom apparel collection: performance T-shirts, sweatshirts, football kits, hoodies, joggers, towels, polos, and workwear.',
+    url: '/products/apparel',
+    images: [{ url: '/images/Apparel/A8.webp', width: 1200, height: 800, alt: 'SVX Custom Sports Apparel Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Sports Apparel & Teamwear OEM Manufacturing | SVX',
+    description:
+      'Explore the complete custom apparel collection: performance T-shirts, sweatshirts, football kits, hoodies, joggers, and workwear.',
+    images: ['/images/Apparel/A8.webp'],
+  },
 };
 
 export default function ApparelPage() {

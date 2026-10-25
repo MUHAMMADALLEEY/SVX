@@ -45,7 +45,7 @@
 
 .hero h1, .catalogue h2, .card h3, .process h2 {
   margin: 0;
-  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', var(--font-barlow-condensed), sans-serif;
   font-weight: 900;
   text-transform: uppercase;
 }

@@ -59,15 +59,29 @@ const developmentSteps = [
 export const metadata: Metadata = {
   title: 'Custom Sports Socks OEM & Private Label Manufacturing',
   description:
-    'Explore 35 specialized custom sock categories developed by SVX for football, performance,training, outdoor,lifestyle, running, compression, workwear, and retail programmes.',
+    'Explore 35 specialized custom sock categories developed by SVX for football, performance, training, outdoor, lifestyle, running, compression, workwear, and retail programmes.',
   alternates: { canonical: '/products/socks' },
+  openGraph: {
+    title: 'Custom Sports Socks OEM & Private Label Manufacturing | SVX',
+    description:
+      'Explore 35 specialized custom sock categories developed by SVX for football, performance, training, outdoor, lifestyle, running, compression, and retail programmes.',
+    url: '/products/socks',
+    images: [{ url: '/images/socks/S26.webp', width: 1200, height: 800, alt: 'SVX Custom Socks Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Sports Socks OEM & Private Label Manufacturing | SVX',
+    description:
+      'Explore 35 specialized custom sock categories developed by SVX for football, performance, training, and retail programmes.',
+    images: ['/images/socks/S26.webp'],
+  },
 };
 
 export default function SocksPage() {
   return (
     <ProductCataloguePage
       category="Socks"
-      categorySlug="sock"
+      categorySlug="socks"
       heroEyebrow="SVX socks · product development"
       headline="Every sock."
       headlineAccent="One expert route."

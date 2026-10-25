@@ -142,6 +142,20 @@ export const metadata: Metadata = {
   description:
     'Explore 19 custom sports-product programmes spanning agility kits, balls, protection, rackets, recovery, and club equipment carry solutions.',
   alternates: { canonical: '/products/sports-products' },
+  openGraph: {
+    title: 'Custom Sports Training & Club Equipment Manufacturing | SVX',
+    description:
+      'Explore 19 custom sports-product programmes spanning agility kits, balls, protection, rackets, recovery, and club equipment carry solutions.',
+    url: '/products/sports-products',
+    images: [{ url: '/images/sports-products/sports-product-01.webp', width: 1200, height: 800, alt: 'SVX Custom Sports Training & Club Equipment Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Sports Training & Club Equipment Manufacturing | SVX',
+    description:
+      'Explore 19 custom sports-product programmes spanning agility kits, balls, protection, rackets, and recovery equipment.',
+    images: ['/images/sports-products/sports-product-01.webp'],
+  },
 };
 
 export default function SportsProductsPage() {

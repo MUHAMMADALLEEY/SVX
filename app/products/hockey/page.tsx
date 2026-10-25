@@ -37,6 +37,20 @@ export const metadata: Metadata = {
   description:
     'Explore carbon-composite and wooden field hockey sticks, team bundles, practice balls, and multi-stick hockey bags developed for retail and club programmes.',
   alternates: { canonical: '/products/hockey' },
+  openGraph: {
+    title: 'Custom Field Hockey Sticks & Equipment Manufacturing | SVX',
+    description:
+      'Explore carbon-composite and wooden field hockey sticks, team bundles, practice balls, and multi-stick hockey bags developed for retail and club programmes.',
+    url: '/products/hockey',
+    images: [{ url: '/images/hockey/hockey-01.webp', width: 1200, height: 800, alt: 'SVX Custom Hockey Equipment Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Field Hockey Sticks & Equipment Manufacturing | SVX',
+    description:
+      'Explore carbon-composite and wooden field hockey sticks, team bundles, and hockey bags.',
+    images: ['/images/hockey/hockey-01.webp'],
+  },
 };
 
 export default function HockeyPage() {

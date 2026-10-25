@@ -46,7 +46,7 @@
 .eyebrow { margin: 0 0 16px; color: var(--sock-blue); font-size: 10px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
 
 .hero h1, .catalogueIntro h2, .process h2, .card h3 {
-  font-family: var(--font-barlow-condensed), 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', var(--font-barlow-condensed), sans-serif;
   font-weight: 900;
   text-transform: uppercase;
 }

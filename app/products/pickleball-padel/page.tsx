@@ -44,6 +44,20 @@ export const metadata: Metadata = {
   description:
     'Explore carbon-face pickleball paddles, padel rackets, practice balls, covers, and complete retail carry sets developed for clubs and retail programmes.',
   alternates: { canonical: '/products/pickleball-padel' },
+  openGraph: {
+    title: 'Custom Pickleball Paddles & Padel Rackets Manufacturing | SVX',
+    description:
+      'Explore carbon-face pickleball paddles, padel rackets, practice balls, covers, and complete retail carry sets developed for clubs and retail programmes.',
+    url: '/products/pickleball-padel',
+    images: [{ url: '/images/pickleball-padel/pickleball-padel-02.webp', width: 1200, height: 800, alt: 'SVX Custom Pickleball & Padel Rackets Manufacturing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Pickleball Paddles & Padel Rackets Manufacturing | SVX',
+    description:
+      'Explore carbon-face pickleball paddles, padel rackets, practice balls, covers, and complete retail carry sets.',
+    images: ['/images/pickleball-padel/pickleball-padel-02.webp'],
+  },
 };
 
 export default function PickleballPadelPage() {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
-import BrandLogo from '@/components/BrandLogo';
+import Footer from '@/components/Footer';
 import ProductGalleryGrid, { type GalleryItem } from '@/components/ProductGalleryGrid';
 import { ContactBriefButton } from '@/components/ContactBriefModal';
 import { PRODUCT_CATEGORIES, getCategoryBySlug } from '@/data/product-categories';
@@ -173,14 +173,7 @@ export default async function ProductCategoryPage({ params }: PageProps) {
         </section>
       </main>
 
-      <footer>
-        <div className="flex items-center text-white h-10">
-          <BrandLogo className="h-8 w-auto" />
-        </div>
-        <span>MANUFACTURING · SOURCING · PRODUCT DEVELOPMENT</span>
-        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
-        <span>LONDON (UK) COMMERCIAL OFFICE · GLOBAL MANUFACTURING NETWORK</span>
-      </footer>
+      <Footer />
     </>
   );
 }

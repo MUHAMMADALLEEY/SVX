@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import BrandLogo from "@/components/BrandLogo";
+import Footer from "@/components/Footer";
 import { ContactBriefButton } from "@/components/ContactBriefModal";
 import Header from "@/components/Header";
+import { siteConfig, absoluteUrl } from "@/lib/site-config";
 import defaultStyles from "./bags/bags-page.module.css";
 
 export type CatalogueItem = {
@@ -54,8 +55,6 @@ export default function ProductCataloguePage({
   items,
   processHeading,
   developmentSteps,
-  footerLine,
-  footerEnd = { label: "BACK TO MAIN WEBSITE", href: "/" },
   getItemAlt,
   imagePriorityCount = 3,
   styles = defaultStyles,
@@ -71,19 +70,19 @@ export default function ProductCataloguePage({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.sportsventurex.com',
+        item: siteConfig.url,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Products',
-        item: 'https://www.sportsventurex.com/#products',
+        item: absoluteUrl('/#products'),
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: category,
-        item: `https://www.sportsventurex.com/products/${categorySlug}`,
+        item: absoluteUrl(`/products/${categorySlug}`),
       },
     ],
   };
@@ -93,14 +92,33 @@ export default function ProductCataloguePage({
     '@type': 'CollectionPage',
     name: `${category} Manufacturing & Sourcing Programme`,
     description: heroCopy,
-    url: `https://www.sportsventurex.com/products/${categorySlug}`,
+    url: absoluteUrl(`/products/${categorySlug}`),
     mainEntity: {
       '@type': 'ItemList',
+      numberOfItems: items.length,
       itemListElement: items.map((item, idx) => ({
         '@type': 'ListItem',
         position: idx + 1,
-        name: item.title,
-        description: item.description,
+        item: {
+          '@type': 'Product',
+          name: `${item.title} - Custom ${category} OEM/ODM Manufacturing`,
+          description: item.description,
+          image: item.image ? (item.image.startsWith('http') ? item.image : absoluteUrl(item.image)) : undefined,
+          category: category,
+          brand: {
+            '@type': 'Brand',
+            name: siteConfig.name,
+          },
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              description: 'Commercial B2B volume pricing quoted based on custom tech pack, material grade, and delivery requirements.',
+            },
+          },
+        },
       })),
     },
   };
@@ -147,7 +165,7 @@ export default function ProductCataloguePage({
                   <div className={styles.cardImage}>
                     <Image
                       src={item.image}
-                      alt={item.alt ?? getItemAlt?.(item) ?? `SVX ${item.title.toLowerCase()} development example`}
+                      alt={item.alt ?? getItemAlt?.(item) ?? `SVX ${item.title} custom ${category.toLowerCase()} manufacturing sample`}
                       fill
                       sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
                       priority={index < imagePriorityCount}
@@ -192,14 +210,7 @@ export default function ProductCataloguePage({
         </section>
       </main>
 
-      <footer>
-        <div className="flex items-center text-white h-10">
-          <BrandLogo className="h-8 w-auto" />
-        </div>
-        <span>{footerLine}</span>
-        <a className="footer-email" href="mailto:sales@sportsventurex.com">sales@sportsventurex.com</a>
-        {footerEnd.href ? <a href={footerEnd.href}>{footerEnd.label}</a> : <span>{footerEnd.label}</span>}
-      </footer>
+      <Footer />
     </>
   );
 }

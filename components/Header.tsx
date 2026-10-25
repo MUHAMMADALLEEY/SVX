@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <header className="fixed z-30">
       <Link className="logo text-white" href="/" aria-label="SVX home">
-        <BrandLogo className="h-8 md:h-9 w-auto" />
+        <BrandLogo variant="white" className="h-8 md:h-9 w-auto text-white" />
       </Link>
 
       <nav
@@ -83,11 +83,6 @@ export default function Header() {
               <Link href="/products/socks" onClick={closeNavigation}><strong>Socks</strong><span>35 specialist products</span></Link>
               <Link href="/products/bags" onClick={closeNavigation}><strong>Bags</strong><span>18 carry solutions</span></Link>
               <Link href="/products/footballs" onClick={closeNavigation}><strong>Footballs</strong><span>11 purpose-built ranges</span></Link>
-              {/* <Link href="/products/apparel" onClick={closeNavigation}><strong>Apparel</strong><span>13 product categories</span></Link>
-              <Link href="/products/sports-products" onClick={closeNavigation}><strong>Sports Products</strong><span>19 product groups</span></Link>
-              <Link href="/products/hockey" onClick={closeNavigation}><strong>Hockey</strong><span>4 equipment groups</span></Link>
-              <Link href="/products/cricket" onClick={closeNavigation}><strong>Cricket</strong><span>4 equipment groups</span></Link>
-              <Link href="/products/pickleball-padel" onClick={closeNavigation}><strong>Pickleball &amp; Padel</strong><span>5 racket directions</span></Link> */}
             </div>
             <Link className="nav-product-all" href="/#products" onClick={closeNavigation}>View all products <span aria-hidden="true">→</span></Link>
           </div>
