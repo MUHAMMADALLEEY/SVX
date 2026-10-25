@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
 
             {/* Subtitle / Effective Date */}
             <p className="text-sm md:text-base text-[#c0c9d7] max-w-2xl leading-relaxed">
-              Effective Date: October 2026 · SportsVentureX B2B Commercial Operations &amp; UK GDPR Compliance.
+            SportsVentureX B2B Commercial Operations &amp; UK GDPR Compliance.
             </p>
           </div>
         </section>
